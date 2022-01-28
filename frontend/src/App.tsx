@@ -38,6 +38,10 @@ import BookOrders from "./components/BookOrders";
 import BookOrderCreate from "./components/BookOrderCreate";
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
+import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
+import DeviceBorrows from "./components/DeviceBorrows";
+import DeviceBorrowCreate from "./components/DeviceBorrowCreate";
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
@@ -124,6 +128,7 @@ createStyles({
       { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
       { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
       {name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
+      { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     ];
     useEffect(() => {
       const token = localStorage.getItem("token");
@@ -216,9 +221,11 @@ return (
         <Route exact path="/book_informations/create" component={BookInformationCreate} />
         <Route exact path="/book_informations" component={BookInformations} />
         <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/bookorders" component={BookOrders} />
-              <Route exact path="/bookordercreate" component={BookOrderCreate} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/bookorders" component={BookOrders} />
+        <Route exact path="/bookordercreate" component={BookOrderCreate} />
+        <Route exact path="/deviceborrows" component={DeviceBorrows} />
+        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/>
       </Switch>
     </div>
     </main>
