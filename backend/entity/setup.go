@@ -208,6 +208,7 @@ order1 := BookOrder{
 	db.Model(&DeviceList{}).Create(&code1)
 
 	// DeviceType Data
+  
 	type1 := DeviceType{
 		Type: "อุปกรณ์ไฟฟ้า",
 	}
@@ -230,6 +231,6 @@ order1 := BookOrder{
 		Member:				natarin,
 	})
 	
-  
+
 }
 
