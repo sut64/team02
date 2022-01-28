@@ -109,6 +109,27 @@ func main() {
 			protected.POST("/places", controller.CreatePlace)
 			protected.PATCH("/places", controller.UpdatePlace)
 			protected.DELETE("/places/:id", controller.DeletePlace)
+
+			 // DeviceList Routes
+			 protected.GET("/devicelists", controller.ListDeviceLists)
+			 protected.GET("/devicelist/:id", controller.GetDeviceList)
+			 protected.POST("/devicelists", controller.CreateDeviceList)
+			 protected.PATCH("/devicelists", controller.UpdateDeviceList)
+			 protected.DELETE("/devicelists/:id", controller.DeleteDeviceList)
+	   
+			 // DeviceType Routes
+			 protected.GET("/devicetypes", controller.ListDeviceTypes)
+			 protected.GET("/devicetype/:id", controller.GetDeviceType)
+			 protected.POST("/devicetypes", controller.CreateDeviceType)
+			 protected.PATCH("/devicetypes", controller.UpdateDeviceType)
+			 protected.DELETE("/devicetypes/:id", controller.DeleteDeviceType)
+	   
+			 // DeviceBorrow Routes
+			 protected.GET("/deviceborrows", controller.ListDeviceBorrows)
+			 protected.GET("/deviceborrow/:id", controller.GetDeviceBorrow)
+			 protected.POST("/deviceborrows", controller.CreateDeviceBorrow)
+			 protected.PATCH("/deviceborrows", controller.UpdateDeviceBorrow)
+			 protected.DELETE("/deviceborrows/:id", controller.DeleteDeviceBorrow)
 		}
 	}
 
