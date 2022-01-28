@@ -69,6 +69,27 @@ func main() {
 			protected.PATCH("/members", controller.UpdateMember)
 			protected.DELETE("/members/:id", controller.DeleteMember)
 
+			// Company Routes
+			protected.GET("/companies", controller.ListCompanies)
+			protected.GET("/company/:id", controller.GetCompany)
+			protected.POST("/compamies", controller.CreateCompany)
+			protected.PATCH("/companies", controller.UpdateCompany)
+			protected.DELETE("/companies/:id", controller.DeleteCompany)
+
+			//OrderStatus Routes
+			protected.GET("/order_statuses", controller.ListOrderStatuses)
+			protected.GET("/order_status/:id", controller.GetOrderStatus)
+			protected.POST("/order_statuses", controller.CreateOrderStatus)
+			protected.PATCH("/order_statuses", controller.UpdateOrderStatus)
+			protected.DELETE("/order_statuses/:id", controller.DeleteOrderStatus)
+
+			// BookOrder Routes
+			protected.GET("/book_orders", controller.ListBookOrders)
+			protected.GET("/book_order/:id", controller.GetBookOrder)
+			protected.POST("/book_orders", controller.CreateBookOrder)
+			protected.PATCH("/book_orders", controller.UpdateBookOrder)
+			protected.DELETE("/book_orders/:id", controller.DeleteBookOrder)
+
 		}
 	}
 	
