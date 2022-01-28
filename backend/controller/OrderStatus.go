@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/Boontita/se-64-example/entity"
+	"github.com/sut64/team02"
 
 )
 
