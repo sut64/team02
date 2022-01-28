@@ -15,3 +15,11 @@ type BookType struct {
 	BookInformation []BookInformation `gorm:"foreignKey:BookTypeID"`
 }
 
+type BookLocation struct {
+	gorm.Model
+
+	Location string `gorm:"uniqueIndex"`
+
+	BookInformation []BookInformation `gorm:"foreignKey:BookLocationID"`
+}
+
