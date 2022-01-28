@@ -4,13 +4,12 @@ import (
 	"gorm.io/gorm"
 
 	"time"
-
 )
 
 type Member struct {
 	gorm.Model
 
-	Name	string
+	Name string
 
 	Email string `gorm:"uniqueIndex"`
 
@@ -18,7 +17,9 @@ type Member struct {
 
 	BookInformation []BookInformation `gorm:"foreignKey:MemberID"`
 
-	BookOrder	[]BookOrder `gorm:"foreignKey:MemberID"`
+	BookOrder []BookOrder `gorm:"foreignKey:MemberID"`
+
+	BorrowDetails []BorrowDetail `gorm:"foreignKey:MemberID"`
 }
 
 type BookType struct {
@@ -28,7 +29,7 @@ type BookType struct {
 
 	BookInformation []BookInformation `gorm:"foreignKey:BookTypeID"`
 
-	BookOrder	[]BookOrder `gorm:"foreignKey:BookTypeID"`
+	BookOrder []BookOrder `gorm:"foreignKey:BookTypeID"`
 }
 
 type BookLocation struct {
@@ -64,19 +65,19 @@ type BookInformation struct {
 
 type Company struct {
 	gorm.Model
-	NameThai string
-	NameEng  string
-	Address	string
-	PhoneNumber	string
-	Email     string
-	Website		string
+	NameThai    string
+	NameEng     string
+	Address     string
+	PhoneNumber string
+	Email       string
+	Website     string
 
 	BookOrder []BookOrder `gorm:"foreignKey:CompanyID"`
 }
 
 type OrderStatus struct {
 	gorm.Model
-	Status	string
+	Status string
 
 	BookOrder []BookOrder `gorm:"foreignKey:OrderStatusID"`
 }
@@ -103,9 +104,37 @@ type BookOrder struct {
 
 	//Librarian
 	MemberID *uint
-	Member		Member
-	
+	Member   Member
 }
 
+type BorrowDetail struct {
+	gorm.Model
 
+	DateToBorrow   time.Time //`valid:"future~DateToBorrow must be in the future"`
+	Tel            string    //`valid:"matches(^[0]{1}[0-9]{9})"`
+	BorrowDuration uint      // `valid:"range(1|30)"`
 
+	MemberID *uint
+	Member   Member `gorm:"references:id"`
+
+	PlaceID *uint
+	Place   ServicePlace `gorm:"references:id"`
+
+	InfoID *uint
+	Info   BookInformation `gorm:"references:id"`
+
+	StatusID *uint
+	Status   Status `gorm:"references:id"`
+}
+
+type ServicePlace struct {
+	gorm.Model
+	Name          string
+	BorrowDetails []BorrowDetail `gorm:"foreignKey:PlaceID"`
+}
+
+type Status struct {
+	gorm.Model
+	Name          string
+	BorrowDetails []BorrowDetail `gorm:"foreignKey:StatusID"`
+}
