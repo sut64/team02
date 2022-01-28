@@ -9,7 +9,7 @@ export interface DeviceBorrowInterface {
   BorrowCode:         string,
 
   Amount:             number,
-  
+
   Date:               Date,
 
   MemberID:        number,
@@ -19,5 +19,6 @@ export interface DeviceBorrowInterface {
   DeviceList:         DeviceListsInterface,
   
   DeviceTypeID:       number,
+  
   DeviceType:         DeviceTypesInterface,
 }
