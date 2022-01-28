@@ -225,7 +225,7 @@ return (
         <Route exact path="/bookorders" component={BookOrders} />
         <Route exact path="/bookordercreate" component={BookOrderCreate} />
         <Route exact path="/deviceborrows" component={DeviceBorrows} />
-        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/>
+        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/
       </Switch>
     </div>
     </main>
