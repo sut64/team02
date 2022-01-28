@@ -6,8 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/PloychompooWongchanthat/se-64/service"
-	"github.com/PloychompooWongchanthat/se-64/entity"
+	"github.com/sut64/team02/service"
+	"github.com/sut64/team02/entity"
 
 )
 
