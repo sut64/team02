@@ -48,6 +48,20 @@ func main() {
 			protected.PATCH("/book_orders", controller.UpdateBookOrder)
 			protected.DELETE("/book_orders/:id", controller.DeleteBookOrder)
 
+			// Company Routes
+			protected.GET("/companies", controller.ListCompanies)
+			protected.GET("/company/:id", controller.GetCompany)
+			protected.POST("/compamies", controller.CreateCompany)
+			protected.PATCH("/companies", controller.UpdateCompany)
+			protected.DELETE("/companies/:id", controller.DeleteCompany)
+
+			//OrderStatus Routes
+			protected.GET("/order_statuses", controller.ListOrderStatuses)
+			protected.GET("/order_status/:id", controller.GetOrderStatus)
+			protected.POST("/order_statuses", controller.CreateOrderStatus)
+			protected.PATCH("/order_statuses", controller.UpdateOrderStatus)
+			protected.DELETE("/order_statuses/:id", controller.DeleteOrderStatus)
+
 			// members Routes
 			protected.GET("/members", controller.ListMembers)
 			protected.GET("/member/:id", controller.GetMember)
