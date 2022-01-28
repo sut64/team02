@@ -7,6 +7,18 @@ import (
 
 )
 
+type Member struct {
+	gorm.Model
+
+	Name	string
+
+	Email string `gorm:"uniqueIndex"`
+
+	Password string
+
+	BookInformation []BookInformation `gorm:"foreignKey:MemberID"`
+}
+
 type BookType struct {
 	gorm.Model
 
