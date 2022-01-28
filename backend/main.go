@@ -4,9 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/sut64/team02/controller"
-	"github.com/sut64/team02/se-64/entity"
 	"github.com/sut64/team02/middlewares"
-
+	"github.com/sut64/team02/se-64/entity"
 )
 
 func main() {
@@ -40,7 +39,6 @@ func main() {
 			protected.PATCH("/book_locations", controller.UpdateBookLocation)
 			protected.DELETE("/book_locations/:id", controller.DeleteBookLocation)
 
-
 			// BookOrders Routes
 			protected.GET("/book_orders", controller.ListBookOrders)
 			protected.GET("/bookorder/:id", controller.GetBookOrder)
@@ -65,7 +63,7 @@ func main() {
 			// members Routes
 			protected.GET("/members", controller.ListMembers)
 			protected.GET("/member/:id", controller.GetMember)
-			
+
 			protected.PATCH("/members", controller.UpdateMember)
 			protected.DELETE("/members/:id", controller.DeleteMember)
 
@@ -90,9 +88,29 @@ func main() {
 			protected.PATCH("/book_orders", controller.UpdateBookOrder)
 			protected.DELETE("/book_orders/:id", controller.DeleteBookOrder)
 
+			// Borrow Routes
+			protected.GET("/borrows", controller.ListBorrows)
+			protected.GET("/borrow/:id", controller.GetBorrow)
+			protected.GET("/borrow/member/:id", controller.ListBorrowsByMember)
+			protected.POST("/borrows", controller.CreateBorrow)
+			protected.PATCH("/borrows", controller.UpdateBorrow)
+			protected.DELETE("/borrows/:id", controller.DeleteBorrow)
+
+			// Status Routes
+			protected.GET("/statuses", controller.ListStatuses)
+			protected.GET("/status/:id", controller.GetStatus)
+			protected.POST("/statuses", controller.CreateStatus)
+			protected.PATCH("/statuses", controller.UpdateStatus)
+			protected.DELETE("/statuses/:id", controller.DeleteStatus)
+
+			// ServicePlace Routes
+			protected.GET("/places", controller.ListPlaces)
+			protected.GET("/place/:id", controller.GetPlace)
+			protected.POST("/places", controller.CreatePlace)
+			protected.PATCH("/places", controller.UpdatePlace)
+			protected.DELETE("/places/:id", controller.DeletePlace)
 		}
 	}
-	
 
 	// members Routes
 	r.POST("/members", controller.CreateMember)
