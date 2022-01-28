@@ -39,7 +39,11 @@ func SetupDatabase() {
     &BookLocation{},
 	&BookOrder{}, 
 	&Company{},
-	&OrderStatus{}
+	&OrderStatus{},
+  &Member{},
+		&DeviceList{},
+		&DeviceType{},
+		&DeviceBorrow{},
   )
 
 
@@ -181,5 +185,52 @@ order1 := BookOrder{
 	OrderStatus: request,
 	}
 	db.Model(&BookOrder{}).Create(&order1)
+
+  db.Model(&Member{}).Create(&Member{
+		Name:     	"ณัฐรินทร์ เนื้อทอง",
+		Email:    	"nattarin@gmail.com",
+		Password: 	 string(password),
+	})
+	db.Model(&Member{}).Create(&Member{
+		Name:     	"บุญฑิตา ปวงสันเทียะ",
+		Email:   	 "boontita@gmail.com",
+		Password: 		string(password),
+	})
+
+	var natarin Member
+	db.Raw("SELECT * FROM members WHERE name = ?", "ณัฐรินทร์ เนื้อทอง").Scan(&natarin)
+	
+
+	// DeviceList Data
+	code1 := DeviceList{
+		DeviceCode: "D00000",
+	}
+	db.Model(&DeviceList{}).Create(&code1)
+
+	// DeviceType Data
+  
+	type1 := DeviceType{
+		Type: "อุปกรณ์ไฟฟ้า",
+	}
+	db.Model(&DeviceType{}).Create(&type1)
+
+	// DeviceType Data
+	type2 := DeviceType{
+		Type: "อุปกรณ์อิเล็กทรอนิกส์",
+	}
+	db.Model(&DeviceType{}).Create(&type2)
+
+	// DeviceBorrow 1
+	db.Model(&DeviceBorrow{}).Create(&DeviceBorrow{
+		DeviceName:   		"ปลั๊กไฟ", 	
+		DeviceList:			code1,
+		DeviceType: 		type1,
+		BorrowCode:			"BD0000",
+		Amount:  			'2',
+		Date:				time.Now(),
+		Member:				natarin,
+	})
+	
+
 }
 
