@@ -17,6 +17,8 @@ type Member struct {
 	Password string
 
 	BookInformation []BookInformation `gorm:"foreignKey:MemberID"`
+
+	BookOrder	[]BookOrder `gorm:"foreignKey:MemberID"`
 }
 
 type BookType struct {
@@ -25,6 +27,8 @@ type BookType struct {
 	Type string `gorm:"uniqueIndex"`
 
 	BookInformation []BookInformation `gorm:"foreignKey:BookTypeID"`
+
+	BookOrder	[]BookOrder `gorm:"foreignKey:BookTypeID"`
 }
 
 type BookLocation struct {
