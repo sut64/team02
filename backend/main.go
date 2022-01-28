@@ -119,6 +119,7 @@ func main() {
 	   
 			 // DeviceType Routes
 			 protected.GET("/devicetypes", controller.ListDeviceTypes)
+			 
 			 protected.GET("/devicetype/:id", controller.GetDeviceType)
 			 protected.POST("/devicetypes", controller.CreateDeviceType)
 			 protected.PATCH("/devicetypes", controller.UpdateDeviceType)
