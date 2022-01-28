@@ -5,8 +5,11 @@ import { DeviceTypesInterface } from "./IDeviceType";
 export interface DeviceBorrowInterface {
   ID:                 number,
   DeviceName:         string,
+
   BorrowCode:         string,
+
   Amount:             number,
+  
   Date:               Date,
 
   MemberID:        number,
