@@ -22,7 +22,7 @@ func DB() *gorm.DB {
 func SetupDatabase() {
 
   database, err := gorm.Open(sqlite.Open("se-64.db"), &gorm.Config{})
-
+  database, err := gorm.Open(sqlite.Open("bookorder.db"), &gorm.Config{})
   if err != nil {
 
     panic("failed to connect database")
@@ -37,6 +37,7 @@ func SetupDatabase() {
     &BookOrder{},
     &BookType{},
     &BookLocation{},
+    &BookOrder{}, &BookType{}, &Company{}, &OrderStatus{}, 
   )
 
 
@@ -118,21 +119,6 @@ func SetupDatabase() {
   }
   db.Model(&BookOrder{}).Create(&business)
 
-
-}
-
-func SetupDatabase() {
-	database, err := gorm.Open(sqlite.Open("bookorder.db"), &gorm.Config{})
-	if err != nil {
-		panic("failed to connect database")
-	}
-
-	// Migrate the schema
-	database.AutoMigrate(&BookOrder{}, &BookType{}, &Company{}, &OrderStatus{}, &Member{})
-
-	db = database
-
-	password, err := bcrypt.GenerateFromPassword([]byte("123456"), 14)
 
 	db.Model(&Member{}).Create(&Member{
     Name: "บุญฑิตา ปวงสันเทียะ",
@@ -220,4 +206,5 @@ func SetupDatabase() {
 		OrderStatus: request,
 	}
 	db.Model(&BookOrder{}).Create(&order1)
+}
 }
