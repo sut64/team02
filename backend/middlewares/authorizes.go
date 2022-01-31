@@ -6,8 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/github.com/sut64/team02/service"
-
+	"github.com/sut64/team02/service"
 )
 
 // validates token
