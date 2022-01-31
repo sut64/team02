@@ -45,20 +45,20 @@ func CreateBookInformation(c *gin.Context) {
 	}
 
 	//แทรกการ validate ไว้ช่วงนี้ของ controller
-	if _, err := govalidator.ValidateStruct(bookinformation); err != nil{
-		c.JSON(http.StatusBadRequest, gin.H{"error":err.Error()})
+	if _, err := govalidator.ValidateStruct(bookinformation); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
-	
+
 	//สร้าง bookinformation
 	bi := entity.BookInformation{
-		BookLocation: 		booklocation, 					// โยงความสัมพันธ์กับ Entity BookLocation
-		BookOrder:      	bookorder,      				// โยงความสัมพันธ์กับ Entity BookOrder
-		BookType:       	booktype,          				// โยงความสัมพันธ์กับ Entity BookType
-		Date:         		bookinformation.Date, 			//ตั้งค่าฟิลก์ Date
-		YearPublication:	bookinformation.YearPublication,//ตั้งค่าฟิลก์ YearPublication
-		CallNumber:			bookinformation.CallNumber, 	//ตั้งค่าฟิลก์ CallNumber
+		BookLocation:    booklocation,                    // โยงความสัมพันธ์กับ Entity BookLocation
+		BookOrder:       bookorder,                       // โยงความสัมพันธ์กับ Entity BookOrder
+		BookType:        booktype,                        // โยงความสัมพันธ์กับ Entity BookType
+		Date:            bookinformation.Date,            //ตั้งค่าฟิลก์ Date
+		YearPublication: bookinformation.YearPublication, //ตั้งค่าฟิลก์ YearPublication
+		CallNumber:      bookinformation.CallNumber,      //ตั้งค่าฟิลก์ CallNumber
 	}
-	
+
 	// บันทึก
 	if err := entity.DB().Create(&bi).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -88,6 +88,17 @@ func ListBookInformations(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": bookinformations})
+}
+
+// GET /info/btype/:id
+func GetInfoByID(c *gin.Context) {
+	var info []entity.BookInformation
+	id := c.Param("id")
+	if err := entity.DB().Preload("BookType").Preload("BookOrder").Raw("SELECT * FROM book_informations WHERE book_type_id = ? ", id).Find(&info).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": info})
 }
 
 // DELETE /book_informations/:id
