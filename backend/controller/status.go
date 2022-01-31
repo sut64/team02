@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/scariestt/sa-64-example/entity"
+	"github.com/sut64/team02/entity"
 
 	"github.com/gin-gonic/gin"
 
