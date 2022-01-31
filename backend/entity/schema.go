@@ -61,6 +61,8 @@ type BookInformation struct {
 	// MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
 	Member   Member `valid:"-"`
+
+	BorrowDetail []BorrowDetail `gorm:"foreignKey:InfoID"`
 }
 
 type Company struct {
@@ -140,35 +142,35 @@ type Status struct {
 }
 type DeviceList struct {
 	gorm.Model
-	DeviceCode			string
-	DeviceBorrow 		[]DeviceBorrow 	`gorm:"foreignKey:DeviceListID"`
+	DeviceCode   string
+	DeviceBorrow []DeviceBorrow `gorm:"foreignKey:DeviceListID"`
 }
 
 type DeviceType struct {
 	gorm.Model
-	Type     		string	
-	DeviceBorrow 	[]DeviceBorrow 	`gorm:"foreignKey:DeviceTypeID"`
+	Type         string
+	DeviceBorrow []DeviceBorrow `gorm:"foreignKey:DeviceTypeID"`
 }
 
 type DeviceBorrow struct {
 	gorm.Model
-	DeviceName   string		`gorm:"not null"`
-	BorrowCode   string		
-	//`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`	
-	Amount		 int 		
+	DeviceName string `gorm:"not null"`
+	BorrowCode string
+	//`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
+	Amount int
 	//`valid:"range(0|9)~Amount must be in negative"`
-	Date		 time.Time	
+	Date time.Time
 	//	`valid:"present~Date must be in the present"`
 
 	//MemberID ทำหน้าที่เป็น FK
-	MemberID      *uint
-	Member        Member
-	
+	MemberID *uint
+	Member   Member
+
 	//DeviceListID ทำหน้าที่เป็น FK
-	DeviceListID   *uint
-	DeviceList     DeviceList			
-	
+	DeviceListID *uint
+	DeviceList   DeviceList
+
 	//DeviceTypeID ทำหน้าที่เป็น FK
-	DeviceTypeID   *uint
-	DeviceType     DeviceType
+	DeviceTypeID *uint
+	DeviceType   DeviceType
 }
