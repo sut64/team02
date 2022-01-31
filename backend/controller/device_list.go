@@ -2,10 +2,11 @@ package controller
 
 import (
 	"net/http"
-	
+
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team02/entity"
 
+	
 )
 
 //function Create เป็นการทำงานแทนคำสั่ง insert ของ SQL
