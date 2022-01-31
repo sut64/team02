@@ -27,8 +27,6 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
-import Navbar from "./components/Navbar";
-
 //import UserCreate from "./components/UserCreate";
 import BookInformations from "./components/BookInformation";
 import BookInformationCreate from "./components/BookInformationCreate";
@@ -225,7 +223,7 @@ return (
         <Route exact path="/bookorders" component={BookOrders} />
         <Route exact path="/bookordercreate" component={BookOrderCreate} />
         <Route exact path="/deviceborrows" component={DeviceBorrows} />
-        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/
+        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/>
       </Switch>
     </div>
     </main>
