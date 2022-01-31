@@ -1,4 +1,4 @@
-import { BookTypesInterface } from "./IBookType";
+import { BookTypeInterface } from "./IBookType";
 import { CompaniesInterface } from "./ICompany";
 import { OrderStatusesInterface } from "./IOrderStatus";
 
@@ -10,7 +10,7 @@ export interface BookOrderInterface {
     Price: Float32Array;
     OrderDate: Date | null;
     BookTypeID: number,
-    BookType: BookTypesInterface,
+    BookType: BookTypeInterface,
     CompanyID: number,
     Company: CompaniesInterface,
     OrderStatusID: number,

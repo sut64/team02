@@ -27,6 +27,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
+//import Navbar from "./components/Navbar";
+
 //import UserCreate from "./components/UserCreate";
 import BookInformations from "./components/BookInformation";
 import BookInformationCreate from "./components/BookInformationCreate";
@@ -123,7 +125,7 @@ createStyles({
       setOpen(false);
     };
     const menu = [
-      { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
+      { name: "หน้าแรก", icon: <HomeIcon/>, path: "/" },
       { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
       {name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
       { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
@@ -218,8 +220,6 @@ return (
         <Route exact path="/" component={Home} />
         <Route exact path="/book_informations/create" component={BookInformationCreate} />
         <Route exact path="/book_informations" component={BookInformations} />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
         <Route exact path="/bookorders" component={BookOrders} />
         <Route exact path="/bookordercreate" component={BookOrderCreate} />
         <Route exact path="/deviceborrows" component={DeviceBorrows} />

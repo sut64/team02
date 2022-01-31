@@ -1,5 +1,5 @@
 import { ServicePlacesInterface } from "./IPlace";
-import { InfoInterface } from "./IInfo";
+import { BookInformationInterface } from "./IBookInformation";
 import { MembersInterface } from "./IMember";
 import { StatusInterface } from "./IStatus";
 
@@ -8,7 +8,7 @@ export interface BorrowDetailInterface {
     MemberID:   number,
     Member:     MembersInterface,
     InfoID:     number,
-    Info:       InfoInterface,
+    Info:       BookInformationInterface,
     PlaceID:    number,
     Place:      ServicePlacesInterface,
     StatusID:   number,
