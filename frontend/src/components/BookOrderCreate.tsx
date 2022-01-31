@@ -13,7 +13,7 @@ import Divider from "@material-ui/core/Divider";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 import { BookOrderInterface } from "../models/IBookOrder";
-import { BookTypesInterface } from "../models/IBookType";
+import { BookTypeInterface } from "../models/IBookType";
 import {CompaniesInterface} from "../models/ICompany";
 import {OrderStatusesInterface} from "../models/IOrderStatus";
 import {MuiPickersUtilsProvider,KeyboardDatePicker,} from "@material-ui/pickers";
@@ -37,7 +37,7 @@ function BookOrderCreate() {
  const classes = useStyles();
  const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
  const [bookorder, setBookOrder] = useState<Partial<BookOrderInterface>>({});
- const [booktypes, setBookTypes] = useState<BookTypesInterface[]>([]);
+ const [booktypes, setBookTypes] = useState<BookTypeInterface[]>([]);
  const [companies, setCompanies] = useState<CompaniesInterface[]>([]);
  const [orderrstatuses, setOrderStatuses] = useState<OrderStatusesInterface[]>([]);
  const [success, setSuccess] = React.useState(false);
@@ -230,7 +230,7 @@ return (
                   <option aria-label="None" value="">
                     กรุณาเลือกประเภทหนังสือ
                   </option>
-                  {booktypes.map((item: BookTypesInterface) => (
+                  {booktypes.map((item: BookTypeInterface) => (
                     <option value={item.ID} key={item.ID}>
                       {item.Type}
                     </option>

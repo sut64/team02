@@ -13,7 +13,6 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { BorrowDetailInterface } from "../models/IBorrowDetail";
-import { TypesInterface } from "../models/IType";
 import { format } from 'date-fns'
 import { id } from "date-fns/locale";
 

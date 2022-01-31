@@ -43,6 +43,7 @@ func SetupDatabase() {
 		&DeviceList{},
 		&DeviceType{},
 		&DeviceBorrow{},
+		&BookReturn{},
 	)
 
 	db = database
