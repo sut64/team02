@@ -12,7 +12,7 @@ import (
 func CreateBorrow(c *gin.Context) {
 
 	var borrowDetail entity.BorrowDetail
-	var place entity.ServicePlace
+	var serviceplace entity.ServicePlace
 	var info entity.BookInformation
 	var member entity.Member
 	var status entity.Status
@@ -24,7 +24,7 @@ func CreateBorrow(c *gin.Context) {
 	}
 
 	// 9: ค้นหา servicePlace ด้วย id
-	if tx := entity.DB().Where("id = ?", borrowDetail.PlaceID).First(&place); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", borrowDetail.ServicePlaceID).First(&serviceplace); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "servicePlace not found"})
 		return
 	}
@@ -50,7 +50,7 @@ func CreateBorrow(c *gin.Context) {
 	// 14: สร้าง BorrowDetail
 	bd := entity.BorrowDetail{
 		Member:         member,
-		Place:          place,
+		ServicePlace:   serviceplace,
 		Info:           info,
 		Status:         status,
 		DateToBorrow:   borrowDetail.DateToBorrow,
@@ -76,7 +76,7 @@ func CreateBorrow(c *gin.Context) {
 func GetBorrow(c *gin.Context) {
 	var borrowDetail entity.BorrowDetail
 	id := c.Param("id")
-	if err := entity.DB().Preload("Place").Preload("Status").Preload("Info").Preload("Member").Raw("SELECT * FROM borrow_details WHERE id = ?", id).Find(&borrowDetail).Error; err != nil {
+	if err := entity.DB().Preload("ServicePlace").Preload("Status").Preload("Info").Preload("Member").Raw("SELECT * FROM borrow_details WHERE id = ?", id).Find(&borrowDetail).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -86,7 +86,7 @@ func GetBorrow(c *gin.Context) {
 // GET /borrows
 func ListBorrows(c *gin.Context) {
 	var borrowDetail []entity.BorrowDetail
-	if err := entity.DB().Preload("Place").Preload("Status").Preload("Member").Preload("Info").Preload("Info.BookOrder").Raw("SELECT * FROM borrow_details").Find(&borrowDetail).Error; err != nil {
+	if err := entity.DB().Preload("ServicePlace").Preload("Status").Preload("Member").Preload("Info").Preload("Info.BookOrder").Raw("SELECT * FROM borrow_details").Find(&borrowDetail).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -98,7 +98,7 @@ func ListBorrows(c *gin.Context) {
 func ListBorrowsByMember(c *gin.Context) {
 	var borrowDetail []entity.BorrowDetail
 	id := c.Param("id")
-	if err := entity.DB().Preload("Place").Preload("Status").Preload("Info").Preload("Member").Raw("SELECT * FROM borrow_details WHERE member_id = ?", id).Find(&borrowDetail).Error; err != nil {
+	if err := entity.DB().Preload("ServicePlace").Preload("Status").Preload("Info").Preload("Member").Raw("SELECT * FROM borrow_details WHERE member_id = ?", id).Find(&borrowDetail).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

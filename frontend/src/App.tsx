@@ -41,113 +41,116 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
 import DeviceBorrows from "./components/DeviceBorrows";
 import DeviceBorrowCreate from "./components/DeviceBorrowCreate";
+import BookReturnCreate from "./components/BookReturnCreate";
+import BookReturns from "./components/BookReturns";
+import CreateBorrowDetail from "./components/BorrowDetailCreate";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
-createStyles({
-  root: {
-    display: "flex",
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  hide: {
-    display: "none",
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: "nowrap",
-  },
-  drawerOpen: {
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerClose: {
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-  }),
-    overflowX: "hidden",
-    width: theme.spacing(7) + 1,
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9) + 1,
+  createStyles({
+    root: {
+      display: "flex",
     },
-  },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-// necessary for content to be below app bar
-...theme.mixins.toolbar,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3)
-  },
-  a: {
-    textDecoration: "none",
-    color: "inherit",
-  },
-})
+    title: {
+      flexGrow: 1,
+    },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+      transition: theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+    },
+    appBarShift: {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    },
+    menuButton: {
+      marginRight: 36,
+    },
+    hide: {
+      display: "none",
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+      whiteSpace: "nowrap",
+    },
+    drawerOpen: {
+      width: drawerWidth,
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    },
+    drawerClose: {
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      overflowX: "hidden",
+      width: theme.spacing(7) + 1,
+      [theme.breakpoints.up("sm")]: {
+        width: theme.spacing(9) + 1,
+      },
+    },
+    toolbar: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      padding: theme.spacing(0, 1),
+      // necessary for content to be below app bar
+      ...theme.mixins.toolbar,
+    },
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3)
+    },
+    a: {
+      textDecoration: "none",
+      color: "inherit",
+    },
+  })
 );
-  export default function MiniDrawer() {
-    const classes = useStyles();
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-    const [token, setToken] = React.useState<String>("");
-    const handleDrawerOpen = () => {
-      setOpen(true);
-    };
-    const handleDrawerClose = () => {
-      setOpen(false);
-    };
-    const menu = [
-      { name: "หน้าแรก", icon: <HomeIcon/>, path: "/" },
-      { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
-      {name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
-      { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
-    ];
-    useEffect(() => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        setToken(token);
-      }
-    }, []);
-  
-    if (!token) {
-      return <SignIn />;
+export default function MiniDrawer() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+  const [token, setToken] = React.useState<String>("");
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const menu = [
+    { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
+    { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
+    { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
+    { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
+  ];
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setToken(token);
     }
-  
-    const signout = () => {
-      localStorage.clear();
-      window.location.href = "/";
-    };
-return (
-  <div className={classes.root}>
-     <Router>
+  }, []);
+
+  if (!token) {
+    return <SignIn />;
+  }
+
+  const signout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
+  return (
+    <div className={classes.root}>
+      <Router>
         <CssBaseline />
         {token && (
           <>
@@ -213,21 +216,24 @@ return (
             </Drawer>
           </>
         )}
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
-    <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/book_informations/create" component={BookInformationCreate} />
-        <Route exact path="/book_informations" component={BookInformations} />
-        <Route exact path="/bookorders" component={BookOrders} />
-        <Route exact path="/bookordercreate" component={BookOrderCreate} />
-        <Route exact path="/deviceborrows" component={DeviceBorrows} />
-        <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate}/>
-      </Switch>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/borrowDetail/create" component={CreateBorrowDetail} />
+              <Route exact path="/book_return" component={BookReturns} />
+              <Route exact path="/book_return/create" component={BookReturnCreate} />
+              <Route exact path="/book_informations/create" component={BookInformationCreate} />
+              <Route exact path="/book_informations" component={BookInformations} />
+              <Route exact path="/bookorders" component={BookOrders} />
+              <Route exact path="/bookordercreate" component={BookOrderCreate} />
+              <Route exact path="/deviceborrows" component={DeviceBorrows} />
+              <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate} />
+            </Switch>
+          </div>
+        </main>
+      </Router>
     </div>
-    </main>
-  </Router>
-</div>
-);
+  );
 }

@@ -20,6 +20,8 @@ type Member struct {
 	BookOrder []BookOrder `gorm:"foreignKey:MemberID"`
 
 	BorrowDetails []BorrowDetail `gorm:"foreignKey:MemberID"`
+
+	BookReturns []BookReturn `gorm:"foreinkey:MemberID"`
 }
 
 type BookType struct {
@@ -119,26 +121,30 @@ type BorrowDetail struct {
 	MemberID *uint
 	Member   Member `gorm:"references:id"`
 
-	PlaceID *uint
-	Place   ServicePlace `gorm:"references:id"`
+	ServicePlaceID *uint
+	ServicePlace   ServicePlace `gorm:"references:id"`
 
 	InfoID *uint
 	Info   BookInformation `gorm:"references:id"`
 
 	StatusID *uint
 	Status   Status `gorm:"references:id"`
+
+	BookReturns []BookReturn `gorm:"foreignKey:BorrowDetailID"`
 }
 
 type ServicePlace struct {
 	gorm.Model
 	Name          string
-	BorrowDetails []BorrowDetail `gorm:"foreignKey:PlaceID"`
+	BorrowDetails []BorrowDetail `gorm:"foreignKey:ServicePlaceID"`
+	BookReturns   []BookReturn   `gorm:"foreinkey:ServicePlaceID"`
 }
 
 type Status struct {
 	gorm.Model
 	Name          string
 	BorrowDetails []BorrowDetail `gorm:"foreignKey:StatusID"`
+	BookReturns   []BookReturn   `gorm:"foreinkey:StatusID"`
 }
 type DeviceList struct {
 	gorm.Model
@@ -173,4 +179,23 @@ type DeviceBorrow struct {
 	//DeviceTypeID ทำหน้าที่เป็น FK
 	DeviceTypeID *uint
 	DeviceType   DeviceType
+}
+
+type BookReturn struct {
+	gorm.Model
+	DateReturn time.Time
+	Damage     int
+	Tel        string
+
+	MemberID *uint
+	Member   Member `gorm:"references:id" `
+
+	BorrowDetailID *uint
+	BorrowDetail   BorrowDetail `gorm:"references:id"`
+
+	ServicePlaceID *uint
+	ServicePlace   ServicePlace `gorm:"references:id"`
+
+	StatusID *uint
+	Status   Status `gorm:"references:id"`
 }
