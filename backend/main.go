@@ -109,6 +109,7 @@ func main() {
 			protected.POST("/deviceborrows", controller.CreateDeviceBorrow)
 			protected.PATCH("/deviceborrows", controller.UpdateDeviceBorrow)
 			protected.DELETE("/deviceborrows/:id", controller.DeleteDeviceBorrow)
+			
 		}
 	}
 
