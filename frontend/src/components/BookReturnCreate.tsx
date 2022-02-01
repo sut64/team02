@@ -249,8 +249,8 @@ function BookReturnCreate() {
                                 }}
                             >
                                 {borrowDetails.map((item: BorrowDetailInterface) => (
-                                    <option value={item.Info.BookOrder.BookTitle} key={item.ID}>
-                                        {item.Info.BookOrder.BookTitle}
+                                    <option value={item.BookOrder.BookTitle} key={item.ID}>
+                                        {item.BookOrder.BookTitle}
                                     </option>
                                 ))}
                             </Select>

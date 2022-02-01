@@ -18,12 +18,12 @@ import {
   KeyboardDateTimePicker,
   DatePicker,
 } from "@material-ui/pickers";
-import { BookInformationInterface } from "../models/IBookInformation";
 import { BookTypeInterface } from "../models/IBookType";
 import { ServicePlacesInterface } from "../models/IServicePlace";
 import { BorrowDetailInterface } from "../models/IBorrowDetail";
 import { FormControl, ImageListItem } from "@material-ui/core";
 import { StatusInterface } from "../models/IStatus";
+import { BookOrderInterface } from "../models/IBookOrder";
 
 const Alert = (props: AlertProps) => {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -58,9 +58,9 @@ function CreateBorrowDetail() {
   const classes = useStyles();
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [members, setMembers] = useState<MembersInterface>();
-  const [info, setInfo] = useState<BookInformationInterface[]>([]);
+  const [bookOrder, setBookOrder] = useState<BookOrderInterface[]>([]);
   const [status, setStatus] = useState<StatusInterface[]>([]);
-  const [btypes, setBtypes] = useState<BookTypeInterface[]>([]);
+  const [booktypes, setBookTypes] = useState<BookTypeInterface[]>([]);
   const [places, setPlaces] = useState<ServicePlacesInterface[]>([]);
   const [borrowDetail, setborrowDetail] = useState<Partial<BorrowDetailInterface>>({});
 
@@ -108,7 +108,7 @@ function CreateBorrowDetail() {
   const handleType = (
     event: React.ChangeEvent<{ name?: string; value: unknown }>
   ) => {
-    getInfo(Number(event.target.value));
+    getOrder(Number(event.target.value));
   };
 
   const handleDateChange = (date: Date | null) => {
@@ -131,37 +131,36 @@ function CreateBorrowDetail() {
   };
 
 
-  const getBtypes = async () => {
+  const getBookType = async () => {
     fetch(`${apiUrl}/book_types`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          setBtypes(res.data);
+          setBookTypes(res.data);
         } else {
           console.log("else");
         }
       });
   };
 
-  const getInfo = async (id: number) => {
-    fetch(`${apiUrl}/bookinformation/bookType/${id}`, requestOptions)
+  const getOrder = async (id: number) => {
+    fetch(`${apiUrl}/book_order/book_type/${id}`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          setInfo(res.data);
-          console.log(res.data);
+          setBookOrder(res.data);
         } else {
           console.log("else");
         }
       });
   };
 
-  const getInfoList = async () => {
-    fetch(`${apiUrl}/book_informations`, requestOptions)
+  const getOrderList = async () => {
+    fetch(`${apiUrl}/book_orders`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          setInfo(res.data);
+          setBookOrder(res.data);
           console.log(res.data);
         } else {
           console.log("else");
@@ -196,9 +195,9 @@ function CreateBorrowDetail() {
   useEffect(() => {
     getMember();
     getPlaces();
-    getBtypes();
+    getBookType();
     getStatus();
-    getInfoList();
+    //getOrderList();
   }, []);
 
   const convertType = (data: string | number | undefined) => {
@@ -209,7 +208,7 @@ function CreateBorrowDetail() {
   function submit() {
     let data = {
       MemberID: convertType(members?.ID),
-      InfoID: convertType(borrowDetail.InfoID),
+      BookOrderID: convertType(borrowDetail.BookOrderID),
       ServicePlaceID: convertType(borrowDetail.ServicePlaceID),
       StatusID: 1,
       DateToBorrow: selectedDate,
@@ -271,14 +270,14 @@ function CreateBorrowDetail() {
             </Grid>
             <Grid item xs={6}>
               <Select
-                value={borrowDetail.Info?.BookTypeID}
+                value={borrowDetail.BookOrder?.BookTypeID}
                 onChange={handleType}
                 style={{ width: 300 }}
                 inputProps={{
-                  name: "BTypeID",
+                  name: "BookTypeID",
                 }}
               >
-                {btypes.map((item: BookTypeInterface) => (
+                {booktypes.map((item: BookTypeInterface) => (
                   <MenuItem value={item.ID} key={item.ID}>
                     {item.Type}
                   </MenuItem>
@@ -291,16 +290,16 @@ function CreateBorrowDetail() {
             </Grid>
             <Grid item xs={6}>
               <Select
-                value={borrowDetail.InfoID}
+                value={borrowDetail.BookOrderID}
                 onChange={handleChange}
                 style={{ width: 300 }}
                 inputProps={{
-                  name: "InfoID",
+                  name: "BookOrderID",
                 }}
               >
-                {info.map((item: BookInformationInterface) => (
+                {bookOrder.map((item: BookOrderInterface) => (
                   <MenuItem value={item.ID} key={item.ID}>
-                    {item.BookOrder.BookTitle}
+                    {item.BookTitle}
                   </MenuItem>
                 ))}
               </Select>

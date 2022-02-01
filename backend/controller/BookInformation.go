@@ -90,17 +90,6 @@ func ListBookInformations(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": bookinformations})
 }
 
-// GET /info/btype/:id
-func GetInfoByID(c *gin.Context) {
-	var info []entity.BookInformation
-	id := c.Param("id")
-	if err := entity.DB().Preload("BookType").Preload("BookOrder").Raw("SELECT * FROM book_informations WHERE book_type_id = ? ", id).Find(&info).Error; err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-	c.JSON(http.StatusOK, gin.H{"data": info})
-}
-
 // DELETE /book_informations/:id
 func DeleteBookInformation(c *gin.Context) {
 	id := c.Param("id")
