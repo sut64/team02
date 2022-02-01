@@ -236,3 +236,11 @@ type BookingRoom struct {
   
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomTypeID"`
   }
+
+  type RoomObjective struct {
+	gorm.Model
+	
+	Name string
+  
+	BookingRoom []BookingRoom `gorm:"foreignkey:RoomObjectiveID"`
+  }
