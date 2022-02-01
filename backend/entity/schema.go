@@ -199,3 +199,24 @@ type BookReturn struct {
 	StatusID *uint
 	Status   Status `gorm:"references:id"`
 }
+
+type BookingRoom struct {
+	gorm.Model
+	
+	MemberID  *uint
+	Member    Member `gorm:"references:ID"`
+  
+	RoomAndTimeID *uint
+	RoomAndTime   RoomAndTime `gorm:"references:ID"`
+  
+	RoomTypeID *uint
+	RoomType   RoomType `gorm:"references:ID"`
+  
+	RoomObjectiveID *uint
+	RoomObjective   RoomObjective `gorm:"references:ID"`
+  
+	QuantityMember    uint     `valid:"range(1|10),required"` 
+	PhoneBooker       string  `valid:"matches(^[0]\\d{9}$)"`
+	BookingRoomAt     time.Time `valid:"future~BookingRoomAt must not be in the past"`
+  
+  }
