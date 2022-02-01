@@ -44,6 +44,9 @@ func SetupDatabase() {
 		&DeviceType{},
 		&DeviceBorrow{},
 		&BookReturn{},
+		&RoomType{},
+        &RoomAndTime{},
+        &RoomObjective{},
 	)
 
 	db = database
@@ -226,5 +229,61 @@ func SetupDatabase() {
 		Date:       time.Now(),
 		Member:     natarin,
 	})
+
+
+	Type1 := RoomType{
+        Name: "ห้องเดี่ยว",
+    }
+    db.Model(&RoomType{}).Create(&Type1)
+
+    Type2 := RoomType{
+        Name: "ห้องกลุ่ม",
+    }
+    db.Model(&RoomType{}).Create(&Type2)
+
+    Objective1 := RoomObjective{
+        Name: "อ่านหนังสือ",
+    }
+    db.Model(&RoomObjective{}).Create(&Objective1)
+
+    Objective2 := RoomObjective{
+        Name: "ทำกิจกรรม",
+    }
+    db.Model(&RoomObjective{}).Create(&Objective2)
+
+    Objective3 := RoomObjective{
+        Name: "ติวหนังสือเป็นกลุ่ม",
+    }
+    db.Model(&RoomObjective{}).Create(&Objective3)
+
+    Objective4 := RoomObjective{
+        Name: "ทำ Project",
+    }
+    db.Model(&RoomObjective{}).Create(&Objective4)
+
+    Objective5 := RoomObjective{
+        Name: "อื่นๆ",
+    }
+    db.Model(&RoomObjective{}).Create(&Objective5)
+
+    RoomAndTime1 := RoomAndTime{
+        Name: "17:00-18:00",
+    }
+    db.Model(&RoomAndTime{}).Create(&RoomAndTime1)
+
+    RoomAndTime2 := RoomAndTime{
+        Name: "18:00-19:00",
+    }
+    db.Model(&RoomAndTime{}).Create(&RoomAndTime2)
+
+    RoomAndTime3 := RoomAndTime{
+        Name: "19:00-20:00",
+    }
+    db.Model(&RoomAndTime{}).Create(&RoomAndTime3)
+
+    RoomAndTime4 := RoomAndTime{
+        Name: "20:00-21:00",
+    }
+    db.Model(&RoomAndTime{}).Create(&RoomAndTime4)
 
 }
