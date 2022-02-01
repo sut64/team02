@@ -114,7 +114,7 @@ function BookReturns() {
                             {book_returns.map((item: BookReturnsInterface) => (
                                 <TableRow >
                                     <TableCell align="center">{item.ID}</TableCell>
-                                    <TableCell align="center">{item.BorrowDetail.Info.BookOrder.BookTitle}</TableCell>
+                                    <TableCell align="center">{item.BorrowDetail.BookOrder.BookTitle}</TableCell>
                                     <TableCell align="center">{item.SevicePlace.Name}</TableCell>
                                     {/* <TableCell align="center">{item.Damage}</TableCell>
                                     <TableCell align="center">{item.Tel}</TableCell> */}

@@ -6,7 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/sut64/team02/entity"
-
 )
 
 // POST /book_orders
@@ -43,14 +42,14 @@ func CreateBookOrder(c *gin.Context) {
 
 	//สร้าง bookorder
 	bod := entity.BookOrder{
-		BookType: booktype, //โยงความสัมพันธ์กับ Entity BookType
-		Company:  company,     //โยงความสัมพันธ์กับ Entity Company
-		OrderStatus:  orderstatus,         //โยงความสัมพันธ์กับ Entity OrderStatus
-		BookTitle:  bookorder.BookTitle,    //ตั้งค่าฟิลด์ BookTitle
-		Author:     bookorder.Author, //ตั้งค่าฟิลด์ Auther
-		OrderAmount:  bookorder.OrderAmount, //ตั้งค่าฟิลด์ OrderAmount
-		Price: bookorder.Price, //ตั้งค่าฟิลด์ Price
-		OrderDate: bookorder.OrderDate, //ตั้งค่าฟิลด์ OrderDate
+		BookType:    booktype,              //โยงความสัมพันธ์กับ Entity BookType
+		Company:     company,               //โยงความสัมพันธ์กับ Entity Company
+		OrderStatus: orderstatus,           //โยงความสัมพันธ์กับ Entity OrderStatus
+		BookTitle:   bookorder.BookTitle,   //ตั้งค่าฟิลด์ BookTitle
+		Author:      bookorder.Author,      //ตั้งค่าฟิลด์ Auther
+		OrderAmount: bookorder.OrderAmount, //ตั้งค่าฟิลด์ OrderAmount
+		Price:       bookorder.Price,       //ตั้งค่าฟิลด์ Price
+		OrderDate:   bookorder.OrderDate,   //ตั้งค่าฟิลด์ OrderDate
 	}
 
 	// บันทึก
@@ -76,12 +75,23 @@ func GetBookOrder(c *gin.Context) {
 // GET /book_orders
 func ListBookOrders(c *gin.Context) {
 	var bookorders []entity.BookOrder
-	if err := entity.DB().Preload("BookType").Preload("Company").Preload("OrderStatus").Raw("SELECT * FROM book_orders ").Find(&bookorders).Error; err != nil {
+	if err := entity.DB().Preload("BookType").Preload("Company").Preload("OrderStatus").Raw("SELECT * FROM book_orders").Find(&bookorders).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": bookorders})
+}
+
+// GET /bookOrder/bookType/:id
+func GetBookTitleByTypeID(c *gin.Context) {
+	var info []entity.BookOrder
+	id := c.Param("id")
+	if err := entity.DB().Preload("BookType").Preload("Company").Preload("OrderStatus").Raw("SELECT * FROM book_orders WHERE book_type_id = ?", id).Find(&info).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": info})
 }
 
 //function สำหรับลบ customer ด้วย ID

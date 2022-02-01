@@ -21,7 +21,6 @@ func main() {
 			// BookInformations Routes
 			protected.GET("/book_informations", controller.ListBookInformations)
 			protected.GET("/bookinformation/:id", controller.GetBookInformation)
-			protected.GET("/bookinformation/bookType/:id", controller.GetInfoByID)
 			protected.POST("/book_informations", controller.CreateBookInformation)
 			protected.PATCH("/book_informations", controller.UpdateBookInformation)
 			protected.DELETE("/book_informations/:id", controller.DeleteBookInformation)
@@ -63,11 +62,12 @@ func main() {
 			// BookOrder Routes
 			protected.GET("/book_orders", controller.ListBookOrders)
 			protected.GET("/book_order/:id", controller.GetBookOrder)
+			protected.GET("/book_order/book_type/:id", controller.GetBookTitleByTypeID)
 			protected.POST("/book_orders", controller.CreateBookOrder)
 			protected.PATCH("/book_orders", controller.UpdateBookOrder)
 			protected.DELETE("/book_orders/:id", controller.DeleteBookOrder)
 
-			// Borrow Routes
+			// BorrowDetail Routes
 			protected.GET("/borrows", controller.ListBorrows)
 			protected.GET("/borrow/:id", controller.GetBorrow)
 			protected.GET("/borrow/member/:id", controller.ListBorrowsByMember)
@@ -125,7 +125,7 @@ func main() {
 			protected.POST("/bookingrooms", controller.CreateBookingRoom)
 			protected.PATCH("/bookingrooms", controller.UpdateBookingRoom)
 			protected.DELETE("/bookingrooms/:id", controller.DeleteBookingRoom)
- 
+
 			//roomtype
 			protected.GET("/roomtypes", controller.ListRoomtype)
 			protected.GET("/roomtypes/:id", controller.GetRoomType)
@@ -133,20 +133,20 @@ func main() {
 			protected.POST("/roomtypes", controller.CreateRoomType)
 			// protected.PATCH("/roomtypes", controller.UpdateRoomType)
 			protected.DELETE("/roomtypes/:id", controller.DeleteRoomType)
- 
+
 			//roomandtime
 			protected.GET("/roomandtimes", controller.ListRoomAndTime)
 			protected.GET("/roomandtimes/:id", controller.GetRoomAndTime)
 			protected.POST("/roomandtimes", controller.CreateRoomAndTime)
-			 //protected.PATCH("/bookingrooms", controller.UpdateR)
+			//protected.PATCH("/bookingrooms", controller.UpdateR)
 			protected.DELETE("/roomandtimes/:id", controller.DeleteRoomAndTime)
- 
+
 			//roomobjective
 			protected.GET("/roomobjectives", controller.ListRoomObjective)
 			protected.GET("/roomobjectives/:id", controller.GetRoomObjective)
 			protected.POST("/roomobjectives", controller.CreateRoomObjective)
 			//protected.PATCH("/bookingrooms", controller.UpdateR)
-			protected.DELETE("/roomobjectives/:id", controller.DeleteRoomObjective)   
+			protected.DELETE("/roomobjectives/:id", controller.DeleteRoomObjective)
 
 		}
 	}

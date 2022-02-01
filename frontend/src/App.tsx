@@ -37,13 +37,14 @@ import Home from "./components/Home";
 import BookOrders from "./components/BookOrders";
 import BookOrderCreate from "./components/BookOrderCreate";
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-
+import BookIcon from '@material-ui/icons/Book';
 import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
 import DeviceBorrows from "./components/DeviceBorrows";
 import DeviceBorrowCreate from "./components/DeviceBorrowCreate";
 import BookReturnCreate from "./components/BookReturnCreate";
 import BookReturns from "./components/BookReturns";
 import CreateBorrowDetail from "./components/BorrowDetailCreate";
+import Borrows from "./components/BorrowDetails";
 import BookingRoom from "./components/BookingRoom";
 import BookingRoomCreate from "./components/BookingRoomCreate";
 
@@ -135,6 +136,7 @@ export default function MiniDrawer() {
     { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     { name: "ข้อมูลการจองห้องติว", icon: <TabletAndroidIcon />, path: "/booking_rooms" },
+    { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
   ];
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -225,6 +227,7 @@ export default function MiniDrawer() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/borrowDetail/create" component={CreateBorrowDetail} />
+              <Route exact path="/borrowDetail" component={Borrows} />
               <Route exact path="/book_return" component={BookReturns} />
               <Route exact path="/book_return/create" component={BookReturnCreate} />
               <Route exact path="/book_informations/create" component={BookInformationCreate} />

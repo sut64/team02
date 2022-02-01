@@ -14,7 +14,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { BorrowDetailInterface } from "../models/IBorrowDetail";
 import { format } from 'date-fns'
-import { id } from "date-fns/locale";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -83,7 +82,7 @@ function Borrows() {
           <Box>
             <Button
               component={RouterLink}
-              to="/create"
+              to="/borrowDetail/create"
               variant="contained"
               color="primary"
             >
@@ -117,7 +116,7 @@ function Borrows() {
               {borrows.map((item: BorrowDetailInterface) => (
                 <TableRow key={item.ID}>
                   {/* <TableCell align="center">{item.ID}</TableCell> */}
-                  <TableCell align="center">{item.Info.BookOrder.BookTitle}</TableCell>
+                  <TableCell align="center">{item.BookOrder.BookTitle}</TableCell>
                   <TableCell align="center">{item.BorrowDuration}</TableCell>
                   <TableCell align="center">{format((new Date(item.DateToBorrow)), 'dd MMMM yyyy')}</TableCell>
                   <TableCell align="center">{item.Status.Name}</TableCell>

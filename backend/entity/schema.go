@@ -63,8 +63,6 @@ type BookInformation struct {
 	// MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
 	Member   Member `valid:"-"`
-
-	BorrowDetail []BorrowDetail `gorm:"foreignKey:InfoID"`
 }
 
 type Company struct {
@@ -109,6 +107,8 @@ type BookOrder struct {
 	//Librarian
 	MemberID *uint
 	Member   Member
+
+	BorrowDetail []BorrowDetail `gorm:"foreignKey:BookOrderID"`
 }
 
 type BorrowDetail struct {
@@ -124,8 +124,8 @@ type BorrowDetail struct {
 	ServicePlaceID *uint
 	ServicePlace   ServicePlace `gorm:"references:id"`
 
-	InfoID *uint
-	Info   BookInformation `gorm:"references:id"`
+	BookOrderID *uint
+	BookOrder   BookOrder `gorm:"references:id"`
 
 	StatusID *uint
 	Status   Status `gorm:"references:id"`
@@ -202,45 +202,45 @@ type BookReturn struct {
 
 type BookingRoom struct {
 	gorm.Model
-	
-	MemberID  *uint
-	Member    Member `gorm:"references:ID"`
-  
+
+	MemberID *uint
+	Member   Member `gorm:"references:ID"`
+
 	RoomAndTimeID *uint
 	RoomAndTime   RoomAndTime `gorm:"references:ID"`
-  
+
 	RoomTypeID *uint
 	RoomType   RoomType `gorm:"references:ID"`
-  
+
 	RoomObjectiveID *uint
 	RoomObjective   RoomObjective `gorm:"references:ID"`
-  
-	QuantityMember    uint    // `valid:"range(1|10),required"` 
-	PhoneBooker       string  //`valid:"matches(^[0]\\d{9}$)"`
-	BookingRoomAt     time.Time //`valid:"future~BookingRoomAt must not be in the past"`
-  
-  }
 
-  type RoomAndTime struct {
+	QuantityMember uint      // `valid:"range(1|10),required"`
+	PhoneBooker    string    //`valid:"matches(^[0]\\d{9}$)"`
+	BookingRoomAt  time.Time //`valid:"future~BookingRoomAt must not be in the past"`
+
+}
+
+type RoomAndTime struct {
 	gorm.Model
-  
+
 	Name string
-  
+
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomAndTimeID"`
-  }
+}
 
-  type RoomType struct {
+type RoomType struct {
 	gorm.Model
-	
+
 	Name string
-  
+
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomTypeID"`
-  }
+}
 
-  type RoomObjective struct {
+type RoomObjective struct {
 	gorm.Model
-	
+
 	Name string
-  
+
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomObjectiveID"`
-  }
+}
