@@ -215,9 +215,9 @@ type BookingRoom struct {
 	RoomObjectiveID *uint
 	RoomObjective   RoomObjective `gorm:"references:ID"`
   
-	QuantityMember    uint     `valid:"range(1|10),required"` 
-	PhoneBooker       string  `valid:"matches(^[0]\\d{9}$)"`
-	BookingRoomAt     time.Time `valid:"future~BookingRoomAt must not be in the past"`
+	QuantityMember    uint    // `valid:"range(1|10),required"` 
+	PhoneBooker       string  //`valid:"matches(^[0]\\d{9}$)"`
+	BookingRoomAt     time.Time //`valid:"future~BookingRoomAt must not be in the past"`
   
   }
 
@@ -227,4 +227,12 @@ type BookingRoom struct {
 	Name string
   
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomAndTimeID"`
+  }
+
+  type RoomType struct {
+	gorm.Model
+	
+	Name string
+  
+	BookingRoom []BookingRoom `gorm:"foreignkey:RoomTypeID"`
   }
