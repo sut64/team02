@@ -39,6 +39,7 @@ func SetupDatabase() {
 		&BookOrder{},
 		&Company{},
 		&OrderStatus{},
+		&BookingRoom{},
 		&Member{},
 		&DeviceList{},
 		&DeviceType{},
