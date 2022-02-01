@@ -220,3 +220,11 @@ type BookingRoom struct {
 	BookingRoomAt     time.Time `valid:"future~BookingRoomAt must not be in the past"`
   
   }
+
+  type RoomAndTime struct {
+	gorm.Model
+  
+	Name string
+  
+	BookingRoom []BookingRoom `gorm:"foreignkey:RoomAndTimeID"`
+  }
