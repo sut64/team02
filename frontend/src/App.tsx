@@ -44,6 +44,8 @@ import DeviceBorrowCreate from "./components/DeviceBorrowCreate";
 import BookReturnCreate from "./components/BookReturnCreate";
 import BookReturns from "./components/BookReturns";
 import CreateBorrowDetail from "./components/BorrowDetailCreate";
+import BookingRoom from "./components/BookingRoom";
+import BookingRoomCreate from "./components/BookingRoomCreate";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -132,6 +134,7 @@ export default function MiniDrawer() {
     { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
     { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
+    { name: "ข้อมูลการจองห้องติว", icon: <TabletAndroidIcon />, path: "/booking_rooms" },
   ];
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -230,6 +233,8 @@ export default function MiniDrawer() {
               <Route exact path="/bookordercreate" component={BookOrderCreate} />
               <Route exact path="/deviceborrows" component={DeviceBorrows} />
               <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate} />
+              <Route exact path="/booking_roomscreate" component={BookingRoomCreate} />
+              <Route exact path="/booking_rooms" component={BookingRoom} />
             </Switch>
           </div>
         </main>
