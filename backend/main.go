@@ -117,6 +117,37 @@ func main() {
 			protected.PATCH("/book_returns", controller.UpdateBookReturn)
 			protected.DELETE("/book_returns/:id", controller.DeleteBookReturn)
 
+			//เจมส์//
+
+			//bookingroom
+			protected.GET("/bookingrooms", controller.ListBookingrooms)
+			protected.GET("/bookingrooms/:id", controller.GetBookingroom)
+			protected.POST("/bookingrooms", controller.CreateBookingRoom)
+			protected.PATCH("/bookingrooms", controller.UpdateBookingRoom)
+			protected.DELETE("/bookingrooms/:id", controller.DeleteBookingRoom)
+ 
+			//roomtype
+			protected.GET("/roomtypes", controller.ListRoomtype)
+			protected.GET("/roomtypes/:id", controller.GetRoomType)
+			// protected.GET("/roomtype/member/:id", controller.ListBorrowsByMember)
+			protected.POST("/roomtypes", controller.CreateRoomType)
+			// protected.PATCH("/roomtypes", controller.UpdateRoomType)
+			protected.DELETE("/roomtypes/:id", controller.DeleteRoomType)
+ 
+			//roomandtime
+			protected.GET("/roomandtimes", controller.ListRoomAndTime)
+			protected.GET("/roomandtimes/:id", controller.GetRoomAndTime)
+			protected.POST("/roomandtimes", controller.CreateRoomAndTime)
+			 //protected.PATCH("/bookingrooms", controller.UpdateR)
+			protected.DELETE("/roomandtimes/:id", controller.DeleteRoomAndTime)
+ 
+			//roomobjective
+			protected.GET("/roomobjectives", controller.ListRoomObjective)
+			protected.GET("/roomobjectives/:id", controller.GetRoomObjective)
+			protected.POST("/roomobjectives", controller.CreateRoomObjective)
+			//protected.PATCH("/bookingrooms", controller.UpdateR)
+			protected.DELETE("/roomobjectives/:id", controller.DeleteRoomObjective)   
+
 		}
 	}
 
