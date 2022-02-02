@@ -34,6 +34,14 @@ type BookType struct {
 	BookOrder []BookOrder `gorm:"foreignKey:BookTypeID"`
 }
 
+type BookCategory struct {
+	gorm.Model
+
+	Category string 						`gorm:"uniqueIndex"`
+
+	BookInformation []BookInformation 		`gorm:"foreignKey:BookCategoryID"`
+}
+
 type BookLocation struct {
 	gorm.Model
 
