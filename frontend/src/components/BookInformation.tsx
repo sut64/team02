@@ -53,7 +53,7 @@ function BookInformations() {
   "Content-Type": "application/json", },
 };
 
- const getStatusRepairs = async () => {
+ const getBookInformations = async () => {
       fetch(`${apiUrl}/book_informations`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
@@ -66,7 +66,7 @@ function BookInformations() {
      });
  };
  useEffect(() => {
-  getStatusRepairs();
+  getBookInformations();
  }, []);
 
  
@@ -129,7 +129,7 @@ function BookInformations() {
                  <TableCell align="center">{item.ID}</TableCell>
                  <TableCell align="center">{item.CallNumber}</TableCell>
                  <TableCell align="center">{item.BookOrder.BookTitle}</TableCell>
-                 <TableCell align="center">{item.BookType.Type}</TableCell>
+                 <TableCell align="center">{item.BookCategory.Category}</TableCell>
                  <TableCell align="center">{item.BookLocation.Location}</TableCell>
                  <TableCell align="center" size="medium">
                    {item.YearPublication}

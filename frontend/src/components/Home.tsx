@@ -21,7 +21,7 @@ function Home() {
   return (
     <div>
       <Container className={classes.container} maxWidth="md">
-        <h1 style={{ textAlign: "center" }}>ระบบบันทึกข้อมูลหนังสือ</h1>
+        <h1 style={{ textAlign: "center" }}>ระบบห้องสมุด</h1>
         <h3>Requirements</h3>
         <p>
         ระบบห้องสมุด

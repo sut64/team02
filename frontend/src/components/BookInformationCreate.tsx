@@ -26,6 +26,8 @@ import Snackbar from "@material-ui/core/Snackbar";
 
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 
+//import MenuItem from '@material-ui/core/MenuItem';
+
 import TextField from "@material-ui/core/TextField";
 
 import Select from '@material-ui/core/Select';
@@ -40,7 +42,9 @@ import { BookOrderInterface } from "../models/IBookOrder";
 
 import { BookLocationInterface } from "../models/IBookLocation";
 
-import { BookTypeInterface } from "../models/IBookType";
+import { BookCategoryInterface } from "../models/IBookCategory";
+
+import {MembersInterface} from "../models/IMember";
 
 
 function Alert(props: AlertProps) {
@@ -62,12 +66,14 @@ function BookInformationCreate() {
   new Date()
 );
 
- const [bookTypes, setBookTypes] = React.useState<BookTypeInterface[]>([]);
+ const [bookCategorys, setBookCategorys] = React.useState<BookCategoryInterface[]>([]);
  const [bookLocations, setBookLocations] = React.useState<BookLocationInterface[]>([]);
  const [bookOrders, setBookOrders] = React.useState<BookOrderInterface[]>([]);
  const [bookInformation, setBookInformation] = useState<Partial<BookInformationInterface>>({});
+ const [members,setMembers] = React.useState<MembersInterface>()
  const [success, setSuccess] = React.useState(false);
  const [error, setError] = React.useState(false);
+ const [errorMessage, setErrorMessage] = useState("");
 
  const apiUrl = "http://localhost:8080";
  const requestOptions = {
@@ -108,12 +114,12 @@ const handleChange = (
    setBookInformation({ ...bookInformation, [id]: value });
  };
 
- const getBookTypes = async () => {
-  fetch(`${apiUrl}/book_types`, requestOptions)
+ const getBookCategorys = async () => {
+  fetch(`${apiUrl}/book_categories`, requestOptions)
     .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-            setBookTypes(res.data);
+            setBookCategorys(res.data);
         } else {
           console.log("else");
         }
@@ -144,10 +150,25 @@ const getBookOrder = async () => {
     });
 };
 
+const geMembers = async () => {
+  let uid = localStorage.getItem("uid");
+  fetch(`${apiUrl}/member/${uid}`, requestOptions)
+    .then((response) => response.json())
+    .then((res) => {
+      bookInformation.MemberID = res.data.ID
+      if (res.data) {
+        setMembers(res.data);
+      } else {
+        console.log("else");
+      }
+    });
+};
+
     useEffect(() => {
-        getBookTypes();
+        getBookCategorys();
         getBookLocations();
         getBookOrder();
+        geMembers();
     }, []);
 
 
@@ -158,17 +179,16 @@ const getBookOrder = async () => {
 
  function submit() {
    let data = {
-    BookTypeID: convertType(bookInformation.BookTypeID),
+    BookCategoryID: convertType(bookInformation.BookCategoryID),
     BookLocationID: convertType(bookInformation.BookLocationID),
     BookOrderID: convertType(bookInformation.BookOrderID),
     Date: selectedDate,
     CallNumber: bookInformation.CallNumber ?? "",
     YearPublication: typeof bookInformation.YearPublication === "string" ? parseInt(bookInformation.YearPublication) : 0,
-    //YearPublication: bookInformation.YearPublication ?? "",
 
    };
-
    console.log(data)
+   
    
    const requestOptionsPost = {
      method: "POST",
@@ -184,9 +204,11 @@ const getBookOrder = async () => {
        if (res.data) {
         console.log("บันทึกได้")
          setSuccess(true);
+         setErrorMessage("")
        } else {
         console.log("บันทึกไม่ได้")
          setError(true);
+         setErrorMessage(res.error)
        }
      }); 
      
@@ -202,7 +224,7 @@ const getBookOrder = async () => {
      </Snackbar>
      <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
        <Alert onClose={handleClose} severity="error">
-         บันทึกข้อมูลไม่สำเร็จ
+         บันทึกข้อมูลไม่สำเร็จ: {errorMessage}
        </Alert>
      </Snackbar>
      <Paper className={classes.paper}>
@@ -269,18 +291,18 @@ const getBookOrder = async () => {
             <FormControl fullWidth variant="outlined">
                 <Select
                 native
-                value={bookInformation.BookTypeID}
+                value={bookInformation.BookCategoryID}
                 onChange={handleChange}
                 inputProps={{
-                  name: "BookTypeID",
+                  name: "BookCategoryID",
                 }}
               >
               <option aria-label="None" value="">
                   กรุณาเลือกประเภทหนังสือ
                 </option>
-                {bookTypes.map((item: BookTypeInterface) => (
+                {bookCategorys.map((item: BookCategoryInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.Type}
+                    {item.Category}
                   </option>
                 ))}
               </Select>
@@ -329,6 +351,25 @@ const getBookOrder = async () => {
              </MuiPickersUtilsProvider>
            </FormControl>
          </Grid>
+
+         <Grid item xs={12}>
+          <p>ผู้บันทึก</p>
+            <FormControl fullWidth variant="outlined">
+                <Select
+                native
+                value={bookInformation.MemberID}
+                onChange={handleChange}
+                disabled
+                inputProps={{
+                  name: "MemberID",
+                }}
+              >
+                <option value={members?.ID} key={members?.ID}>
+                    {members?.Name}
+                </option>
+              </Select>
+            </FormControl>
+        </Grid>
 
         <Grid item xs={12}>
            <Button component={RouterLink} 

@@ -48,6 +48,7 @@ func SetupDatabase() {
 		&RoomAndTime{},
 		&RoomObjective{},
 		&BorrowDetail{},
+		&BookCategory{},
 	)
 
 	db = database
@@ -55,14 +56,14 @@ func SetupDatabase() {
 	password, err := bcrypt.GenerateFromPassword([]byte("123456"), 14)
 
 	Ploy := Member{
-		Name:     "ploy",
+		Name:     "พลอยชมพู วงศ์ฉันท์ทัต",
 		Email:    "p@gmail.com",
 		Password: string(password),
 	}
 	db.Model(&Member{}).Create(&Ploy)
 
 	Auy := Member{
-		Name:     "auy",
+		Name:     "บุญฑิตา ปวงสันเทียะ",
 		Email:    "b@gmail.com",
 		Password: string(password),
 	}
@@ -99,6 +100,57 @@ func SetupDatabase() {
 	}
 	db.Model(&BookType{}).Create(&magazine)
 
+	//--BookCategory Data
+	Category000 := BookCategory{
+		Category: "หมวด  000  เบ็ดเตล็ด  ความรู้ทั่วไป  บรรณารักษศาสตร์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category000)
+	
+	  Category100 := BookCategory{
+		Category: " หมวด  100  ปรัชญา  จิตวิทยา",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category100)
+	
+	  Category200 := BookCategory{
+		Category: "หมวด  200  ศาสนา",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category200)
+	
+	  Category300 := BookCategory{
+		Category: "หมวด  300  สังคมศาสตร์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category300)
+	
+	  Category400 := BookCategory{
+		Category: " หมวด  400  ภาษาศาสตร์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category400)
+	
+	  Category500 := BookCategory{
+		Category: "หมวด  500  วิทยาศาสตร์  คณิตศาสตร์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category500)
+	
+	  Category600 := BookCategory{
+		Category: "หมวด  600  เทคโนโลยี  หรือวิทยาศาสตร์ประยุกต์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category600)
+	
+	  Category700 := BookCategory{
+		Category: " หมวด  700  ศิลปกรรม  และนันทนาการ",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category700)
+	
+	  Category800 := BookCategory{
+		Category: "หมวด  800  วรรณคดี",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category800)
+	
+	  Category900 := BookCategory{
+		Category: "หมวด  900  ภูมิศาสตร์และประวัติศาสตร์",
+	  }
+	  db.Model(&BookCategory{}).Create(&Category900)
+	  
 	//--BookLocation Data
 	floor1 := BookLocation{
 		Location: "ชั้น 1",
