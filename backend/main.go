@@ -25,6 +25,13 @@ func main() {
 			protected.PATCH("/book_informations", controller.UpdateBookInformation)
 			protected.DELETE("/book_informations/:id", controller.DeleteBookInformation)
 
+			// BookCategory Routes
+			protected.GET("/book_categories", controller.ListBookCategories)
+			protected.GET("/bookcategory/:id", controller.GetBookCategory)
+			protected.POST("/book_categories", controller.CreateBookCategory)
+			protected.PATCH("/book_categories", controller.UpdateBookCategory)
+			protected.DELETE("/book_categories/:id", controller.DeleteBookCategory)
+
 			// BookType Routes
 			protected.GET("/book_types", controller.ListBookTypes)
 			protected.GET("/booktype/:id", controller.GetBookType)
