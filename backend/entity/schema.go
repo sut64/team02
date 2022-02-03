@@ -37,9 +37,9 @@ type BookType struct {
 type BookCategory struct {
 	gorm.Model
 
-	Category string 						`gorm:"uniqueIndex"`
+	Category string `gorm:"uniqueIndex"`
 
-	BookInformation []BookInformation 		`gorm:"foreignKey:BookCategoryID"`
+	BookInformation []BookInformation `gorm:"foreignKey:BookCategoryID"`
 }
 
 type BookLocation struct {
@@ -116,7 +116,7 @@ type BookOrder struct {
 	MemberID *uint
 	Member   Member
 
-	BorrowDetail []BorrowDetail `gorm:"foreignKey:BookOrderID"`
+	BorrowDetail    []BorrowDetail    `gorm:"foreignKey:BookOrderID"`
 	BookInformation []BookInformation `gorm:"foreignKey:BookOrderID"`
 }
 
@@ -252,6 +252,12 @@ type RoomObjective struct {
 	Name string
 
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomObjectiveID"`
+}
+
+type TypeResearch struct {
+	gorm.Model
+	Value      string
+	Researches []Research `gorm:"foreignKey:TypeResearchID"`
 }
 
 type Research struct {
