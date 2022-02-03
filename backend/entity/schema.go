@@ -260,6 +260,12 @@ type TypeResearch struct {
 	Researches []Research `gorm:"foreignKey:TypeResearchID"`
 }
 
+type AuthorName struct {
+	gorm.Model
+	AuthorName string
+	Researches []Research `gorm:"foreignKey:AuthorNameID"`
+}
+
 type Research struct {
 	gorm.Model
 
