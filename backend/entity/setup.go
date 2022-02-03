@@ -49,6 +49,10 @@ func SetupDatabase() {
 		&RoomObjective{},
 		&BorrowDetail{},
 		&BookCategory{},
+		&TypeResearch{},
+		&AuthorName{},
+		&InstitutionName{},
+		&Research{},
 	)
 
 	db = database
@@ -103,54 +107,54 @@ func SetupDatabase() {
 	//--BookCategory Data
 	Category000 := BookCategory{
 		Category: "หมวด  000  เบ็ดเตล็ด  ความรู้ทั่วไป  บรรณารักษศาสตร์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category000)
-	
-	  Category100 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category000)
+
+	Category100 := BookCategory{
 		Category: " หมวด  100  ปรัชญา  จิตวิทยา",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category100)
-	
-	  Category200 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category100)
+
+	Category200 := BookCategory{
 		Category: "หมวด  200  ศาสนา",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category200)
-	
-	  Category300 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category200)
+
+	Category300 := BookCategory{
 		Category: "หมวด  300  สังคมศาสตร์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category300)
-	
-	  Category400 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category300)
+
+	Category400 := BookCategory{
 		Category: " หมวด  400  ภาษาศาสตร์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category400)
-	
-	  Category500 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category400)
+
+	Category500 := BookCategory{
 		Category: "หมวด  500  วิทยาศาสตร์  คณิตศาสตร์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category500)
-	
-	  Category600 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category500)
+
+	Category600 := BookCategory{
 		Category: "หมวด  600  เทคโนโลยี  หรือวิทยาศาสตร์ประยุกต์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category600)
-	
-	  Category700 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category600)
+
+	Category700 := BookCategory{
 		Category: " หมวด  700  ศิลปกรรม  และนันทนาการ",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category700)
-	
-	  Category800 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category700)
+
+	Category800 := BookCategory{
 		Category: "หมวด  800  วรรณคดี",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category800)
-	
-	  Category900 := BookCategory{
+	}
+	db.Model(&BookCategory{}).Create(&Category800)
+
+	Category900 := BookCategory{
 		Category: "หมวด  900  ภูมิศาสตร์และประวัติศาสตร์",
-	  }
-	  db.Model(&BookCategory{}).Create(&Category900)
-	  
+	}
+	db.Model(&BookCategory{}).Create(&Category900)
+
 	//--BookLocation Data
 	floor1 := BookLocation{
 		Location: "ชั้น 1",
@@ -352,4 +356,88 @@ func SetupDatabase() {
 		Name: "บรรณาสาร",
 	}
 	db.Model(&ServicePlace{}).Create((&Library))
+
+	// TypeResearch data
+	t1 := TypeResearch{
+		Value: "แบ่งตามจุดมุ่งหมายของการวิจัย",
+	}
+	db.Model(&TypeResearch{}).Create(&t1)
+
+	t2 := TypeResearch{
+		Value: "แบ่งตามประโยชน์ของการวิจัย",
+	}
+	db.Model(&TypeResearch{}).Create(&t2)
+
+	t3 := TypeResearch{
+		Value: "แบ่งตามวิธีการเก็บรวบรวมข้อมูล",
+	}
+	db.Model(&TypeResearch{}).Create(&t3)
+
+	t4 := TypeResearch{
+		Value: "แบ่งตามลักษณะการวิเคราะห์ข้อมูล",
+	}
+	db.Model(&TypeResearch{}).Create(&t4)
+
+	t5 := TypeResearch{
+		Value: "แบ่งตามลักษณะวิชาหรือศาสตร์",
+	}
+	db.Model(&TypeResearch{}).Create(&t5)
+
+	t6 := TypeResearch{
+		Value: "แบ่งตามระเบียบวิธีวิจัย",
+	}
+	db.Model(&TypeResearch{}).Create(&t6)
+
+	// AuthorName data
+	AuthorName1 := AuthorName{
+		AuthorName: "Chatchai Asara",
+	}
+	db.Model(&AuthorName{}).Create(&AuthorName1)
+
+	AuthorName2 := AuthorName{
+		AuthorName: "Edward Lee",
+	}
+	db.Model(&AuthorName{}).Create(&AuthorName2)
+
+	AuthorName3 := AuthorName{
+		AuthorName: "วิศนุ ทองหลาง",
+	}
+	db.Model(&AuthorName{}).Create(&AuthorName3)
+
+	// InstitutionName data
+	InstitutionName1 := InstitutionName{
+		InstitutionName: "มหาวิทยาลัยเทคโนโลยีสุรนารี",
+	}
+	db.Model(&InstitutionName{}).Create(&InstitutionName1)
+
+	InstitutionName2 := InstitutionName{
+		InstitutionName: "มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน",
+	}
+	db.Model(&InstitutionName{}).Create(&InstitutionName2)
+
+	InstitutionName3 := InstitutionName{
+		InstitutionName: "มหาวิทยาลัยเชียงใหม่",
+	}
+	db.Model(&InstitutionName{}).Create(&InstitutionName3)
+
+	// Research data
+	research1 := Research{
+		NameResearch:      "ResearchInDekThai2019",
+		YearOfPublication: 2019,
+		TypeResearchID:    &t1.ID,
+		AuthorNameID:      &AuthorName3.ID,
+		InstitutionNameID: &InstitutionName3.ID,
+		RecordingDate:     time.Now(),
+	}
+	db.Model(&Research{}).Create(&research1)
+
+	research2 := Research{
+		NameResearch:      "ResearchMCPU",
+		YearOfPublication: 2017,
+		TypeResearchID:    &t5.ID,
+		AuthorNameID:      &AuthorName2.ID,
+		InstitutionNameID: &InstitutionName1.ID,
+		RecordingDate:     time.Now(),
+	}
+	db.Model(&Research{}).Create(&research2)
 }
