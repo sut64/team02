@@ -182,6 +182,7 @@ const geMembers = async () => {
     BookCategoryID: convertType(bookInformation.BookCategoryID),
     BookLocationID: convertType(bookInformation.BookLocationID),
     BookOrderID: convertType(bookInformation.BookOrderID),
+    MemberID: convertType(bookInformation.MemberID),
     Date: selectedDate,
     CallNumber: bookInformation.CallNumber ?? "",
     YearPublication: typeof bookInformation.YearPublication === "string" ? parseInt(bookInformation.YearPublication) : 0,
