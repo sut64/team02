@@ -29,8 +29,6 @@ type BookType struct {
 
 	Type string `gorm:"uniqueIndex"`
 
-	BookInformation []BookInformation `gorm:"foreignKey:BookTypeID"`
-
 	BookOrder []BookOrder `gorm:"foreignKey:BookTypeID"`
 }
 
@@ -64,9 +62,9 @@ type BookInformation struct {
 	BookLocationID *uint
 	BookLocation   BookLocation `valid:"-"`
 
-	// BookTypeID ทำหน้าที่เป็น FK
-	BookTypeID *uint
-	BookType   BookType `valid:"-"`
+	// BookCategoryID ทำหน้าที่เป็น FK
+	BookCategoryID *uint
+	BookCategory   BookCategory `valid:"-"`
 
 	// MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
@@ -117,6 +115,7 @@ type BookOrder struct {
 	Member   Member
 
 	BorrowDetail []BorrowDetail `gorm:"foreignKey:BookOrderID"`
+	BookInformation []BookInformation `gorm:"foreignKey:BookOrderID"`
 }
 
 type BorrowDetail struct {
