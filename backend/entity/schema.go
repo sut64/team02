@@ -22,6 +22,8 @@ type Member struct {
 	BorrowDetails []BorrowDetail `gorm:"foreignKey:MemberID"`
 
 	BookReturns []BookReturn `gorm:"foreinkey:MemberID"`
+
+	Researches []Research `gorm:"foreignKey:MemberID"`
 }
 
 type BookType struct {
@@ -250,4 +252,26 @@ type RoomObjective struct {
 	Name string
 
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomObjectiveID"`
+}
+
+type Research struct {
+	gorm.Model
+
+	NameResearch string
+
+	YearOfPublication uint
+
+	RecordingDate time.Time
+
+	TypeResearchID *uint
+	TypeResearch   TypeResearch `valid:"-"`
+
+	AuthorNameID *uint
+	AuthorName   AuthorName `valid:"-"`
+
+	InstitutionNameID *uint
+	InstitutionName   InstitutionName `valid:"-"`
+
+	MemberID *uint
+	Member   Member `valid:"-"`
 }
