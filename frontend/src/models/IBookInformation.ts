@@ -1,6 +1,7 @@
 import { BookOrderInterface } from "./IBookOrder";
-import { BookTypeInterface } from "./IBookType";
 import { BookLocationInterface } from "./IBookLocation";
+import { BookCategoryInterface } from "./IBookCategory";
+import { MembersInterface } from "./IMember";
 
 export interface BookInformationInterface {
   ID: number,
@@ -11,10 +12,13 @@ export interface BookInformationInterface {
   BookOrderID: number,
   BookOrder: BookOrderInterface,
 
-  BookTypeID: number,
-  BookType:  BookTypeInterface,
+  BookCategoryID: number,
+  BookCategory:  BookCategoryInterface,
 
   BookLocationID: number,
   BookLocation: BookLocationInterface,
+
+  MemberID: number,
+  Member: MembersInterface,
   
 }
