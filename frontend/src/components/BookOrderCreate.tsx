@@ -184,7 +184,7 @@ return (
             color="primary"
             gutterBottom
           >
-            สร้าง BookOrder
+            บันทึกข้อมูลการสั่งซื้อหนังสือ
           </Typography>
         </Box>
       </Box>
@@ -327,7 +327,7 @@ return (
            </FormControl>
          </Grid>
          <Grid item xs={12}>
-           <Button component={RouterLink} to="/" variant="contained">
+           <Button component={RouterLink} to="/bookorders" variant="contained">
              กลับ
            </Button>
            <Button
