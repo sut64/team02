@@ -36,7 +36,7 @@ import SignIn from "./components/SignIn";
 import Home from "./components/Home";
 import BookOrders from "./components/BookOrders";
 import BookOrderCreate from "./components/BookOrderCreate";
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import BookIcon from '@material-ui/icons/Book';
 import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
 import DeviceBorrows from "./components/DeviceBorrows";
@@ -135,7 +135,7 @@ export default function MiniDrawer() {
   const menu = [
     { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
     { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
-    { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
+    { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <ShoppingCartOutlinedIcon />, path: "/bookorders" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     { name: "ข้อมูลการจองห้องติว", icon: <TabletAndroidIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
