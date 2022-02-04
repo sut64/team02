@@ -171,26 +171,10 @@ func SetupDatabase() {
 	}
 	db.Model(&BookLocation{}).Create(&floor3)
 
-	//BookOrder Data
-	maths := BookOrder{
-		BookTitle: "คณิตศาสตร์",
-	}
-	db.Model(&BookOrder{}).Create(&maths)
-
-	business := BookOrder{
-		BookTitle: "ธุรกิจก้าวหน้า",
-	}
-	db.Model(&BookOrder{}).Create(&business)
-
 	done := OrderStatus{
 		Status: "สั่งซื้อสำเร็จ",
 	}
 	db.Model(&OrderStatus{}).Create(&done)
-
-	waitforapproval := OrderStatus{
-		Status: "รอการอนุมัติ",
-	}
-	db.Model(&OrderStatus{}).Create(&waitforapproval)
 
 	request := OrderStatus{
 		Status: "เสนอสั่งซื้อ",
@@ -240,8 +224,21 @@ func SetupDatabase() {
 		OrderAmount: 5,
 		Price:       2052.50,
 		OrderStatus: request,
+		OrderDate: time.Now(),
 	}
 	db.Model(&BookOrder{}).Create(&order1)
+
+	order2 := BookOrder{
+		BookTitle:   "ชีวิตของสิงโต",
+		Author:      "สมาสองหนึ่ง",
+		BookType:    documentary,
+		Company:     C,
+		OrderAmount: 12,
+		Price:       5200.25,
+		OrderStatus: done,
+		OrderDate: time.Now(),
+	}
+	db.Model(&BookOrder{}).Create(&order2)
 
 	db.Model(&Member{}).Create(&Member{
 		Name:     "ณัฐรินทร์ เนื้อทอง",
