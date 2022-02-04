@@ -14,7 +14,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { BookOrderInterface } from "../models/IBookOrder";
  
-import moment from 'moment';
+import { format } from "date-fns";
  
  
 const useStyles = makeStyles((theme: Theme) =>
@@ -65,7 +65,7 @@ function BookOrders() {
              color="primary"
              gutterBottom
            >
-             BOOKORDERS
+             ข้อมูลการสั่งซื้อหนังสือ
            </Typography>
          </Box>
          <Box>
@@ -75,7 +75,7 @@ function BookOrders() {
   variant="contained"
   color="primary"
 >
-  สร้าง BookOrder
+  เพิ่มข้อมูล
 </Button>
 </Box>
 </Box>
@@ -86,7 +86,7 @@ function BookOrders() {
     <TableCell align="center" width="2%">
       ลำดับ
     </TableCell>
-    <TableCell align="center" width="17%">
+    <TableCell align="center" width="15%">
       ชื่อเรื่องหนังสือ
     </TableCell>
     <TableCell align="center" width="10%">
@@ -123,7 +123,7 @@ function BookOrders() {
       <TableCell align="center">{item.OrderAmount}</TableCell>
       <TableCell align="center">{item.Price}</TableCell>
       <TableCell align="center">{item.OrderStatus.Status}</TableCell>
-      <TableCell align="center">{moment(item.OrderDate).format("DD/MM/YYYY")}</TableCell>
+      <TableCell align="center">{format((new Date(item.OrderDate)), 'dd MMMM yyyy')}</TableCell>
     </TableRow>
    ))}
    </TableBody>
