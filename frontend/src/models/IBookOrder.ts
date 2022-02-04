@@ -8,7 +8,7 @@ export interface BookOrderInterface {
     Author: string;
     OrderAmount: number;
     Price: Float32Array;
-    OrderDate: Date | null;
+    OrderDate: Date;
     BookTypeID: number,
     BookType: BookTypeInterface,
     CompanyID: number,
