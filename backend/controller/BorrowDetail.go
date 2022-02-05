@@ -11,7 +11,6 @@ import (
 
 // POST /borrows
 func CreateBorrow(c *gin.Context) {
-
 	var borrowDetail entity.BorrowDetail
 	var serviceplace entity.ServicePlace
 	var bookorder entity.BookOrder
