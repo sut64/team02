@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"github.com/asaskevich/govalidator"
 	"github.com/sut64/team02/entity"
 
 	"github.com/gin-gonic/gin"
@@ -58,11 +59,11 @@ func CreateBorrow(c *gin.Context) {
 		BorrowDuration: borrowDetail.BorrowDuration,
 	}
 
-	/*//validate
+	//validate
 	if _, err := govalidator.ValidateStruct(bd); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
-	}*/
+	}
 
 	// 15: บันทึก
 	if err := entity.DB().Create(&bd).Error; err != nil {
