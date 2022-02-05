@@ -1,6 +1,7 @@
 package entity
 
 import (
+	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
 
 	"time"
@@ -292,4 +293,17 @@ type Research struct {
 
 	MemberID *uint
 	Member   Member `valid:"-"`
+}
+
+func init() {
+	govalidator.CustomTypeTagMap.Set("past", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		now := time.Now()
+		return now.After(t)
+	})
+	govalidator.CustomTypeTagMap.Set("future", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		now := time.Now()
+		return now.Before(time.Time(t))
+	})
 }
