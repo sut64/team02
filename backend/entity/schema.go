@@ -124,8 +124,8 @@ type BorrowDetail struct {
 	gorm.Model
 
 	DateToBorrow   time.Time //`valid:"future~DateToBorrow must be in the future"`
-	Tel            string    //`valid:"matches(^[0]{1}[0-9]{9})"`
-	BorrowDuration uint      // `valid:"range(1|30)"`
+	Tel            string    `valid:"matches(^[0]{1}[0-9]{9})"`
+	BorrowDuration uint      `valid:"range(1|30)"`
 
 	MemberID *uint
 	Member   Member `gorm:"references:id"`
