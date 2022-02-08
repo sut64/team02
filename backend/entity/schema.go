@@ -1,10 +1,11 @@
 package entity
 
 import (
+	"time"
+
 	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
 
-	"time"
 )
 
 type Member struct {
@@ -97,21 +98,21 @@ type BookOrder struct {
 	gorm.Model
 	BookTitle   string
 	Author      string
-	OrderAmount uint
-	Price       float32
-	OrderDate   time.Time
+	OrderAmount int       `valid:"int,required~OrderAmount cannot be zero and negative,morethanzero~OrderAmount cannot be zero and negative"`
+	Price       float32   `valid:"float,required~Price cannot be negative and zero,nonnegative~Price cannot be negative and zero"`
+	OrderDate   time.Time `valid:"present~OrderDate must be present"`
 
 	//Company ทำหน้าที่เป็น FK
 	CompanyID *uint
-	Company   Company
+	Company   Company `valid:"-"`
 
 	//Company ทำหน้าที่เป็น FK
 	OrderStatusID *uint
-	OrderStatus   OrderStatus
+	OrderStatus   OrderStatus `valid:"-"`
 
 	//BookType ทำหน้าที่เป็น FK
 	BookTypeID *uint
-	BookType   BookType
+	BookType   BookType `valid:"-"`
 
 	//Librarian
 	MemberID *uint
@@ -306,4 +307,27 @@ func init() {
 		now := time.Now()
 		return now.Before(time.Time(t))
 	})
+	govalidator.CustomTypeTagMap.Set("present",
+		func(i interface{}, context interface{}) bool {
+			t := i.(time.Time)
+			if t.Year() == time.Now().Year() {
+				if int(t.Month()) == int(time.Now().Month()) {
+					if t.Day() == time.Now().Day() {
+						return true
+					}
+				}
+			}
+			return false
+		})
+
+	govalidator.CustomTypeTagMap.Set("nonnegative",
+		func(i interface{}, context interface{}) bool {
+			value := i.(float32)
+			return value > 0
+		})
+	govalidator.CustomTypeTagMap.Set("morethanzero",
+		func(i interface{}, context interface{}) bool {
+			num := i
+			return num.(int) > 0
+		})
 }
