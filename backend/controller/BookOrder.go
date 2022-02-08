@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/sut64/team02/entity"
+	"github.com/asaskevich/govalidator"
 )
 
 // POST /book_orders
@@ -50,6 +51,12 @@ func CreateBookOrder(c *gin.Context) {
 		OrderAmount: bookorder.OrderAmount, //ตั้งค่าฟิลด์ OrderAmount
 		Price:       bookorder.Price,       //ตั้งค่าฟิลด์ Price
 		OrderDate:   bookorder.OrderDate,   //ตั้งค่าฟิลด์ OrderDate
+	}
+
+	// ขั้นตอนการ validate
+	if _, err := govalidator.ValidateStruct(bod); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// บันทึก
