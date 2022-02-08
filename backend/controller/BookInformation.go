@@ -53,9 +53,9 @@ func CreateBookInformation(c *gin.Context) {
 	//สร้าง bookinformation
 	bi := entity.BookInformation{
 		Member: 		 member,						//โยงความสัมพันธ์กับ Entity member
-		BookLocation:    booklocation,                    // โยงความสัมพันธ์กับ Entity BookLocation
-		BookOrder:       bookorder,                       // โยงความสัมพันธ์กับ Entity BookOrder
-		BookCategory:    bookcategory,                        // โยงความสัมพันธ์กับ Entity BookCategory
+		BookLocation:    booklocation,                  // โยงความสัมพันธ์กับ Entity BookLocation
+		BookOrder:       bookorder,                     // โยงความสัมพันธ์กับ Entity BookOrder
+		BookCategory:    bookcategory,                  // โยงความสัมพันธ์กับ Entity BookCategory
 		Date:            bookinformation.Date,            //ตั้งค่าฟิลก์ Date
 		YearPublication: bookinformation.YearPublication, //ตั้งค่าฟิลก์ YearPublication
 		CallNumber:      bookinformation.CallNumber,      //ตั้งค่าฟิลก์ CallNumber
@@ -64,6 +64,7 @@ func CreateBookInformation(c *gin.Context) {
 	//แทรกการ validate ไว้ช่วงนี้ของ controller
 	if _, err := govalidator.ValidateStruct(bi); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return 
 	}
 
 	// บันทึก
