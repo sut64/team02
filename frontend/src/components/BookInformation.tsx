@@ -104,21 +104,21 @@ function BookInformations() {
                  ID
                </TableCell>
                <TableCell align="center" width="15%">
-                  เลขเรียกหนังสือ
+                เลขเรียกหนังสือ
                </TableCell>
-               <TableCell align="center" width="25%">
+               <TableCell align="center" width="15%">
                  ชื่อเรื่อง
                </TableCell>
-               <TableCell align="center" width="10%">
-                 ประเภท
+               <TableCell align="center" width="20%">
+                 หมวดหมู่หนังสือ
                </TableCell>
                <TableCell align="center" width="10%">
-                 ที่จัดเก็บ
+                 สถานที่จัดเก็บ
                </TableCell>
                <TableCell align="center" width="10%">
                  ปีที่พิมพ์
                </TableCell>
-               <TableCell align="center" width="30%">
+               <TableCell align="center" width="20%">
                  วันที่อัพเดท
               </TableCell>
              </TableRow>
