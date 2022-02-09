@@ -171,13 +171,10 @@ type DeviceType struct {
 
 type DeviceBorrow struct {
 	gorm.Model
-	DeviceName string `gorm:"not null"`
-	BorrowCode string
-	//`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
-	Amount int
-	//`valid:"range(0|9)~Amount must be in negative"`
-	Date time.Time
-	//	`valid:"present~Date must be in the present"`
+	DeviceName string 	`gorm:"not null"`
+	BorrowCode string	`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
+	Amount int			`valid:"range(0|9)~Amount must be in negative"`
+	Date time.Time		`valid:"today~Date must be in the today"`
 
 	//MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
