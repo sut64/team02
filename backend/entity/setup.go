@@ -260,8 +260,13 @@ func SetupDatabase() {
 	}
 	db.Model(&DeviceList{}).Create(&code1)
 
-	// DeviceType Data
+	// DeviceList Data
+	code2 := DeviceList{
+		DeviceCode: "D00001",
+	}
+	db.Model(&DeviceList{}).Create(&code2)
 
+	// DeviceType Data
 	type1 := DeviceType{
 		Type: "อุปกรณ์ไฟฟ้า",
 	}
@@ -279,7 +284,7 @@ func SetupDatabase() {
 		DeviceList: code1,
 		DeviceType: type1,
 		BorrowCode: "BD0000",
-		Amount:     '2',
+		Amount:     2,
 		Date:       time.Now(),
 		Member:     natarin,
 	})
