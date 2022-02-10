@@ -83,7 +83,7 @@ func TestAmount(t *testing.T) {
 }
 
 //ตรวจสอบวันที่เป็นปัจจุบัน
-func TestDateMustBePasts(t *testing.T) {
+func TestDateMustBePast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	deviceborrow := DeviceBorrow{
