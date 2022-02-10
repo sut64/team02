@@ -1,12 +1,12 @@
 package entity
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 	"time"
+
 	"github.com/asaskevich/govalidator"
 	. "github.com/onsi/gomega"
-
 )
 
 func TestDeviceBorrowPass(t *testing.T) {
@@ -14,9 +14,9 @@ func TestDeviceBorrowPass(t *testing.T) {
 
 	// ข้อมูลถูกต้องหมดทุก field
 	deviceborrow := DeviceBorrow{
-		BorrowCode: "BD0000",	
-		Amount: 2,
-		Date: time.Now(),
+		BorrowCode: "BD0000",
+		Amount:     2,
+		Date:       time.Now(),
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(deviceborrow)
@@ -28,22 +28,21 @@ func TestDeviceBorrowPass(t *testing.T) {
 	g.Expect(err).To(BeNil())
 }
 
-
 func TestBorrowCodeMustBeInValidPattern(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []string{
 		"XX0000",
-		"BD00000",  // BD ตามด้วย \d 5 ตัว
-		"BD000",   	// BD ตามด้วย \d 3 ตัว
-		"BA0000", 	// BA ตามด้วย \d 4 ตัว
+		"BD00000", // BD ตามด้วย \d 5 ตัว
+		"BD000",   // BD ตามด้วย \d 3 ตัว
+		"BA0000",  // BA ตามด้วย \d 4 ตัว
 	}
 
 	for _, fixture := range fixtures {
 		deviceborrow := DeviceBorrow{
-			BorrowCode: fixture,		//ผิด
-			Amount: 2,
-			Date: time.Now(),
+			BorrowCode: fixture, //ผิด
+			Amount:     2,
+			Date:       time.Now(),
 		}
 
 		// ตรวจสอบด้วย govalidator
@@ -60,15 +59,14 @@ func TestBorrowCodeMustBeInValidPattern(t *testing.T) {
 	}
 }
 
-
 //ตรวจสอบจำนวนห้ามติดลบ
 func TestAmount(t *testing.T) {
 	g := NewGomegaWithT(t)
-	
+
 	deviceborrow := DeviceBorrow{
-		BorrowCode: "BD0000",		
-		Amount: -2,				//ข้อมูล amount ผิด
-		Date: time.Now(),
+		BorrowCode: "BD0000",
+		Amount:     -2, //ข้อมูล amount ผิด
+		Date:       time.Now(),
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -84,14 +82,13 @@ func TestAmount(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("Amount must be in negative"))
 }
 
-
 //ตรวจสอบวันที่เป็นปัจจุบัน
-func TestDateMustBePast(t *testing.T) {
+func TestDateMustBePasts(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	deviceborrow := DeviceBorrow{
 
-		Date:  time.Now().Add(24 * time.Hour), // อนาคต, fail
+		Date: time.Now().Add(24 * time.Hour), // อนาคต, fail
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -104,7 +101,5 @@ func TestDateMustBePast(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Date must be in the today"))
+	g.Expect(err.Error()).To(Equal("Date must be in the present"))
 }
-
-

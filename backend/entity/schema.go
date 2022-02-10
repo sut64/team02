@@ -5,7 +5,6 @@ import (
 
 	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
-
 )
 
 type Member struct {
@@ -55,9 +54,9 @@ type BookLocation struct {
 type BookInformation struct {
 	gorm.Model
 
-	Date            time.Time		`valid:"present~Date must be in the present"`
-	CallNumber      string			`valid:"matches(^[A-Z]+[A-Z]+[.]+\\d{3}$)~CallNumber: does not validate as matches"`
-	YearPublication uint			`valid:"range(1900|2022)~Year Publication must be between 1900 - 2022"`
+	Date            time.Time `valid:"present~Date must be in the present"`
+	CallNumber      string    `valid:"matches(^[A-Z]+[A-Z]+[.]+\\d{3}$)~CallNumber: does not validate as matches"`
+	YearPublication uint      `valid:"range(1900|2022)~Year Publication must be between 1900 - 2022"`
 	// BookOrderID ทำหน้าที่เป็น FK
 	BookOrderID *uint
 	BookOrder   BookOrder `valid:"-"`
@@ -126,20 +125,20 @@ type BorrowDetail struct {
 	gorm.Model
 
 	DateToBorrow   time.Time `valid:"future~DateToBorrow must be in the future"`
-	Tel            string    `valid:"matches(^[0]{1}[0-9]{9})"`
+	Tel            string    `valid:"matches(^[0]{1}[0-9]{9})~Tel not match"`
 	BorrowDuration uint      `valid:"range(1|30)"`
 
 	MemberID *uint
-	Member   Member `gorm:"references:id"`
+	Member   Member `gorm:"references:id" valid:"-"`
 
 	ServicePlaceID *uint
-	ServicePlace   ServicePlace `gorm:"references:id"`
+	ServicePlace   ServicePlace `gorm:"references:id" valid:"-"`
 
 	BookOrderID *uint
-	BookOrder   BookOrder `gorm:"references:id"`
+	BookOrder   BookOrder `gorm:"references:id" valid:"-"`
 
 	StatusID *uint
-	Status   Status `gorm:"references:id"`
+	Status   Status `gorm:"references:id" valid:"-"`
 
 	BookReturns []BookReturn `gorm:"foreignKey:BorrowDetailID"`
 }
@@ -171,10 +170,10 @@ type DeviceType struct {
 
 type DeviceBorrow struct {
 	gorm.Model
-	DeviceName string 	`gorm:"not null"`
-	BorrowCode string	`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
-	Amount int			`valid:"range(0|9)~Amount must be in negative"`
-	Date time.Time		`valid:"present~Date must be in the present"`
+	DeviceName string    `gorm:"not null"`
+	BorrowCode string    `valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
+	Amount     int       `valid:"range(0|9)~Amount must be in negative"`
+	Date       time.Time `valid:"present~Date must be in the present"`
 
 	//MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
@@ -196,7 +195,7 @@ type BookReturn struct {
 	Tel        string
 
 	MemberID *uint
-	Member   Member `gorm:"references:id" `
+	Member   Member `gorm:"references:id"`
 
 	BorrowDetailID *uint
 	BorrowDetail   BorrowDetail `gorm:"references:id"`
