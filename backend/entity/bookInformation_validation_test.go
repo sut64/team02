@@ -14,8 +14,8 @@ func TestBookInformationPass(t *testing.T) {
 
 	// ข้อมูลถูกต้องทุก field
 	bookInformation := BookInformation{
-		Date:	time.Now(),
-		CallNumber:	"BI.100",
+		Date:            time.Now(),
+		CallNumber:      "BI.100",
 		YearPublication: 2000,
 	}
 	// ตรวจสอบด้วย govalidator
@@ -46,7 +46,7 @@ func TestDateMustBePast(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Date must be in the now"))
+	g.Expect(err.Error()).To(Equal("Date must be in the present"))
 }
 
 func TestYearPublicationMustbetween(t *testing.T) {
@@ -76,9 +76,9 @@ func TestCallNumber(t *testing.T) {
 
 	fixtures := []string{
 		"B.456",
-		"BI.90",  
-		"BO456",   
-		"AZ*456", 
+		"BI.90",
+		"BO456",
+		"AZ*456",
 	}
 	// ข้อมูล callnnumber ผิด
 	for _, fixture := range fixtures {
@@ -86,18 +86,18 @@ func TestCallNumber(t *testing.T) {
 			Date:            time.Now(),
 			CallNumber:      fixture, //ผิด
 			YearPublication: 2022,
+		}
+
+		// ตรวจสอบด้วย govalidator
+		ok, err := govalidator.ValidateStruct(bookInformation)
+
+		// ok ต้องเป็น true แปลว่าไม่มี error
+		g.Expect(ok).ToNot(BeTrue())
+
+		// err เป็นค่า nil แปลว่าไม่มี error
+		g.Expect(err).ToNot(BeNil())
+
+		// err.Error ต้องมี error message แสดงออกมา
+		g.Expect(err.Error()).To(Equal((`CallNumber: does not validate as matches`)))
 	}
-
-	// ตรวจสอบด้วย govalidator
-	ok, err := govalidator.ValidateStruct(bookInformation)
-
-	// ok ต้องเป็น true แปลว่าไม่มี error
-	g.Expect(ok).ToNot(BeTrue())
-
-	// err เป็นค่า nil แปลว่าไม่มี error
-	g.Expect(err).ToNot(BeNil())
-
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal((`CallNumber: does not validate as matches`)))
-}
 }
