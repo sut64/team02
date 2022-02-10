@@ -59,6 +59,8 @@ function BookingRoom() {
     getEvent();
   }, []);
 
+  
+
   return (
     <div>
       <Container className={classes.container} maxWidth = "lg" >
@@ -70,7 +72,7 @@ function BookingRoom() {
               color="primary"
               gutterBottom
             >
-              ข้อมูลตารางกิจกรรม
+              ข้อมูลการจองห้องติว
             </Typography>
             </Box>
          <Box>
@@ -95,20 +97,20 @@ function BookingRoom() {
                 <TableCell align="center" width="15%">
                   ห้องและเวลา
                 </TableCell>
-                <TableCell align="center" width="15%">
+                <TableCell align="center" width="10%">
                   ประเภทของห้อง
                 </TableCell>
-                <TableCell align="center" width="15%">
+                <TableCell align="center" width="10%">
                   จุดประสงค์การใช้ห้อง
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="5%">
                   เบอร์โทรศัพท์ผู้จอง
                 </TableCell>
                 <TableCell align="center" width="5%">
                   จำนวน
                 </TableCell>
                 <TableCell align="center" width="15%">
-                  ณ เวลาที่จอง
+                  วันที่จอง
                 </TableCell>
 
               </TableRow>
@@ -123,7 +125,8 @@ function BookingRoom() {
                   <TableCell align="center">{item.RoomObjective.Name}</TableCell>
                   <TableCell align="center">{item.PhoneBooker}</TableCell>
                   <TableCell align="center">{item.QuantityMember}</TableCell>
-                  <TableCell align="center">{moment(item.BookingRoomAt).format("YYYY-MM-DDTHH:mm")}</TableCell>
+                  {/* //THH:mm */}
+                  <TableCell align="center">{moment(item.BookingRoomAt).format("YYYY-MM-DD")}</TableCell> 
                 </TableRow>
               ))}
             </TableBody>
