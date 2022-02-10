@@ -16,9 +16,10 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Snackbar from "@material-ui/core/Snackbar";
 import Select from "@material-ui/core/Select";
+import MenuItem from '@material-ui/core/MenuItem';
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 import { ServicePlacesInterface } from "../models/IServicePlace";
-// import { StatusInterface } from "../models/IStatus";
+import { StatusInterface } from "../models/IStatus";
 import { BorrowDetailInterface } from "../models/IBorrowDetail";
 import { BookReturnsInterface } from "../models/IBookReturn";
 import { MembersInterface } from "../models/IMember";
@@ -28,6 +29,7 @@ import {
 } from "@material-ui/pickers";
 import { TextField } from "@material-ui/core";
 import DateFnsUtils from '@date-io/date-fns';
+import { isTemplateExpression } from "typescript";
 
 const Alert = (props: AlertProps) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -54,6 +56,7 @@ function BookReturnCreate() {
     const [selectedDate, setSelectedDate] = useState<Date | null>(new
         Date());
     const [servicePlaces, setServicePlaces] = useState<ServicePlacesInterface[]>([]);
+    const [status, setStatus] = useState<StatusInterface[]>([]);
     const [borrowDetails, setborrowDetails] = useState<BorrowDetailInterface[]>([]);
     const [members, setMembers] = useState<MembersInterface>();
     const [book_return, setBookReturn] =
@@ -62,6 +65,7 @@ function BookReturnCreate() {
         );
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     const apiUrl = "http://localhost:8080";
     const requestOptions = {
         method: "GET",
@@ -100,7 +104,6 @@ function BookReturnCreate() {
         event: React.ChangeEvent<{ name?: string; value: unknown }>
     ) => {
         const id = Number(event.target.value);
-        getBorrowDetails(id);
         console.log(id)
         const name = event.target.name as keyof typeof book_return;
         setBookReturn({
@@ -114,6 +117,7 @@ function BookReturnCreate() {
         setSelectedDate(date);
     };
 
+    console.log("value", book_return)
     const getMember = async () => {
         let uid = localStorage.getItem("uid");
         fetch(`${apiUrl}/member/${uid}`, requestOptions)
@@ -158,10 +162,23 @@ function BookReturnCreate() {
                 }
             });
     };
-    console.log(borrowDetails);
+    console.log("value data", borrowDetails);
+
+    const getStatus = async () => {
+        fetch(`${apiUrl}/statuses`, requestOptions)
+            .then((response) => response.json())
+            .then((res) => {
+                if (res.data) {
+                    setStatus(res.data);
+                } else {
+                    console.log("else");
+                }
+            });
+    };
     useEffect(() => {
         getMember();
         getSevicePlace();
+        getStatus();
     }, []);
     const convertType = (data: string | number | undefined) => {
         let val = typeof data === "string" ? parseInt(data) : data;
@@ -172,9 +189,10 @@ function BookReturnCreate() {
             MemberID: convertType(book_return.MemberID),
             BorrowDetailID: convertType(book_return.BorrowDetailID),
             ServicePlaceID: convertType(book_return.ServicePlaceID),
-            Damage: book_return.Damage ?? "",
+            Damage: convertType(book_return.Damage),
             Tel: book_return.Tel ?? "",
-            MoveOutTime: selectedDate,
+            DateReturn: selectedDate,
+            StatusID: 2,
         };
         console.log(data)
         const requestOptionsPost = {
@@ -185,13 +203,15 @@ function BookReturnCreate() {
             },
             body: JSON.stringify(data),
         };
-        fetch(`${apiUrl}/book_returns`, requestOptionsPost)
+        fetch(`${apiUrl}/book_return`, requestOptionsPost)
             .then((response) => response.json())
             .then((res) => {
                 if (res.data) {
                     setSuccess(true);
+                    setErrorMessage("")
                 } else {
                     setError(true);
+                    setErrorMessage(res.error)
                 }
             });
     }
@@ -206,7 +226,7 @@ function BookReturnCreate() {
             <Snackbar open={error} autoHideDuration={6000}
                 onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">
-                    บันทึกข้อมูลไม่สําเร็จ
+                    บันทึกข้อมูลไม่สําเร็จ: {errorMessage}
                 </Alert>
 
             </Snackbar>
@@ -249,7 +269,7 @@ function BookReturnCreate() {
                                 }}
                             >
                                 {borrowDetails.map((item: BorrowDetailInterface) => (
-                                    <option value={item.BookOrder.BookTitle} key={item.ID}>
+                                    <option value={item.ID} key={item.ID}>
                                         {item.BookOrder.BookTitle}
                                     </option>
                                 ))}
@@ -280,12 +300,12 @@ function BookReturnCreate() {
                     </Grid>
 
                     <Grid item xs={6}>
-                        <FormControl fullWidth variant="standard">
+                        <FormControl fullWidth variant="standard" >
                             <p>จำนวนจุดที่ชำรุด</p>
                             <TextField
                                 id="Damage"
                                 variant="standard"
-                                type="string"
+                                type="number"
                                 size="medium"
                                 placeholder=""
                                 value={book_return.Damage || ""}
@@ -327,14 +347,40 @@ function BookReturnCreate() {
                             </MuiPickersUtilsProvider>
                         </FormControl>
                     </Grid>
+
+                    <Grid item xs={12}>
+                        <FormControl fullWidth variant="standard">
+                            <p>สถานะ</p>
+
+                            <Select
+                                id="status"
+                                value={1}
+                                onChange={handleChange}
+                                style={{ width: 300 }}
+                                disabled
+                                inputProps={{
+                                    name: "StatusID",
+                                }}
+                            >
+                                {status.map((item: StatusInterface) =>
+                                    <MenuItem value={item.ID} key={item.ID}>
+                                        {item.Name}
+                                    </MenuItem>
+                                )}
+                            </Select>
+
+                        </FormControl>
+                    </Grid>
+
                     <Grid item xs={12}>
                         <Button
                             component={RouterLink}
-                            to="/"
+                            to="/book_return"
                             variant="contained"
                         >
                             กลับ
                         </Button>
+
                         <Button
                             style={{ float: "right" }}
                             variant="contained"

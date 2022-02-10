@@ -53,7 +53,7 @@ function BookReturns() {
                 }
             });
     };
-    console.log(book_returns);
+    console.log("value",book_returns);
     useEffect(() => {
         getBookReturns();
     }, []);
@@ -115,9 +115,7 @@ function BookReturns() {
                                 <TableRow >
                                     <TableCell align="center">{item.ID}</TableCell>
                                     <TableCell align="center">{item.BorrowDetail.BookOrder.BookTitle}</TableCell>
-                                    <TableCell align="center">{item.SevicePlace.Name}</TableCell>
-                                    {/* <TableCell align="center">{item.Damage}</TableCell>
-                                    <TableCell align="center">{item.Tel}</TableCell> */}
+                                    <TableCell align="center">{item.ServicePlace.Name}</TableCell>
                                     <TableCell align="center">{format((new Date(item.DateReturn)), 'dd MMMM yyyy')}</TableCell>
                                     <TableCell align="center">{item.Status.Name}</TableCell>
                                 </TableRow>
