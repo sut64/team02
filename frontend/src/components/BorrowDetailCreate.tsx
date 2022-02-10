@@ -67,6 +67,7 @@ function CreateBorrowDetail() {
 
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const apiUrl = "http://localhost:8080";
   const requestOptions = {
@@ -230,11 +231,13 @@ function CreateBorrowDetail() {
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          console.log(data)
+          console.log("บันทึกได้")
           setSuccess(true);
+          setErrorMessage("")
         } else {
-          console.log(data)
+          console.log("บันทึกไม่ได้")
           setError(true);
+          setErrorMessage(res.error)
         }
       });
   }
@@ -251,7 +254,7 @@ function CreateBorrowDetail() {
         </Snackbar>
         <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
-            บันทึกข้อมูลไม่สำเร็จ
+            บันทึกข้อมูลไม่สำเร็จ : {errorMessage}
           </Alert>
         </Snackbar>
         <Box display="flex" style={{ marginBottom: 55 }}>
