@@ -1,0 +1,923 @@
+{
+  "id": "5be99a4f-d7cc-4b7b-acd7-b938226acabc",
+  "version": "2.0",
+  "name": "B6113605_BookInformation",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "bfb813cc-3135-4514-8a19-817f104cac82",
+    "name": "B6113605 - ตรวจสอบเวลา BookInformation ต้องเป็นปัจจุบัน",
+    "commands": [{
+      "id": "a79cd8b8-eaed-4b79-80a9-a015572c24b6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92d5baeb-6038-4915-b499-7ae13d60e936",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2bd828c3-de09-47bb-aa5d-e3da8733e07a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "97e94085-07c9-4b89-a70a-fbd18268aca4",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d994fc8-a760-4952-8e0a-b5e8e9d6533d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "304c7d8b-bdea-4aa2-95f8-15ea6e78cfa5",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookOrderID",
+      "targets": [
+        ["name=BookOrderID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookOrderID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34a0ceef-f06a-49a5-87f9-3438366902b3",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookOrderID",
+      "targets": [],
+      "value": "label=ธุรกิจก้าวหน้า"
+    }, {
+      "id": "bf81b912-da54-46cb-a5e6-91a62be3bc93",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookLocationID",
+      "targets": [
+        ["name=BookLocationID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookLocationID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a6a91a8-0269-4252-872c-073b8eb29e5a",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookLocationID",
+      "targets": [],
+      "value": "label=ชั้น 2"
+    }, {
+      "id": "5a43b89d-48a4-4369-948a-55e07b1e4c09",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookCategoryID",
+      "targets": [
+        ["name=BookCategoryID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookCategoryID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e274da1-9c2c-4928-a744-fd10924d4623",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookCategoryID",
+      "targets": [],
+      "value": "label=หมวด 200 ศาสนา"
+    }, {
+      "id": "a44f7298-4ad5-4879-8080-184f21c1f46e",
+      "comment": "",
+      "command": "click",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bd69602-67f7-4ab8-96cc-938104eba159",
+      "comment": "",
+      "command": "type",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "AB.200"
+    }, {
+      "id": "ea242c54-18b6-44b9-ac06-dd45a49a31db",
+      "comment": "",
+      "command": "click",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58680104-269d-4543-a587-3505e7311eea",
+      "comment": "",
+      "command": "type",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1900"
+    }, {
+      "id": "ee0d4743-955e-4ad5-a3d3-b08681cac369",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "04ce1a3d-d65a-4b08-ac7a-4e96c65777fb",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(6) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(6) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[4]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'25')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf220e11-5fe8-44ad-a767-5b20f9e4af2e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(6) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(6) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[4]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'25')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "768bbd7d-0046-486e-9044-82d6579d5e54",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiPickersDay-daySelected .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersDay-daySelected .MuiTypography-root", "css:finder"],
+        ["xpath=//div[4]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'25')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86ab458f-ab01-412a-a64b-6b773015a6bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "60c8391d-ab60-4951-867f-c9a80c23087b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a97d3e11-abc7-4678-a5aa-c38d9643836e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e92d08a8-4b0f-4007-b909-92e9e142355b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: Date must be in the now"
+    }]
+  }, {
+    "id": "8919e1d6-8edc-4827-942a-dce22e8c10d2",
+    "name": "B6113605 - ตรวจสอบปีที่พิมพ์ต้องเป็นปีระหว่าง 1900 - 2022",
+    "commands": [{
+      "id": "3e8685f1-6233-494d-aec3-d9874b52af14",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c6f5971-b07b-4ef2-a6e4-982f20c3937a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97f7907d-ece1-4a6b-96e1-af8b55ccf797",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7c2bee6-8655-4530-97d7-d0a96379536f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90303d2e-ed9e-48bb-a481-a7a99d1cad17",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "99e54c8d-a6ac-420f-a01e-24c12b05640d",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookOrderID",
+      "targets": [
+        ["name=BookOrderID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookOrderID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c981a00-8c32-4772-8a95-ee0ddad52f86",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(2) > p",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(2) > p", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'สถานที่จัดเก็บ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "65d70c73-09af-42b1-b06a-04acf9919ddf",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookLocationID",
+      "targets": [
+        ["name=BookLocationID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookLocationID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a1f56f3-99ee-428c-a7a5-683c529bf705",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookLocationID",
+      "targets": [],
+      "value": "label=ชั้น 2"
+    }, {
+      "id": "3a62cf48-d654-4747-b3de-5a2cca31878e",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookOrderID",
+      "targets": [
+        ["name=BookOrderID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookOrderID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f8f794e-93c1-4014-ac91-f9018cfa367a",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookOrderID",
+      "targets": [],
+      "value": "label=คณิตศาสตร์"
+    }, {
+      "id": "4d9b5035-81ab-4160-8d61-14e6cf619f17",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookCategoryID",
+      "targets": [
+        ["name=BookCategoryID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookCategoryID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce7da1d6-4d19-48af-8379-ecf3adb78024",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookCategoryID",
+      "targets": [],
+      "value": "label=หมวด 300 สังคมศาสตร์"
+    }, {
+      "id": "920ee155-74af-4f80-8375-6d905ab00c49",
+      "comment": "",
+      "command": "click",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5dcf619f-1f78-42b8-92ca-81a893737543",
+      "comment": "",
+      "command": "type",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "AB.300"
+    }, {
+      "id": "3be935ec-44fc-4c32-a61e-f71867fe3c8b",
+      "comment": "",
+      "command": "click",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37601f50-d889-4c0f-8756-f3030b46daab",
+      "comment": "",
+      "command": "type",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1898"
+    }, {
+      "id": "ed8d2ecd-fbfe-447a-b71f-2a9da77fe170",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de941eef-4821-42c0-bd60-e2b3edda2643",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2879659-fefd-4675-9b2e-e1810ac27ae6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: Year Publication must be between 1900 - 2022"
+    }]
+  }, {
+    "id": "ea245bf9-ce9f-43f2-b961-2f97130bffdb",
+    "name": "B6113605 - บันทึกข้อมูล BookInformation สำเร็จ",
+    "commands": [{
+      "id": "4977bc99-1fb5-46dd-9327-11b83ffb3e6f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f72ca5a7-2cdb-4d96-a650-aa81a525bf44",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a0cd60c-165d-40c4-ad04-a7b957a6d99d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d09678f-b426-4515-80a5-9f09baff426b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30891711-44e2-40b9-b6b7-30ab9594c48a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9baa1bd-4f79-4de8-8cb9-a4020b5bf664",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookOrderID",
+      "targets": [
+        ["name=BookOrderID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookOrderID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37f37ce0-0c33-46b9-add3-731d45587f63",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookOrderID",
+      "targets": [],
+      "value": "label=คณิตศาสตร์"
+    }, {
+      "id": "f08c93c8-c13c-4539-afa1-dd1bf64a6185",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookLocationID",
+      "targets": [
+        ["name=BookLocationID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookLocationID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77848bab-ceb7-41b0-a8f3-f32dfdea5ad2",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookLocationID",
+      "targets": [],
+      "value": "label=ชั้น 2"
+    }, {
+      "id": "b17e4fba-0005-4618-a520-34c73f1e9bfd",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookCategoryID",
+      "targets": [
+        ["name=BookCategoryID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookCategoryID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "162145a7-f3cb-4429-84e3-4e861bf77e8b",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookCategoryID",
+      "targets": [],
+      "value": "label=หมวด 200 ศาสนา"
+    }, {
+      "id": "5e1783fe-6813-42c8-8a6e-fe6b7687179e",
+      "comment": "",
+      "command": "click",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ec0997e-c3cc-499c-a36c-8a6a60f34a13",
+      "comment": "",
+      "command": "type",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "AB.200"
+    }, {
+      "id": "5317490b-7719-4e84-a387-63db3cea6983",
+      "comment": "",
+      "command": "click",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74f49144-0f74-44fc-b630-49f9f46c4ed0",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5e30a4a-e5b7-4c43-bf83-7e0a2804c01c",
+      "comment": "",
+      "command": "type",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1900"
+    }, {
+      "id": "36b5b1c1-9515-43f1-bc13-7022468d2f62",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "adca3455-87a3-434f-a857-6d13fdf0cc14",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div[2]/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "792bf636-0d93-4725-9576-1ceea8b03657",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c56f67a0-a311-4554-8178-afb4ab7c5160",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
+    }]
+  }, {
+    "id": "4bdcdafc-1a7f-4f9a-92be-18cc55403cdb",
+    "name": "B6113605 - ตรวจสอบเลขเรียกหนังสือต้องไม่มีอักขระพิเศษยกเว้นจุด",
+    "commands": [{
+      "id": "77f58256-ba3b-4dde-8ec3-2c6ce2529ead",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86e8f1e6-c4de-4242-b16f-69bebf8acffd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8c257f2-d57e-414f-9457-dc0c86a87f1f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "445ae633-659f-4199-b99f-593ab2e18c6c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "28fcc0f0-9e52-436f-aa91-5fd94fabd64d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(2) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "43c217ba-e737-47ed-94eb-f54797c7d023",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af929da6-e531-40bb-816f-ed7f05fec9ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61c42c3d-159b-4c47-b832-2781cd29f577",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookOrderID",
+      "targets": [
+        ["name=BookOrderID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookOrderID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7c135e2-f7c8-42fd-ac8f-1573d7d1933e",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookOrderID",
+      "targets": [],
+      "value": "label=ธุรกิจก้าวหน้า"
+    }, {
+      "id": "e107f9a4-2fc4-48c0-87bb-5cbfaa14622a",
+      "comment": "",
+      "command": "click",
+      "target": "name=BookLocationID",
+      "targets": [
+        ["name=BookLocationID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BookLocationID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/select", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfb4475e-9ef3-4bd1-9e7b-5b3a6bf15a2c",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookLocationID",
+      "targets": [],
+      "value": "label=ชั้น 2"
+    }, {
+      "id": "68c00365-f518-4a54-ac91-91150e5cae18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-item:nth-child(3)",
+      "targets": [
+        ["css=.MuiGrid-item:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]", "xpath:idRelative"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05260fd2-2ca9-4649-a888-47fbee9eaa07",
+      "comment": "",
+      "command": "select",
+      "target": "name=BookCategoryID",
+      "targets": [],
+      "value": "label=หมวด 900 ภูมิศาสตร์และประวัติศาสตร์"
+    }, {
+      "id": "936c74cf-30a3-41b2-9526-123039be8297",
+      "comment": "",
+      "command": "click",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87ce7856-b79b-46fe-8e42-90ce825beb08",
+      "comment": "",
+      "command": "type",
+      "target": "id=CallNumber",
+      "targets": [
+        ["id=CallNumber", "id"],
+        ["css=#CallNumber", "css:finder"],
+        ["xpath=//input[@id='CallNumber']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "AB*900"
+    }, {
+      "id": "9608f2cc-2dbf-4cda-91e7-869dd4a24ae1",
+      "comment": "",
+      "command": "click",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55624084-5cf6-49a9-8420-dad5f774e872",
+      "comment": "",
+      "command": "type",
+      "target": "id=YearPublication",
+      "targets": [
+        ["id=YearPublication", "id"],
+        ["css=#YearPublication", "css:finder"],
+        ["xpath=//input[@id='YearPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1900"
+    }, {
+      "id": "24531983-b293-40ac-9447-fb6992de1cc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[8]/button/span", "xpath:idRelative"],
+        ["xpath=//div[8]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "88bc8dbc-529d-4439-94ee-2594998e4694",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98ee1744-4adf-4991-8129-9952c2d62a11",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลไม่สำเร็จ: CallNumber: does not validate as matches"
+    }]
+  }],
+  "suites": [{
+    "id": "a0a61941-d960-4bc9-ab8d-92e6574d57a1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["bfb813cc-3135-4514-8a19-817f104cac82"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
