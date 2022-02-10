@@ -122,6 +122,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
