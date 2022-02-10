@@ -137,7 +137,7 @@ export default function MiniDrawer() {
     { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
     { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <ShoppingCartOutlinedIcon />, path: "/bookorders" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
-    { name: "ข้อมูลการจองห้องติว", icon: <TabletAndroidIcon />, path: "/booking_rooms" },
+    { name: "ข้อมูลการจองห้องติว", icon: <AccountCircleIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
     { name: "ข้อมูลงานวิจัย", icon: <AddCircleOutlineIcon />, path: "/Research" },
   ];
