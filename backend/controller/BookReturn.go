@@ -1,11 +1,11 @@
 package controller
 
 import (
-	"github.com/sut64/team02/entity"
-
-	"github.com/gin-gonic/gin"
-
 	"net/http"
+
+	"github.com/asaskevich/govalidator"
+	"github.com/gin-gonic/gin"
+	"github.com/sut64/team02/entity"
 )
 
 // POST /bookReturns
@@ -52,10 +52,10 @@ func CreateBookReturn(c *gin.Context) {
 	}
 
 	// // แทรกการ validate ไว้ช่วงนี้ของ controller
-	// if _, err := govalidator.ValidateStruct(book_return); err != nil {
-	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-	// 	return
-	// }
+	if _, err := govalidator.ValidateStruct(book_return); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
 
 	// 13: บันทึก
 	if err := entity.DB().Create(&wv).Error; err != nil {
@@ -73,7 +73,7 @@ func GetBookReturn(c *gin.Context) {
 
 	id := c.Param("id")
 
-	if err := entity.DB().Preload("BorrowDetail").Preload("SevicePlace").Preload("Status").Raw("SELECT * FROM book_returns WHERE id = ?", id).Scan(&book_return).Error; err != nil {
+	if err := entity.DB().Preload("BorrowDetail").Preload("ServicePlace").Preload("Status").Preload("Member").Preload("BorrowDetail.BookOrder").Raw("SELECT * FROM book_returns WHERE id = ?", id).Find(&book_return).Error; err != nil {
 
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 
@@ -91,7 +91,7 @@ func ListBookReturns(c *gin.Context) {
 
 	var book_returns []entity.BookReturn
 
-	if err := entity.DB().Preload("BorrowDetail").Preload("SevicePlace").Preload("Status").Raw("SELECT * FROM book_returns").Scan(&book_returns).Error; err != nil {
+	if err := entity.DB().Preload("BorrowDetail").Preload("ServicePlace").Preload("Status").Preload("Member").Preload("BorrowDetail.BookOrder").Raw("SELECT * FROM book_returns").Find(&book_returns).Error; err != nil {
 
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 

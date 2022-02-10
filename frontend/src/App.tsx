@@ -24,8 +24,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
 
 import HomeIcon from "@material-ui/icons/Home";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+// import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
 
 //import Navbar from "./components/Navbar";
 
@@ -139,6 +140,7 @@ export default function MiniDrawer() {
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     { name: "ข้อมูลการจองห้องติว", icon: <AccountCircleIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
+    { name: "ข้อมูลการคืนหนังสือ", icon: <AssignmentReturnIcon />, path: "/book_return" },
     { name: "ข้อมูลงานวิจัย", icon: <AddCircleOutlineIcon />, path: "/Research" },
   ];
   useEffect(() => {

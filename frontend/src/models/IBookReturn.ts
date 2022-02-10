@@ -11,11 +11,11 @@ export interface BookReturnsInterface{
     DateReturn: Date,
     MemberID: string,
     Member: MembersInterface,
-    BorrowDetailID: string,
+    BorrowDetailID: number,
     BorrowDetail: BorrowDetailInterface
-    ServicePlaceID: string,
-    SevicePlace: ServicePlacesInterface,
-    StatusID: string,
+    ServicePlaceID: number,
+    ServicePlace: ServicePlacesInterface,
+    StatusID: number,
     Status: StatusInterface,
 
 
