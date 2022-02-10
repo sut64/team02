@@ -1,9 +1,10 @@
 package entity
 
 import (
-	"gorm.io/gorm"
-
 	"time"
+
+	"github.com/asaskevich/govalidator"
+	"gorm.io/gorm"
 )
 
 type Member struct {
@@ -22,6 +23,8 @@ type Member struct {
 	BorrowDetails []BorrowDetail `gorm:"foreignKey:MemberID"`
 
 	BookReturns []BookReturn `gorm:"foreinkey:MemberID"`
+
+	Researches []Research `gorm:"foreignKey:MemberID"`
 }
 
 type BookType struct {
@@ -29,17 +32,15 @@ type BookType struct {
 
 	Type string `gorm:"uniqueIndex"`
 
-	BookInformation []BookInformation `gorm:"foreignKey:BookTypeID"`
-
 	BookOrder []BookOrder `gorm:"foreignKey:BookTypeID"`
 }
 
 type BookCategory struct {
 	gorm.Model
 
-	Category string 						`gorm:"uniqueIndex"`
+	Category string `gorm:"uniqueIndex"`
 
-	BookInformation []BookInformation 		`gorm:"foreignKey:BookCategoryID"`
+	BookInformation []BookInformation `gorm:"foreignKey:BookCategoryID"`
 }
 
 type BookLocation struct {
@@ -53,9 +54,9 @@ type BookLocation struct {
 type BookInformation struct {
 	gorm.Model
 
-	Date            time.Time
-	CallNumber      string
-	YearPublication uint
+	Date            time.Time `valid:"present~Date must be in the present"`
+	CallNumber      string    `valid:"matches(^[A-Z]+[A-Z]+[.]+\\d{3}$)~CallNumber: does not validate as matches"`
+	YearPublication uint      `valid:"range(1900|2022)~Year Publication must be between 1900 - 2022"`
 	// BookOrderID ทำหน้าที่เป็น FK
 	BookOrderID *uint
 	BookOrder   BookOrder `valid:"-"`
@@ -64,9 +65,9 @@ type BookInformation struct {
 	BookLocationID *uint
 	BookLocation   BookLocation `valid:"-"`
 
-	// BookTypeID ทำหน้าที่เป็น FK
-	BookTypeID *uint
-	BookType   BookType `valid:"-"`
+	// BookCategoryID ทำหน้าที่เป็น FK
+	BookCategoryID *uint
+	BookCategory   BookCategory `valid:"-"`
 
 	// MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
@@ -96,47 +97,48 @@ type BookOrder struct {
 	gorm.Model
 	BookTitle   string
 	Author      string
-	OrderAmount uint
-	Price       float32
-	OrderDate   time.Time
+	OrderAmount int       `valid:"int,required~OrderAmount cannot be zero and negative,morethanzero~OrderAmount cannot be zero and negative"`
+	Price       float32   `valid:"float,required~Price cannot be negative and zero,nonnegative~Price cannot be negative and zero"`
+	OrderDate   time.Time `valid:"present~OrderDate must be present"`
 
 	//Company ทำหน้าที่เป็น FK
 	CompanyID *uint
-	Company   Company
+	Company   Company `valid:"-"`
 
 	//Company ทำหน้าที่เป็น FK
 	OrderStatusID *uint
-	OrderStatus   OrderStatus
+	OrderStatus   OrderStatus `valid:"-"`
 
 	//BookType ทำหน้าที่เป็น FK
 	BookTypeID *uint
-	BookType   BookType
+	BookType   BookType `valid:"-"`
 
 	//Librarian
 	MemberID *uint
 	Member   Member
 
-	BorrowDetail []BorrowDetail `gorm:"foreignKey:BookOrderID"`
+	BorrowDetail    []BorrowDetail    `gorm:"foreignKey:BookOrderID"`
+	BookInformation []BookInformation `gorm:"foreignKey:BookOrderID"`
 }
 
 type BorrowDetail struct {
 	gorm.Model
 
-	DateToBorrow   time.Time //`valid:"future~DateToBorrow must be in the future"`
-	Tel            string    //`valid:"matches(^[0]{1}[0-9]{9})"`
-	BorrowDuration uint      // `valid:"range(1|30)"`
+	DateToBorrow   time.Time `valid:"future~DateToBorrow must be in the future"`
+	Tel            string    `valid:"matches(^[0]{1}[0-9]{9})~Tel not match"`
+	BorrowDuration uint      `valid:"range(1|30)"`
 
 	MemberID *uint
-	Member   Member `gorm:"references:id"`
+	Member   Member `gorm:"references:id" valid:"-"`
 
 	ServicePlaceID *uint
-	ServicePlace   ServicePlace `gorm:"references:id"`
+	ServicePlace   ServicePlace `gorm:"references:id" valid:"-"`
 
 	BookOrderID *uint
-	BookOrder   BookOrder `gorm:"references:id"`
+	BookOrder   BookOrder `gorm:"references:id" valid:"-"`
 
 	StatusID *uint
-	Status   Status `gorm:"references:id"`
+	Status   Status `gorm:"references:id" valid:"-"`
 
 	BookReturns []BookReturn `gorm:"foreignKey:BorrowDetailID"`
 }
@@ -168,13 +170,10 @@ type DeviceType struct {
 
 type DeviceBorrow struct {
 	gorm.Model
-	DeviceName string `gorm:"not null"`
-	BorrowCode string
-	//`valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
-	Amount int
-	//`valid:"range(0|9)~Amount must be in negative"`
-	Date time.Time
-	//	`valid:"present~Date must be in the present"`
+	DeviceName string    `gorm:"not null"`
+	BorrowCode string    `valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
+	Amount     int       `valid:"range(0|9)~Amount must be in negative"`
+	Date       time.Time `valid:"present~Date must be in the present"`
 
 	//MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
@@ -196,7 +195,7 @@ type BookReturn struct {
 	Tel        string
 
 	MemberID *uint
-	Member   Member `gorm:"references:id" `
+	Member   Member `gorm:"references:id"`
 
 	BorrowDetailID *uint
 	BorrowDetail   BorrowDetail `gorm:"references:id"`
@@ -251,4 +250,80 @@ type RoomObjective struct {
 	Name string
 
 	BookingRoom []BookingRoom `gorm:"foreignkey:RoomObjectiveID"`
+}
+
+type TypeResearch struct {
+	gorm.Model
+	Value      string
+	Researches []Research `gorm:"foreignKey:TypeResearchID"`
+}
+
+type AuthorName struct {
+	gorm.Model
+	AuthorName string
+	Researches []Research `gorm:"foreignKey:AuthorNameID"`
+}
+
+type InstitutionName struct {
+	gorm.Model
+	InstitutionName string
+	Researches      []Research `gorm:"foreignKey:InstitutionNameID"`
+}
+
+type Research struct {
+	gorm.Model
+
+	NameResearch string
+
+	YearOfPublication uint
+
+	RecordingDate time.Time
+
+	TypeResearchID *uint
+	TypeResearch   TypeResearch `valid:"-"`
+
+	AuthorNameID *uint
+	AuthorName   AuthorName `valid:"-"`
+
+	InstitutionNameID *uint
+	InstitutionName   InstitutionName `valid:"-"`
+
+	MemberID *uint
+	Member   Member `valid:"-"`
+}
+
+func init() {
+	govalidator.CustomTypeTagMap.Set("past", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		now := time.Now()
+		return now.After(t)
+	})
+	govalidator.CustomTypeTagMap.Set("future", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		now := time.Now()
+		return now.Before(time.Time(t))
+	})
+	govalidator.CustomTypeTagMap.Set("present",
+		func(i interface{}, context interface{}) bool {
+			t := i.(time.Time)
+			if t.Year() == time.Now().Year() {
+				if int(t.Month()) == int(time.Now().Month()) {
+					if t.Day() == time.Now().Day() {
+						return true
+					}
+				}
+			}
+			return false
+		})
+
+	govalidator.CustomTypeTagMap.Set("nonnegative",
+		func(i interface{}, context interface{}) bool {
+			value := i.(float32)
+			return value > 0
+		})
+	govalidator.CustomTypeTagMap.Set("morethanzero",
+		func(i interface{}, context interface{}) bool {
+			num := i
+			return num.(int) > 0
+		})
 }

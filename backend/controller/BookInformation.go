@@ -17,12 +17,18 @@ func CreateBookInformation(c *gin.Context) {
 	var bookinformation entity.BookInformation
 	var booklocation entity.BookLocation
 	var bookorder entity.BookOrder
-	var booktype entity.BookType
-	//var employee entity.Employee
+	var bookcategory entity.BookCategory
+	var member 		entity.Member
 
 	// ผลลัพธ์ที่ได้จากขั้นตอนที่ 8 จะถูก bind เข้าตัวแปร bookinformation
 	if err := c.ShouldBindJSON(&bookinformation); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// ค้นหา member ด้วย id
+	if tx := entity.DB().Where("id = ?", bookinformation.MemberID).First(&member); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "member not found"})
 		return
 	}
 
@@ -38,25 +44,27 @@ func CreateBookInformation(c *gin.Context) {
 		return
 	}
 
-	// ค้นหา booktype ด้วย id
-	if tx := entity.DB().Where("id = ?", bookinformation.BookTypeID).First(&booktype); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "booktype not found"})
+	// ค้นหา bookcategory ด้วย id
+	if tx := entity.DB().Where("id = ?", bookinformation.BookCategoryID).First(&bookcategory); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "bookcategory not found"})
 		return
-	}
-
-	//แทรกการ validate ไว้ช่วงนี้ของ controller
-	if _, err := govalidator.ValidateStruct(bookinformation); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 
 	//สร้าง bookinformation
 	bi := entity.BookInformation{
-		BookLocation:    booklocation,                    // โยงความสัมพันธ์กับ Entity BookLocation
-		BookOrder:       bookorder,                       // โยงความสัมพันธ์กับ Entity BookOrder
-		BookType:        booktype,                        // โยงความสัมพันธ์กับ Entity BookType
+		Member: 		 member,						//โยงความสัมพันธ์กับ Entity member
+		BookLocation:    booklocation,                  // โยงความสัมพันธ์กับ Entity BookLocation
+		BookOrder:       bookorder,                     // โยงความสัมพันธ์กับ Entity BookOrder
+		BookCategory:    bookcategory,                  // โยงความสัมพันธ์กับ Entity BookCategory
 		Date:            bookinformation.Date,            //ตั้งค่าฟิลก์ Date
 		YearPublication: bookinformation.YearPublication, //ตั้งค่าฟิลก์ YearPublication
 		CallNumber:      bookinformation.CallNumber,      //ตั้งค่าฟิลก์ CallNumber
+	}
+
+	//แทรกการ validate ไว้ช่วงนี้ของ controller
+	if _, err := govalidator.ValidateStruct(bi); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return 
 	}
 
 	// บันทึก
@@ -71,7 +79,7 @@ func CreateBookInformation(c *gin.Context) {
 func GetBookInformation(c *gin.Context) {
 	var bookinformation entity.BookInformation
 	id := c.Param("id")
-	if err := entity.DB().Preload("BookLocation").Preload("BookOrder").Preload("BookType").Raw("SELECT * FROM book_informations WHERE id = ?", id).Find(&bookinformation).Error; err != nil {
+	if err := entity.DB().Preload("BookLocation").Preload("BookOrder").Preload("BookCategory").Raw("SELECT * FROM book_informations WHERE id = ?", id).Find(&bookinformation).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -82,7 +90,7 @@ func GetBookInformation(c *gin.Context) {
 // GET /book_informations
 func ListBookInformations(c *gin.Context) {
 	var bookinformations []entity.BookInformation
-	if err := entity.DB().Preload("BookLocation").Preload("BookOrder").Preload("BookType").Raw("SELECT * FROM book_informations").Find(&bookinformations).Error; err != nil {
+	if err := entity.DB().Preload("BookLocation").Preload("BookOrder").Preload("BookCategory").Raw("SELECT * FROM book_informations").Find(&bookinformations).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

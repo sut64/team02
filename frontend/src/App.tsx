@@ -24,7 +24,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
 
 import HomeIcon from "@material-ui/icons/Home";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+// import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
 
@@ -37,7 +37,7 @@ import SignIn from "./components/SignIn";
 import Home from "./components/Home";
 import BookOrders from "./components/BookOrders";
 import BookOrderCreate from "./components/BookOrderCreate";
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import BookIcon from '@material-ui/icons/Book';
 import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
 import DeviceBorrows from "./components/DeviceBorrows";
@@ -48,6 +48,8 @@ import CreateBorrowDetail from "./components/BorrowDetailCreate";
 import Borrows from "./components/BorrowDetails";
 import BookingRoom from "./components/BookingRoom";
 import BookingRoomCreate from "./components/BookingRoomCreate";
+import Research from "./components/Research";
+import ResearchCreate from "./components/ResearchCreate";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -134,11 +136,12 @@ export default function MiniDrawer() {
   const menu = [
     { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
     { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
-    { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <PeopleAltIcon />, path: "/bookorders" },
+    { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <ShoppingCartOutlinedIcon />, path: "/bookorders" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     { name: "ข้อมูลการจองห้องติว", icon: <TabletAndroidIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
     { name: "ข้อมูลการคืนหนังสือ", icon: <AssignmentReturnIcon />, path: "/book_return" },
+    { name: "ข้อมูลงานวิจัย", icon: <AddCircleOutlineIcon />, path: "/Research" },
   ];
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -240,6 +243,8 @@ export default function MiniDrawer() {
               <Route exact path="/deviceborrow/create" component={DeviceBorrowCreate} />
               <Route exact path="/booking_roomscreate" component={BookingRoomCreate} />
               <Route exact path="/booking_rooms" component={BookingRoom} />
+              <Route exact path="/researCreate/create" component={ResearchCreate} />
+              <Route exact path="/Research" component={Research} />
             </Switch>
           </div>
         </main>

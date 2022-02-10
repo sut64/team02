@@ -182,6 +182,7 @@ const geMembers = async () => {
     BookCategoryID: convertType(bookInformation.BookCategoryID),
     BookLocationID: convertType(bookInformation.BookLocationID),
     BookOrderID: convertType(bookInformation.BookOrderID),
+    MemberID: convertType(bookInformation.MemberID),
     Date: selectedDate,
     CallNumber: bookInformation.CallNumber ?? "",
     YearPublication: typeof bookInformation.YearPublication === "string" ? parseInt(bookInformation.YearPublication) : 0,
@@ -287,7 +288,7 @@ const geMembers = async () => {
             </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <p>ประเภทหนังสือ</p>
+          <p>หมวดหมู่หนังสือ</p>
             <FormControl fullWidth variant="outlined">
                 <Select
                 native
@@ -298,7 +299,7 @@ const geMembers = async () => {
                 }}
               >
               <option aria-label="None" value="">
-                  กรุณาเลือกประเภทหนังสือ
+                  กรุณาเลือกหมวดหมู่หนังสือ
                 </option>
                 {bookCategorys.map((item: BookCategoryInterface) => (
                   <option value={item.ID} key={item.ID}>

@@ -25,6 +25,13 @@ func main() {
 			protected.PATCH("/book_informations", controller.UpdateBookInformation)
 			protected.DELETE("/book_informations/:id", controller.DeleteBookInformation)
 
+			// BookCategory Routes
+			protected.GET("/book_categories", controller.ListBookCategories)
+			protected.GET("/bookcategory/:id", controller.GetBookCategory)
+			protected.POST("/book_categories", controller.CreateBookCategory)
+			protected.PATCH("/book_categories", controller.UpdateBookCategory)
+			protected.DELETE("/book_categories/:id", controller.DeleteBookCategory)
+
 			// BookType Routes
 			protected.GET("/book_types", controller.ListBookTypes)
 			protected.GET("/booktype/:id", controller.GetBookType)
@@ -147,6 +154,36 @@ func main() {
 			protected.POST("/roomobjectives", controller.CreateRoomObjective)
 			//protected.PATCH("/bookingrooms", controller.UpdateR)
 			protected.DELETE("/roomobjectives/:id", controller.DeleteRoomObjective)
+
+			//เพชร//
+
+			// TypeResearch Routes
+			protected.GET("/typeresearches", controller.ListTypeResearch)
+			protected.GET("/typeresearch/:id", controller.GetTypeResearch)
+			protected.POST("/typeresearches", controller.CreateTypeResearch)
+			protected.PATCH("/typeresearches", controller.UpdateTypeResearch)
+			protected.DELETE("/typeresearches/:id", controller.DeleteTypeResearch)
+
+			// AuthorName Routes
+			protected.GET("/authornames", controller.ListAuthorName)
+			protected.GET("/authorname/:id", controller.GetAuthorName)
+			protected.POST("/authornames", controller.CreateAuthorName)
+			protected.PATCH("/authornames", controller.UpdateAuthorName)
+			protected.DELETE("/authornames/:id", controller.DeleteAuthorName)
+
+			// InstitutionName Routes
+			protected.GET("/institutionnames", controller.ListTypeInstitutionName)
+			protected.GET("/institutionname/:id", controller.GetInstitutionName)
+			protected.POST("/institutionnames", controller.CreateInstitutionName)
+			protected.PATCH("/institutionnames", controller.UpdateInstitutionName)
+			protected.DELETE("/institutionnames/:id", controller.DeleteInstitutionName)
+
+			// Research Routes
+			protected.GET("/researches", controller.ListResearch)
+			protected.GET("/researche/:id", controller.GetResearch)
+			protected.POST("/researches", controller.CreateResearch)
+			protected.PATCH("/researches", controller.UpdateResearch)
+			protected.DELETE("/researches/:id", controller.DeleteResearch)
 
 		}
 	}
