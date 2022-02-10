@@ -325,22 +325,22 @@ func SetupDatabase() {
 	db.Model(&RoomObjective{}).Create(&Objective5)
 
 	RoomAndTime1 := RoomAndTime{
-		Name: "17:00-18:00",
+		Name: "ห้องที่ 1 17:00-18:00",
 	}
 	db.Model(&RoomAndTime{}).Create(&RoomAndTime1)
 
 	RoomAndTime2 := RoomAndTime{
-		Name: "18:00-19:00",
+		Name: "ห้องที่ 2 18:00-19:00",
 	}
 	db.Model(&RoomAndTime{}).Create(&RoomAndTime2)
 
 	RoomAndTime3 := RoomAndTime{
-		Name: "19:00-20:00",
+		Name: "ห้องที่ 2 19:00-20:00",
 	}
 	db.Model(&RoomAndTime{}).Create(&RoomAndTime3)
 
 	RoomAndTime4 := RoomAndTime{
-		Name: "20:00-21:00",
+		Name: "ห้องที่ 1 20:00-21:00",
 	}
 	db.Model(&RoomAndTime{}).Create(&RoomAndTime4)
 
