@@ -27,7 +27,7 @@ func TestBookInformationPass(t *testing.T) {
 	// err เป็นค่า nil แปลว่าไม่มี error
 	g.Expect(err).To(BeNil())
 }
-func TestDateMustBePast(t *testing.T) {
+func TestDateBookInfoMustBePast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	// ข้อมูลวันที่ผิด
