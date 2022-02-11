@@ -211,7 +211,7 @@ type BookingRoom struct {
 	gorm.Model
 
 	MemberID *uint
-	Member   Member `gorm:"references:ID"` 
+	Member   Member `gorm:"references:ID"`
 
 	RoomAndTimeID *uint
 	RoomAndTime   RoomAndTime `gorm:"references:ID"`
@@ -222,10 +222,9 @@ type BookingRoom struct {
 	RoomObjectiveID *uint
 	RoomObjective   RoomObjective `gorm:"references:ID"`
 
-	QuantityMember uint       `valid:"range(1|10),required"`
+	QuantityMember uint      `valid:"range(1|10),required"`
 	PhoneBooker    string    `valid:"matches(^[0]\\d{9}$)"`
 	BookingRoomAt  time.Time `valid:"future~BookingRoomAt must not be in the past"`
-
 }
 
 type RoomAndTime struct {
@@ -273,11 +272,11 @@ type InstitutionName struct {
 type Research struct {
 	gorm.Model
 
-	NameResearch string
+	NameResearch string `valid:"alphanum~NameResearch: does not validate as alphanum"`
 
-	YearOfPublication uint
+	YearOfPublication uint `valid:"range(1900|2022),required"`
 
-	RecordingDate time.Time
+	RecordingDate time.Time `valid:"present~RecordingDate: must be in the now"`
 
 	TypeResearchID *uint
 	TypeResearch   TypeResearch `valid:"-"`
