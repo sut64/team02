@@ -48,6 +48,7 @@ function ResearchCreate() {
 
  const [success, setSuccess] = React.useState(false);
  const [error, setError] = React.useState(false);
+ const [errormessage, setErrormessage] = React.useState("");
 
  const apiUrl = "http://localhost:8080";
  const requestOptions = {
@@ -176,9 +177,13 @@ const getMembers = async () => {
      .then((response) => response.json())
      .then((res) => {
        if (res.data) {
+         console.log("บันทึกได้")
          setSuccess(true);
+         setErrormessage("")
        } else {
-         setError(true);
+         console.log("บันทึกไม่ได้")
+         setError(true)
+         setErrormessage(res.error)
        }
      });
  }
