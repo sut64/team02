@@ -1,7 +1,9 @@
 package controller
+
 import (
 	"net/http"
 
+	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 
 	"github.com/sut64/team02/entity"
@@ -49,11 +51,11 @@ func CreateResearch(c *gin.Context) {
 		YearOfPublication: research.YearOfPublication, //ตั้งค่าฟิลด์ YearOfPublication
 		RecordingDate:     research.RecordingDate,     //ตั้งค่าฟิลด์ RecordingDate
 	}
-	/*//validate
+	//validate
 	if _, err := govalidator.ValidateStruct(rs); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
-	}*/
+	}
 
 	// 13: บันทึก
 	if err := entity.DB().Create(&rs).Error; err != nil {
