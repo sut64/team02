@@ -24,7 +24,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
 
 import HomeIcon from "@material-ui/icons/Home";
-// import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
 
