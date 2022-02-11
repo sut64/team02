@@ -197,7 +197,7 @@ const getMembers = async () => {
      </Snackbar>
      <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
        <Alert onClose={handleClose} severity="error">
-         บันทึกข้อมูลไม่สำเร็จ
+         บันทึกข้อมูลไม่สำเร็จ - {errormessage}
        </Alert>
      </Snackbar>
      <Paper className={classes.paper}>
