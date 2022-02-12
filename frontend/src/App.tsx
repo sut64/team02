@@ -125,6 +125,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
+  const Role = localStorage.getItem("role");
   const [open, setOpen] = React.useState(false);
   const [token, setToken] = React.useState<String>("");
   const handleDrawerOpen = () => {
@@ -133,16 +134,29 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const menu = [
+  const menuLibrarian = [
     { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
-    { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
     { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <ShoppingCartOutlinedIcon />, path: "/bookorders" },
+    { name: "ข้อมูลของหนังสือ", icon: <AddCircleOutlineIcon />, path: "/book_informations" },
+    { name: "ข้อมูลงานวิจัย", icon: <AddCircleOutlineIcon />, path: "/Research" },
+  ];
+
+  const menuMember = [
+    { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
     { name: "ข้อมูลการยืมอุปกรณ์", icon: <TabletAndroidIcon />, path: "/deviceborrows" },
     { name: "ข้อมูลการจองห้องติว", icon: <AccountCircleIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
     { name: "ข้อมูลการคืนหนังสือ", icon: <AssignmentReturnIcon />, path: "/book_return" },
-    { name: "ข้อมูลงานวิจัย", icon: <AddCircleOutlineIcon />, path: "/Research" },
-  ];
+  ]; 
+
+  const Menu = () => {
+    if (Role === "member"){
+      return menuLibrarian
+    } else {
+      return menuMember
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -214,7 +228,7 @@ export default function MiniDrawer() {
               </div>
               <Divider />
               <List>
-                {menu.map((item, index) => (
+                {Menu().map((item, index) => (
                   <Link to={item.path} key={item.name} className={classes.a}>
                     <ListItem button>
                       <ListItemIcon>{item.icon}</ListItemIcon>

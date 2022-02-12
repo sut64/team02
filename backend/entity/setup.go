@@ -62,6 +62,7 @@ func SetupDatabase() {
 	Ploy := Member{
 		Name:     "พลอยชมพู วงศ์ฉันท์ทัต",
 		Email:    "p@gmail.com",
+		Role: 	"Librarian",
 		Password: string(password),
 	}
 	db.Model(&Member{}).Create(&Ploy)
