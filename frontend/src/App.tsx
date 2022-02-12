@@ -150,7 +150,7 @@ export default function MiniDrawer() {
   ]; 
 
   const Menu = () => {
-    if (Role === "member"){
+    if (Role === "Librarian"){
       return menuLibrarian
     } else {
       return menuMember
