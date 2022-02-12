@@ -126,8 +126,8 @@ type BookOrder struct {
 type BorrowDetail struct {
 	gorm.Model
 
-	DateToBorrow   time.Time `valid:"future~DateToBorrow must be in the future"`
-	Tel            string    `valid:"matches(^[0]{1}[0-9]{9})~Tel not match"`
+	DateToBorrow   time.Time `valid:"notpast~DateToBorrow must be in the future and present"`
+	Tel            string    `valid:"matches(^[0]{1}[0-9]{9}$)~Tel not match"`
 	BorrowDuration uint      `valid:"range(1|30)"`
 
 	MemberID *uint
@@ -192,21 +192,21 @@ type DeviceBorrow struct {
 
 type BookReturn struct {
 	gorm.Model
-	DateReturn time.Time
-	Damage     int
-	Tel        string
+	DateReturn time.Time `valid:"present~DateReturn: must be in the now"`
+	Damage     int       `valid:"range(1|50)"`
+	Tel        string    `valid:"matches(^[0]{1}[0-9]{9}$)~Tel not match"`
 
 	MemberID *uint
-	Member   Member `gorm:"references:id"`
+	Member   Member `gorm:"references:id" valid:"-"`
 
 	BorrowDetailID *uint
-	BorrowDetail   BorrowDetail `gorm:"references:id"`
+	BorrowDetail   BorrowDetail `gorm:"references:id" valid:"-"`
 
 	ServicePlaceID *uint
-	ServicePlace   ServicePlace `gorm:"references:id"`
+	ServicePlace   ServicePlace `gorm:"references:id" valid:"-"`
 
 	StatusID *uint
-	Status   Status `gorm:"references:id"`
+	Status   Status `gorm:"references:id" valid:"-"`
 }
 
 type BookingRoom struct {
@@ -316,7 +316,11 @@ func init() {
 			}
 			return false
 		})
-
+	govalidator.CustomTypeTagMap.Set("notpast", func(i interface{}, o interface{}) bool {
+		t := i.(time.Time)
+		// ย้อนหลังไม่เกิน 1 วัน
+		return t.After(time.Now().AddDate(0, 0, -1))
+	})
 	govalidator.CustomTypeTagMap.Set("nonnegative",
 		func(i interface{}, context interface{}) bool {
 			value := i.(float32)

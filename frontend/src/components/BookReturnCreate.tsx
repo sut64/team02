@@ -148,6 +148,32 @@ function BookReturnCreate() {
             });
     };
 
+
+    // const onUpdateStatusBorrowdetail =async (value: BookReturnsInterface) => {
+    //     let data={ StatusID: 2,
+            
+    //     }
+    //     console.log("Borrow",value)
+    //     const requestOptions = {
+    //         method: "PATCH",
+    //         headers: {
+    //             Authorization: `Bearer ${localStorage.getItem("token")}`,
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(data),
+    //     };
+    //     fetch(`${apiUrl}/borrows/${value.BorrowDetail.ID}`, requestOptions)
+    //     .then((response) => response.json())
+    //         .then((res) => {
+    //             console.log(res.data);
+    //             if (res.data) {
+    //                 setborrowDetails(res.data);
+    //                 console.log(res.data);
+    //             } else {
+    //                 console.log("else");
+    //             }
+    //         });
+    // }
     const getBorrowDetails = async (id: number) => {
 
         fetch(`${apiUrl}/borrow/member/${id}`, requestOptions)
@@ -193,6 +219,7 @@ function BookReturnCreate() {
             Tel: book_return.Tel ?? "",
             DateReturn: selectedDate,
             StatusID: 2,
+            
         };
         console.log(data)
         const requestOptionsPost = {
@@ -207,6 +234,7 @@ function BookReturnCreate() {
             .then((response) => response.json())
             .then((res) => {
                 if (res.data) {
+                    // onUpdateStatusBorrowdetail(res.data)
                     setSuccess(true);
                     setErrorMessage("")
                 } else {
