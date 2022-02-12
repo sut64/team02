@@ -120,17 +120,26 @@ func DeleteBorrow(c *gin.Context) {
 // PATCH /borrows
 func UpdateBorrow(c *gin.Context) {
 	var borrowDetail entity.BorrowDetail
+	var status entity.Status
+	id := c.Param("id")
 	if err := c.ShouldBindJSON(&borrowDetail); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	if tx := entity.DB().Where("id = ?", borrowDetail.ID).First(&borrowDetail); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", id).First(&borrowDetail); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Borrow not found"})
 		return
 	}
 
-	if err := entity.DB().Save(&borrowDetail).Error; err != nil {
+	if tx := entity.DB().Where("id = ?", borrowDetail.StatusID).First(&status); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "status not found"})
+		return
+	}
+	bd := entity.BorrowDetail{
+		Status: status,
+	}
+	if err := entity.DB().Save(&bd).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

@@ -28,7 +28,7 @@ func TestDateToBorrowMustBeFuture(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("DateToBorrow must be in the future"))
+	g.Expect(err.Error()).To(Equal("DateToBorrow must be in the future and present"))
 }
 
 func TestTelLengthAndCorrect(t *testing.T) {
@@ -43,7 +43,7 @@ func TestTelLengthAndCorrect(t *testing.T) {
 		bd := BorrowDetail{
 			DateToBorrow:   time.Date(2025, 10, 5, 0, 0, 0, 0, time.UTC),
 			Tel:            fixture,
-			BorrowDuration: 31,
+			BorrowDuration: 5,
 		}
 
 		//ตรวจสอบด้วย govalidator
@@ -56,7 +56,7 @@ func TestTelLengthAndCorrect(t *testing.T) {
 		g.Expect(err).ToNot(BeNil())
 
 		// err.Error ต้องมี error message แสดงออกมา
-		g.Expect(err.Error()).To(Equal("BorrowDuration: 31 does not validate as range(1|30);Tel not match"))
+		g.Expect(err.Error()).To(Equal("Tel not match"))
 	}
 }
 

@@ -22,25 +22,30 @@ func CreateBookReturn(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	// 9: ค้นหา borrowDetail ด้วย id
+	// 9: ค้นหา member ด้วย id
+	if tx := entity.DB().Where("id = ?", book_return.MemberID).First(&member); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "member not found"})
+		return
+	}
+	// 10: ค้นหา borrowDetail ด้วย id
 	if tx := entity.DB().Where("id = ?", book_return.BorrowDetailID).First(&borrowDetail); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "borrowdetail not found"})
 		return
 	}
 
-	// 10: ค้นหา serviceplace ด้วย id
+	// 11: ค้นหา serviceplace ด้วย id
 	if tx := entity.DB().Where("id = ?", book_return.ServicePlaceID).First(&serviceplace); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "seviceplace not found"})
 		return
 	}
 
-	// 11: ค้นหา status ด้วย id
+	// 12: ค้นหา status ด้วย id
 	if tx := entity.DB().Where("id = ?", book_return.StatusID).First(&status); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "status not found"})
 		return
 	}
 
-	// 12: สร้าง BookReturn
+	// 13: สร้าง BookReturn
 	wv := entity.BookReturn{
 		Member:       member,
 		BorrowDetail: borrowDetail,

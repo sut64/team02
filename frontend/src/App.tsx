@@ -180,7 +180,7 @@ export default function MiniDrawer() {
   ];
 
   const Menu2 = () => {
-    if (Role === "Librarian") {
+    if (Role === "บรรณารักษ์") {
       return menuLibrarian
     } else {
       return menuMember
