@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
+import Tooltip from "@material-ui/core/Tooltip";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -50,6 +51,12 @@ import BookingRoom from "./components/BookingRoom";
 import BookingRoomCreate from "./components/BookingRoomCreate";
 import Research from "./components/Research";
 import ResearchCreate from "./components/ResearchCreate";
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import { MembersInterface } from "./models/IMember";
+import Chip from '@material-ui/core/Chip';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -125,6 +132,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
+  const [member, setMember] = React.useState<MembersInterface>();
   const Role = localStorage.getItem("role");
   const [open, setOpen] = React.useState(false);
   const [token, setToken] = React.useState<String>("");
@@ -134,6 +142,28 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const apiUrl = "http://localhost:8080";
+  const requestOptions = {
+    method: "GET",
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}`, "Content-Type": "application/json" },
+  };
+
+  const getMember = async () => {
+    let uid = localStorage.getItem("uid");
+    fetch(`${apiUrl}/member/${uid}`, requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        console.log("member", res.data);
+        if (res.data) {
+          setMember(res.data);
+        } else {
+          console.log("else");
+        }
+      });
+  };
+
+
   const menuLibrarian = [
     { name: "หน้าแรก", icon: <HomeIcon />, path: "/" },
     { name: "ข้อมูลสั่งซื้อหนังสือ", icon: <ShoppingCartOutlinedIcon />, path: "/bookorders" },
@@ -147,10 +177,10 @@ export default function MiniDrawer() {
     { name: "ข้อมูลการจองห้องติว", icon: <AccountCircleIcon />, path: "/booking_rooms" },
     { name: "ข้อมูลการยืมหนังสือ", icon: <BookIcon />, path: "/borrowDetail" },
     { name: "ข้อมูลการคืนหนังสือ", icon: <AssignmentReturnIcon />, path: "/book_return" },
-  ]; 
+  ];
 
-  const Menu = () => {
-    if (Role === "Librarian"){
+  const Menu2 = () => {
+    if (Role === "Librarian") {
       return menuLibrarian
     } else {
       return menuMember
@@ -159,6 +189,7 @@ export default function MiniDrawer() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    getMember();
     if (token) {
       setToken(token);
     }
@@ -172,6 +203,8 @@ export default function MiniDrawer() {
     localStorage.clear();
     window.location.href = "/";
   };
+
+
   return (
     <div className={classes.root}>
       <Router>
@@ -180,6 +213,7 @@ export default function MiniDrawer() {
           <>
             <AppBar
               position="fixed"
+              style={{ backgroundColor: '#13c2c2' }}
               className={clsx(classes.appBar, {
                 [classes.appBarShift]: open,
               })}
@@ -199,9 +233,20 @@ export default function MiniDrawer() {
                 <Typography variant="h6" className={classes.title}>
                   ระบบห้องสมุด
                 </Typography>
-                <Button color="inherit" onClick={signout}>
-                  ออกจากระบบ
+                
+                <Chip
+                  size="medium"
+                  icon={<AccountCircleIcon style={{ color: '#13c2c2' }} />}
+                  label={member?.Name + " (" + member?.Role + ") "}
+                  variant="outlined"
+                  style={{ backgroundColor: '#fff', fontSize: '1rem', color: '#009688' }}
+                />
+                <Tooltip title = "Logout">
+                <Button color="inherit" onClick={signout} style={{ fontFamily: "Kanit" }}>
+                  <ExitToAppIcon style={{ fontSize: 30, marginRight: 2 }} />
                 </Button>
+                </Tooltip>
+
               </Toolbar>
             </AppBar>
             <Drawer
@@ -228,7 +273,7 @@ export default function MiniDrawer() {
               </div>
               <Divider />
               <List>
-                {Menu().map((item, index) => (
+                {Menu2().map((item, index) => (
                   <Link to={item.path} key={item.name} className={classes.a}>
                     <ListItem button>
                       <ListItemIcon>{item.icon}</ListItemIcon>

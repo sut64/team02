@@ -16,7 +16,7 @@ type Member struct {
 
 	Password string
 
-	Role string `gorm:"default:'member'"`
+	Role string `gorm:"default:'สมาชิก'"`
 
 	BookInformation []BookInformation `gorm:"foreignKey:MemberID"`
 
