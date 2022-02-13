@@ -14,9 +14,16 @@ func CreateBookingRoom(c *gin.Context) {
 	var roomandtime entity.RoomAndTime
 	var roomtype entity.RoomType
 	var roomobjective entity.RoomObjective
+	var member entity.Member
 
 	if err := c.ShouldBindJSON(&bookingroom); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// ค้นหา member ด้วย id
+	if tx := entity.DB().Where("id = ?", bookingroom.MemberID).First(&member); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "member not found"})
 		return
 	}
 
@@ -43,6 +50,7 @@ func CreateBookingRoom(c *gin.Context) {
 	}
 
 	booking := entity.BookingRoom{
+		Member: 			member,						//โยงความสัมพันธ์กับ Entity member
 		RoomAndTime: 		roomandtime, 					
 		RoomType:      		roomtype,      				
 		RoomObjective:      roomobjective,          				
@@ -62,7 +70,7 @@ func CreateBookingRoom(c *gin.Context) {
 func GetBookingroom(c *gin.Context) {
 	var bookingroom entity.BookingRoom
 	id := c.Param("id")
-	if err := entity.DB().Preload("RoomAndTime").Preload("RoomType").Preload("RoomObjective").Raw("SELECT * FROM booking_rooms WHERE id = ?", id).Find(&bookingroom).Error; err != nil {
+	if err := entity.DB().Preload("Member").Preload("RoomAndTime").Preload("RoomType").Preload("RoomObjective").Raw("SELECT * FROM booking_rooms WHERE id = ?", id).Find(&bookingroom).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -73,7 +81,7 @@ func GetBookingroom(c *gin.Context) {
 // GET /bookingrooms
 func ListBookingrooms(c *gin.Context) {
 	var bookingrooms []entity.BookingRoom
-	if err := entity.DB().Preload("RoomAndTime").Preload("RoomType").Preload("RoomObjective").Raw("SELECT * FROM booking_rooms").Find(&bookingrooms).Error; err != nil {
+	if err := entity.DB().Preload("Member").Preload("RoomAndTime").Preload("RoomType").Preload("RoomObjective").Raw("SELECT * FROM booking_rooms").Find(&bookingrooms).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

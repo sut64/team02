@@ -16,6 +16,7 @@ import { BookingRoomInterface } from "../models/IBookingRoom";
 import { RoomAndTimeInterface } from "../models/IRoomAndTime";
 import { RoomObjectiveInterface } from "../models/IRoomObjective";
 import { RoomTypeInterface } from "../models/IRoomType";
+import { MembersInterface } from "../models/IMember";
 import {MuiPickersUtilsProvider,KeyboardDatePicker,} from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { useEffect, useState } from "react";
@@ -38,6 +39,7 @@ function BookingRoomCreate() {
  const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
  const [bookingroom, setBookingroom] = useState<Partial<BookingRoomInterface>>({});
  const [roomandtimes, setRoomAndTimes] = useState<RoomAndTimeInterface[]>([]);
+ const [members, setMembers] = useState<MembersInterface>();
  const [roomtypes, setRoomTypes] = useState<RoomTypeInterface[]>([]);
  const [roomobjectives, setRoomObjectives] = useState<RoomObjectiveInterface[]>([]);
  const [success, setSuccess] = React.useState(false);
@@ -63,6 +65,8 @@ function BookingRoomCreate() {
  const handleDateChange = (date: Date | null) => {
    setSelectedDate(date);
  };
+
+ 
  
  const handleInputChange = (
    event: React.ChangeEvent<{ id?: string; value: any }>
@@ -80,6 +84,20 @@ function BookingRoomCreate() {
     ...bookingroom, 
     [name]: event.target.value, 
    });
+};
+
+const getMember = async () => {
+  let uid = localStorage.getItem("uid");
+  fetch(`${apiUrl}/member/${uid}`, requestOptions)
+    .then((response) => response.json())
+    .then((res) => {
+      bookingroom.MemberID = res.data.ID
+      if (res.data) {
+        setMembers(res.data);
+      } else {
+        console.log("else");
+      }
+    });
 };
 
  const getRoomAndTimes = async () => {
@@ -119,6 +137,7 @@ const getRoomObjectives = async () => {
 };
 
 useEffect(() => {
+  getMember();
   getRoomAndTimes();
   getRoomTypes();
   getRoomObjectives();
@@ -131,6 +150,7 @@ const convertType = (data: string | number | undefined) => {
  
  function submit() {
    let data = {
+     MemberID: convertType(members?.ID),
      PhoneBooker: bookingroom.PhoneBooker ?? "",
      QuantityMember: typeof bookingroom.QuantityMember === "string" ? parseInt(bookingroom.QuantityMember) : 0,
      BookingRoomAt: selectedDate, 
@@ -193,6 +213,25 @@ return (
 
 
        <Grid container spacing={3} className={classes.root}>
+       <Grid item xs={12}>
+            <FormControl fullWidth variant="outlined">
+              <p>ผู้บันทึกการยืม</p>
+              <Select
+                native
+                value={bookingroom.MemberID}
+                onChange={handleChange}
+                disabled
+                inputProps={{
+                  name: "MemberID",
+                }}
+              >      
+                  <option value={members?.ID} key={members?.ID}>
+                    {members?.Name}
+                  </option>
+                
+              </Select>
+            </FormControl>
+          </Grid>
 
 
        <Grid item xs={6}>
