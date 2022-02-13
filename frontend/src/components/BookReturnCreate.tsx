@@ -296,6 +296,10 @@ function BookReturnCreate() {
                                     name: "BorrowDetailID",
                                 }}
                             >
+                                <option aria-label="None" value="">
+                                    เลือกหนังสือที่ต้องการคืน
+                                </option>
+
                                 {borrowDetails.map((item: BorrowDetailInterface) => (
                                     <option value={item.ID} key={item.ID}>
                                         {item.BookOrder.BookTitle}
@@ -382,7 +386,7 @@ function BookReturnCreate() {
 
                             <Select
                                 id="status"
-                                value={1}
+                                value={2}
                                 onChange={handleChange}
                                 style={{ width: 300 }}
                                 disabled

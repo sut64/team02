@@ -101,7 +101,8 @@ function SignIn() {
           Sign in
 
         </Typography>
-        *email:p@gmail.com, password:123456*
+        *email:p@gmail.com, password:123456* (บรรณารักษ์)
+        *email:b@gmail.com, password:123456* (สมาชิก)
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"

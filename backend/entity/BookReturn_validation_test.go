@@ -28,7 +28,7 @@ func TestBookReturn(t *testing.T) {
 }
 
 // ตรวจสอบค่าว่างของชื่อแล้วต้องเจอ Error
-func TestUserNameNotBlank(t *testing.T) {
+func TestDamagenNotOverLimit(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	br := BookReturn{
@@ -70,7 +70,7 @@ func TestDateReturnMustBePresent(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("DateReturn: must be in the now"))
 }
 
-func TestStudentIDMustBeInValidPattern(t *testing.T) {
+func TestTelMustBeInValidPattern(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []string{
