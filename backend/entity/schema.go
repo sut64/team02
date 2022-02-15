@@ -78,7 +78,7 @@ type BookInformation struct {
 
 type Company struct {
 	gorm.Model
-	NameThai    string
+	NameThai    string	`gorm:"uniqueIndex"`
 	NameEng     string
 	Address     string
 	PhoneNumber string
@@ -90,7 +90,7 @@ type Company struct {
 
 type OrderStatus struct {
 	gorm.Model
-	Status string
+	Status string	`gorm:"uniqueIndex"`
 
 	BookOrder []BookOrder `gorm:"foreignKey:OrderStatusID"`
 }
@@ -99,8 +99,8 @@ type BookOrder struct {
 	gorm.Model
 	BookTitle   string
 	Author      string
-	OrderAmount int       `valid:"int,required~OrderAmount cannot be zero and negative,morethanzero~OrderAmount cannot be zero and negative"`
-	Price       float32   `valid:"float,required~Price cannot be negative and zero,nonnegative~Price cannot be negative and zero"`
+	OrderAmount int       `valid:"required~OrderAmount cannot be zero and negative,morethanzero~OrderAmount cannot be zero and negative"`
+	Price       float32   `valid:"required~Price cannot be negative and zero,nonnegative~Price cannot be negative and zero"`
 	OrderDate   time.Time `valid:"present~OrderDate must be present"`
 
 	//Company ทำหน้าที่เป็น FK
