@@ -15,7 +15,7 @@ func TestBookInformationPass(t *testing.T) {
 	// ข้อมูลถูกต้องทุก field
 	bookInformation := BookInformation{
 		Date:            time.Now(),
-		CallNumber:      "BI.100",
+		CallNumber:      "ย.ง100",
 		YearPublication: 2000,
 	}
 	// ตรวจสอบด้วย govalidator
@@ -33,7 +33,7 @@ func TestDateBookInfoMustBePast(t *testing.T) {
 	// ข้อมูลวันที่ผิด
 	bookInformation := BookInformation{
 		Date:            time.Now().Add(24 * time.Hour), // อนาคต, fail
-		CallNumber:      "BI.100",
+		CallNumber:      "ฟ.น100",
 		YearPublication: 2022,
 	}
 	// ตรวจสอบด้วย govalidator
@@ -55,7 +55,7 @@ func TestYearPublicationMustbetween(t *testing.T) {
 	// ข้อมูลปีที่พิมพ์ผิด
 	bookInformation := BookInformation{
 		Date:            time.Now(),
-		CallNumber:      "BI.100",
+		CallNumber:      "A.L456",
 		YearPublication: 1898,
 	}
 	// ตรวจสอบด้วย govalidator
@@ -71,13 +71,15 @@ func TestYearPublicationMustbetween(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("Year Publication must be between 1900 - 2022"))
 }
 
-func TestCallNumber(t *testing.T) {
+func TeseCallNumber(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []string{
-		"B.456",
-		"BI.90",
-		"BO456",
+		"กข456",
+		"กข12",
+		"กข*912",
+		"AZ909",
+		"AZ12",
 		"AZ*456",
 	}
 	// ข้อมูล callnnumber ผิด

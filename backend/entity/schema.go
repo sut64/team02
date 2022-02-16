@@ -57,7 +57,7 @@ type BookInformation struct {
 	gorm.Model
 
 	Date            time.Time `valid:"present~Date must be in the present"`
-	CallNumber      string    `valid:"matches(^[A-Z]+[A-Z]+[.]+\\d{3}$)~CallNumber: does not validate as matches"`
+	CallNumber      string    `valid:"matches(^[ก-ฮ]+[.]+[ก-ฮ]+\\d{3}$|^[A-Z]+[.]+[A-Z]+\\d{3}$)~CallNumber: does not validate as matches"`
 	YearPublication uint      `valid:"range(1900|2022)~Year Publication must be between 1900 - 2022"`
 	// BookOrderID ทำหน้าที่เป็น FK
 	BookOrderID *uint
