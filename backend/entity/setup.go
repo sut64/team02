@@ -187,6 +187,11 @@ func SetupDatabase() {
 	}
 	db.Model(&OrderStatus{}).Create(&approval)
 
+	disapproved := OrderStatus{
+		Status: "ไม่อนุมัติ",
+	}
+	db.Model(&OrderStatus{}).Create(&disapproved)
+
 	A := Company{
 		NameThai:    "บริษัท เอ จำกัด",
 		NameEng:     "A Company Limited",
