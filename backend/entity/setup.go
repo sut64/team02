@@ -62,7 +62,7 @@ func SetupDatabase() {
 	Ploy := Member{
 		Name:     "พลอยชมพู วงศ์ฉันท์ทัต",
 		Email:    "p@gmail.com",
-		Role: 	"บรรณารักษ์",
+		Role:     "บรรณารักษ์",
 		Password: string(password),
 	}
 	db.Model(&Member{}).Create(&Ploy)
@@ -73,6 +73,13 @@ func SetupDatabase() {
 		Password: string(password),
 	}
 	db.Model(&Member{}).Create(&Auy)
+
+	pooh := Member{
+		Name:     "กฤษณุชา นิลเขียว",
+		Email:    "po@gmail.com",
+		Password: string(password),
+	}
+	db.Model(&Member{}).Create(&pooh)
 
 	//--BookType Data
 	documentary := BookType{
@@ -230,7 +237,7 @@ func SetupDatabase() {
 		OrderAmount: 5,
 		Price:       2052.50,
 		OrderStatus: request,
-		OrderDate: time.Now(),
+		OrderDate:   time.Now(),
 	}
 	db.Model(&BookOrder{}).Create(&order1)
 
@@ -242,7 +249,7 @@ func SetupDatabase() {
 		OrderAmount: 12,
 		Price:       5200.25,
 		OrderStatus: done,
-		OrderDate: time.Now(),
+		OrderDate:   time.Now(),
 	}
 	db.Model(&BookOrder{}).Create(&order2)
 

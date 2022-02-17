@@ -1,7 +1,6 @@
 package entity
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
@@ -66,6 +65,7 @@ func TestBorrowDurationRange(t *testing.T) {
 	fixtures := []uint{
 		31,
 		35,
+		0,
 	}
 
 	for _, fixture := range fixtures {
@@ -84,7 +84,7 @@ func TestBorrowDurationRange(t *testing.T) {
 		g.Expect(err).ToNot(BeNil())
 
 		// err.Error ต้องมี error message แสดงออกมา
-		g.Expect(err.Error()).To(Equal(fmt.Sprintf(`BorrowDuration: %d does not validate as range(1|30)`, fixture)))
+		g.Expect(err.Error()).To(Equal("BorrowDuration must in range 1-30"))
 	}
 }
 
