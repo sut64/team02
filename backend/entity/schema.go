@@ -78,7 +78,7 @@ type BookInformation struct {
 
 type Company struct {
 	gorm.Model
-	NameThai    string	`gorm:"uniqueIndex"`
+	NameThai    string `gorm:"uniqueIndex"`
 	NameEng     string
 	Address     string
 	PhoneNumber string
@@ -90,7 +90,7 @@ type Company struct {
 
 type OrderStatus struct {
 	gorm.Model
-	Status string	`gorm:"uniqueIndex"`
+	Status string `gorm:"uniqueIndex"`
 
 	BookOrder []BookOrder `gorm:"foreignKey:OrderStatusID"`
 }
@@ -128,7 +128,7 @@ type BorrowDetail struct {
 
 	DateToBorrow   time.Time `valid:"notpast~DateToBorrow must be in the future and present"`
 	Tel            string    `valid:"matches(^[0]{1}[0-9]{9}$)~Tel not match"`
-	BorrowDuration uint      `valid:"range(1|30)"`
+	BorrowDuration uint      `valid:"range(1|30)~BorrowDuration must in range 1-30,required~BorrowDuration must in range 1-30"`
 
 	MemberID *uint
 	Member   Member `gorm:"references:id" valid:"-"`
