@@ -66,7 +66,7 @@ function DeviceBorrows() {
             <Typography
               component="h2"
               variant="h6"
-              color="primary"
+              style={{ color: '#13c2c2' }}
               gutterBottom
             >
               ข้อมูลการยืมอุปกรณ์
@@ -77,7 +77,7 @@ function DeviceBorrows() {
               component={RouterLink}
               to="/deviceborrow/create"
               variant="contained"
-              color="primary"
+              style={{ backgroundColor: '#13c2c2', color: '#ffffff' }}
             >
               ยืมอุปกรณ์
             </Button>

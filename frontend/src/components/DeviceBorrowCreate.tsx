@@ -198,7 +198,7 @@ function DeviceBorrowCreate() {
             <Typography
               component="h2"
               variant="h6"
-              color="primary"
+              style={{ color: '#13c2c2' }}
               gutterBottom
             >
               บันทึกข้อมูลการยืมอุปกรณ์
@@ -210,7 +210,7 @@ function DeviceBorrowCreate() {
 
         <Grid item xs={12}>
             <FormControl fullWidth variant="outlined">
-              <p>ผู้บันทึกการยืม</p>
+              <p>ชื่อผู้ยืมอุปกรณ์</p>
               <Select
                 native
                 value={deviceborrow.MemberID}
@@ -346,10 +346,9 @@ function DeviceBorrowCreate() {
               กลับ
             </Button>
             <Button
-              style={{ float: "right" }}
+              style={{ float: "right", backgroundColor: '#13c2c2', color: '#ffffff' }}
               variant="contained"
               onClick={submit}
-              color="primary"
             >
               บันทึก
             </Button>
