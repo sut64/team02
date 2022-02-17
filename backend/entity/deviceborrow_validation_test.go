@@ -65,7 +65,7 @@ func TestAmount(t *testing.T) {
 
 	deviceborrow := DeviceBorrow{
 		BorrowCode: "BD0000",
-		Amount:     -2, //ข้อมูล amount ผิด
+		Amount:     -2, 			//ข้อมูล amount ผิด
 		Date:       time.Now(),
 	}
 
@@ -79,7 +79,7 @@ func TestAmount(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err เป็นค่า nil แปลว่าไม่มี error
-	g.Expect(err.Error()).To(Equal("Amount must be in negative"))
+	g.Expect(err.Error()).To(Equal("Amount cannot be zero and negative"))
 }
 
 //ตรวจสอบวันที่เป็นปัจจุบัน
@@ -87,7 +87,8 @@ func TestDateMustBePast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	deviceborrow := DeviceBorrow{
-
+		BorrowCode: "BD0000",
+		Amount:     2,
 		Date: time.Now().Add(24 * time.Hour), // อนาคต, fail
 	}
 

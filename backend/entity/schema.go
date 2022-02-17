@@ -174,20 +174,20 @@ type DeviceBorrow struct {
 	gorm.Model
 	DeviceName string    `gorm:"not null"`
 	BorrowCode string    `valid:"matches(^[B]+[D]\\d{4}$)~BorrowCode: %s does not validate as matches"`
-	Amount     int       `valid:"range(0|9)~Amount must be in negative"`
+	Amount     int       `valid:"required~Amount cannot be zero and negative,morethanzero~Amount cannot be zero and negative"`
 	Date       time.Time `valid:"present~Date must be in the present"`
 
 	//MemberID ทำหน้าที่เป็น FK
 	MemberID *uint
-	Member   Member
+	Member   Member	`valid:"-"`
 
 	//DeviceListID ทำหน้าที่เป็น FK
 	DeviceListID *uint
-	DeviceList   DeviceList
+	DeviceList   DeviceList	`valid:"-"`
 
 	//DeviceTypeID ทำหน้าที่เป็น FK
 	DeviceTypeID *uint
-	DeviceType   DeviceType
+	DeviceType   DeviceType	`valid:"-"`
 }
 
 type BookReturn struct {
