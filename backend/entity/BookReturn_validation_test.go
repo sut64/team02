@@ -27,7 +27,6 @@ func TestBookReturn(t *testing.T) {
 	g.Expect(err).To(BeNil())
 }
 
-// ตรวจสอบค่าว่างของชื่อแล้วต้องเจอ Error
 func TestDamagenNotOverLimit(t *testing.T) {
 	g := NewGomegaWithT(t)
 
@@ -74,8 +73,9 @@ func TestTelMustBeInValidPattern(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	fixtures := []string{
-		"01002578963", //ตัวเเรกไม่ขึ้นต้นด้วย 0
+		"1002578963",  //ตัวเเรกไม่ขึ้นต้นด้วย 0
 		"050000",      //ไม่ครบจำนวน
+		"01234567897", //เกินจำนวน
 
 	}
 
