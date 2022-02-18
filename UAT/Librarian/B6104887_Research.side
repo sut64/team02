@@ -7,30 +7,21 @@
     "id": "52fc8ee1-2336-4637-86ca-b0b153416d79",
     "name": "B6104887 - บันทึกข้อมูลสำเร็จ",
     "commands": [{
-      "id": "7b728436-e2c8-455d-bdf5-bffce566d4b6",
+      "id": "f1910812-511d-4af9-9d6f-af63cb374dac",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "0328a30b-bd4e-4bab-8c7a-c2e3c3c95f98",
+      "id": "d69190cf-da67-4b59-a9ec-055aeeddf34a",
       "comment": "",
       "command": "setWindowSize",
       "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "3cce5a7e-eef7-4324-9082-653262581479",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
-      "targets": [
-        ["css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "bacb71bf-3cb8-4f83-b64d-cbfe955ab86a",
+      "id": "1488d26f-0e29-472a-bdbe-e831bfcdf4a5",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
@@ -39,16 +30,7 @@
       ],
       "value": ""
     }, {
-      "id": "c26bf9e1-e959-4039-9bc5-6ed788b64a13",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
-      "targets": [
-        ["css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "54ff455d-ec7d-45b8-81db-8aa912a64eb0",
+      "id": "5a00d334-34e8-4438-b4fb-50d7e01a1f87",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -60,7 +42,7 @@
       ],
       "value": ""
     }, {
-      "id": "a3429dd8-fad4-423f-8cfa-e02d57284780",
+      "id": "d4ca1b1e-8093-472e-a822-41a070b031e3",
       "comment": "",
       "command": "click",
       "target": "id=NameResearch",
@@ -73,7 +55,7 @@
       ],
       "value": ""
     }, {
-      "id": "93b4a5fb-f0ab-465a-99e7-19193f14860f",
+      "id": "84d34fd1-deb5-43a0-9c81-f080c4152df4",
       "comment": "",
       "command": "type",
       "target": "id=NameResearch",
@@ -84,9 +66,9 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "add12"
+      "value": "set64"
     }, {
-      "id": "235e8b87-965b-4fd9-8d76-bcb8c0b90dc9",
+      "id": "5ad38fdc-542a-476b-8bca-dbd8a0808079",
       "comment": "",
       "command": "click",
       "target": "id=YearOfPublication",
@@ -99,7 +81,7 @@
       ],
       "value": ""
     }, {
-      "id": "2096efc5-98f2-4564-aca5-24d30be2483e",
+      "id": "b7a7b440-0b3f-4421-952a-faef22cd229c",
       "comment": "",
       "command": "type",
       "target": "id=YearOfPublication",
@@ -110,9 +92,9 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/div/input", "xpath:position"]
       ],
-      "value": "2012"
+      "value": "2020"
     }, {
-      "id": "15bd0f87-81fa-4feb-b398-9b93a1d1d6d0",
+      "id": "19e2f741-3559-47d6-a882-a3745487ec98",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-TypeResearchID",
@@ -125,369 +107,7 @@
       ],
       "value": ""
     }, {
-      "id": "98c836ac-8146-4ec3-b3a2-75e51b69c8e9",
-      "comment": "",
-      "command": "mouseUp",
-      "target": "css=.MuiMenu-list",
-      "targets": [
-        ["css=.MuiMenu-list", "css:finder"],
-        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul", "xpath:idRelative"],
-        ["xpath=//div[3]/ul", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ac742fd3-3148-4eba-9c17-795e29c81149",
-      "comment": "",
-      "command": "click",
-      "target": "css=body",
-      "targets": [
-        ["css=body", "css:finder"],
-        ["xpath=//body", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4102528b-db9b-4db2-a734-c7857aff8ebc",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiListItem-root:nth-child(3)",
-      "targets": [
-        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[3]", "xpath:idRelative"],
-        ["xpath=//li[3]", "xpath:position"],
-        ["xpath=//li[contains(.,'แบ่งตามวิธีการเก็บรวบรวมข้อมูล')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "f6d63821-b91a-4d2e-8dc3-9eccc1abb2c0",
-      "comment": "",
-      "command": "mouseDown",
-      "target": "id=mui-component-select-AuthorNameID",
-      "targets": [
-        ["id=mui-component-select-AuthorNameID", "id"],
-        ["css=#mui-component-select-AuthorNameID", "css:finder"],
-        ["xpath=//div[@id='mui-component-select-AuthorNameID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[4]/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "817bd4ca-9d2d-4edd-8d6b-023ba3b5a75b",
-      "comment": "",
-      "command": "mouseUp",
-      "target": "css=.MuiMenuItem-root:nth-child(1)",
-      "targets": [
-        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'Chatchai Asara')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "af9d2c51-4094-4fe0-a32e-b72ca28f203b",
-      "comment": "",
-      "command": "click",
-      "target": "css=body",
-      "targets": [
-        ["css=body", "css:finder"],
-        ["xpath=//body", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "632f4e63-7c48-4df5-9d99-fac39b959ee6",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiListItem-root:nth-child(2)",
-      "targets": [
-        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li[2]", "xpath:idRelative"],
-        ["xpath=//li[2]", "xpath:position"],
-        ["xpath=//li[contains(.,'Edward Lee')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "9245d7b9-3305-4400-b0c6-56f97363cffc",
-      "comment": "",
-      "command": "mouseDown",
-      "target": "id=mui-component-select-InstitutionNameID",
-      "targets": [
-        ["id=mui-component-select-InstitutionNameID", "id"],
-        ["css=#mui-component-select-InstitutionNameID", "css:finder"],
-        ["xpath=//div[@id='mui-component-select-InstitutionNameID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[5]/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "56459cd3-ee24-4ad7-8985-005906911dc0",
-      "comment": "",
-      "command": "mouseUp",
-      "target": "css=.MuiMenuItem-root:nth-child(1)",
-      "targets": [
-        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'มหาวิทยาลัยเทคโนโลยีสุรนารี')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "2840003e-f368-4403-9185-872caaa2c842",
-      "comment": "",
-      "command": "click",
-      "target": "css=body",
-      "targets": [
-        ["css=body", "css:finder"],
-        ["xpath=//body", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "a5b9046d-54ae-4bb3-ab48-eef06b89f224",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiMenuItem-root:nth-child(1)",
-      "targets": [
-        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'มหาวิทยาลัยเทคโนโลยีสุรนารี')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "1f333a24-22a7-4a91-8953-107ef692652d",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "67785107-1d55-4890-be32-2024f41832a8",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "b496fcf6-d200-4c62-ae40-acc4b323080a",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "37c14361-2992-4868-be52-c7d8e3c29e01",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "e32913da-ad9d-4fc0-882f-3080883d3a5a",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "450dc069-5252-4201-bdc6-17bb7994fc21",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiPickersDay-daySelected .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersDay-daySelected .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "1680d23e-4fd8-4a7e-8148-bf410ac6b094",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[2]/button[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "a6a9aab4-ae0e-46a6-b9f5-5d912e935b2a",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "b86a5c2e-a26b-4344-be59-743eb54ae0bb",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "4a62e4a8-8603-497f-8ef6-84f8940c1307",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div[2]/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "5234ebc8-b998-4bd8-a78f-092a9c576ea0",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiAlert-root",
-      "targets": [
-        ["css=.MuiAlert-root", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1aadda95-04fa-4a23-9403-a2c7ce12f1ff",
-      "comment": "",
-      "command": "assertText",
-      "target": "css=.MuiAlert-message",
-      "targets": [
-        ["css=.MuiAlert-message", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
-        ["xpath=//div/div/div[2]", "xpath:position"]
-      ],
-      "value": "บันทึกข้อมูลสำเร็จ"
-    }]
-  }, {
-    "id": "0199c010-c0a9-41ac-8c57-40be1e4a58c5",
-    "name": "B6104887 - ตรวจสอบว่าชื่องานวิจัยต้องไม่เป็นอักขระพิเศษ",
-    "commands": [{
-      "id": "8c3d880a-976f-41c3-9d7b-33c8cdb33d77",
-      "comment": "",
-      "command": "open",
-      "target": "/",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "87e70d85-fbd7-4c70-ad4c-abc540c76066",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1936x1056",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "ac656d1c-c255-43af-a19f-9d8593c51504",
-      "comment": "",
-      "command": "click",
-      "target": "css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root",
-      "targets": [
-        ["css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root", "css:finder"],
-        ["xpath=//div[@id='root']/div/div/div/ul/a[4]/div", "xpath:idRelative"],
-        ["xpath=//a[4]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "02097b97-6179-45a2-90de-2be26bfd4aac",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButton-contained > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//a/span", "xpath:position"],
-        ["xpath=//span[contains(.,'เพิ่มงานวิจัย')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "eba900eb-5d5d-454f-97d8-2ca09b6da54e",
-      "comment": "",
-      "command": "click",
-      "target": "id=NameResearch",
-      "targets": [
-        ["id=NameResearch", "id"],
-        ["css=#NameResearch", "css:finder"],
-        ["xpath=//input[@id='NameResearch']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "ce9acbce-64d3-43ac-9383-45763afaf5ab",
-      "comment": "",
-      "command": "type",
-      "target": "id=NameResearch",
-      "targets": [
-        ["id=NameResearch", "id"],
-        ["css=#NameResearch", "css:finder"],
-        ["xpath=//input[@id='NameResearch']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "@sada21"
-    }, {
-      "id": "20668a38-9685-4c40-b302-dc1811e85237",
-      "comment": "",
-      "command": "click",
-      "target": "id=YearOfPublication",
-      "targets": [
-        ["id=YearOfPublication", "id"],
-        ["css=#YearOfPublication", "css:finder"],
-        ["xpath=//input[@id='YearOfPublication']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "40fa6f11-3587-4a9a-8ea3-87c873a75027",
-      "comment": "",
-      "command": "type",
-      "target": "id=YearOfPublication",
-      "targets": [
-        ["id=YearOfPublication", "id"],
-        ["css=#YearOfPublication", "css:finder"],
-        ["xpath=//input[@id='YearOfPublication']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
-      ],
-      "value": "2012"
-    }, {
-      "id": "7e071ba6-05f6-4355-8926-ab7b15d0bd40",
-      "comment": "",
-      "command": "mouseDown",
-      "target": "id=mui-component-select-TypeResearchID",
-      "targets": [
-        ["id=mui-component-select-TypeResearchID", "id"],
-        ["css=#mui-component-select-TypeResearchID", "css:finder"],
-        ["xpath=//div[@id='mui-component-select-TypeResearchID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "50074c5e-cc25-4a4c-9145-f55a786eaf69",
+      "id": "bdccee74-ab3c-426e-bdb3-75cca4f5c7ce",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.Mui-focusVisible",
@@ -499,7 +119,7 @@
       ],
       "value": ""
     }, {
-      "id": "12cf8652-9126-417b-96d6-1282f4614a55",
+      "id": "fb8f892b-e431-4d53-a507-0e8e1cc7a3d1",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -509,19 +129,19 @@
       ],
       "value": ""
     }, {
-      "id": "107792a3-ba02-4a4e-9b6b-c79c6b24b26a",
+      "id": "dc4ad205-def4-4f1f-bfa3-58ddcb28c415",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiListItem-root:nth-child(4)",
+      "target": "css=.MuiListItem-root:nth-child(2)",
       "targets": [
-        ["css=.MuiListItem-root:nth-child(4)", "css:finder"],
-        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[4]", "xpath:idRelative"],
-        ["xpath=//li[4]", "xpath:position"],
-        ["xpath=//li[contains(.,'แบ่งตามลักษณะการวิเคราะห์ข้อมูล')]", "xpath:innerText"]
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'แบ่งตามประโยชน์ของการวิจัย')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "95f3a3b0-58a1-4341-900a-8beac5842ac7",
+      "id": "c38cb934-5e11-442b-85e0-067360d2357b",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-AuthorNameID",
@@ -534,19 +154,18 @@
       ],
       "value": ""
     }, {
-      "id": "be011ad6-df04-4d2b-96bf-a5840edf5d40",
+      "id": "13f8e83e-fbcd-4261-b0d7-327582a859e8",
       "comment": "",
       "command": "mouseUp",
-      "target": "css=.MuiListItem-root:nth-child(2)",
+      "target": "css=#menu-AuthorNameID > div:nth-child(1)",
       "targets": [
-        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li[2]", "xpath:idRelative"],
-        ["xpath=//li[2]", "xpath:position"],
-        ["xpath=//li[contains(.,'Edward Lee')]", "xpath:innerText"]
+        ["css=#menu-AuthorNameID > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "5e4bde31-7183-4b09-9648-9310c82b15c9",
+      "id": "3190e0a1-a6db-4c52-af5b-3634106770af",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -556,19 +175,19 @@
       ],
       "value": ""
     }, {
-      "id": "bc699840-9968-41f9-9ff1-d3184e1eae10",
+      "id": "1d22cd08-7007-4c8f-8864-ebc8a4ab92ae",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiListItem-root:nth-child(3)",
+      "target": "css=.MuiListItem-root:nth-child(2)",
       "targets": [
-        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li[3]", "xpath:idRelative"],
-        ["xpath=//li[3]", "xpath:position"],
-        ["xpath=//li[contains(.,'วิศนุ ทองหลาง')]", "xpath:innerText"]
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Edward Lee')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "ab35a61a-76b5-423b-a4dd-3725f1326604",
+      "id": "27346a9a-4563-4d25-8621-f5d947dc345e",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-InstitutionNameID",
@@ -581,7 +200,7 @@
       ],
       "value": ""
     }, {
-      "id": "fcd0c8d9-007a-498f-8426-7f48ee679c24",
+      "id": "3a99ea94-8c00-4a05-9648-8030e5138595",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiMenuItem-root:nth-child(1)",
@@ -593,7 +212,7 @@
       ],
       "value": ""
     }, {
-      "id": "0194b528-4f9c-4471-8817-33ffd6ed5ab7",
+      "id": "6ad22b2f-a7f4-474b-ad6e-cd5c167643a3",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -603,28 +222,19 @@
       ],
       "value": ""
     }, {
-      "id": "1e582b20-ec40-43f4-8c39-b6c73f3d39a1",
+      "id": "f47db98c-7284-454b-b0a7-dae9df1302f7",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiListItem-root:nth-child(3)",
+      "target": "css=.MuiMenuItem-root:nth-child(1)",
       "targets": [
-        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
-        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li[3]", "xpath:idRelative"],
-        ["xpath=//li[3]", "xpath:position"],
-        ["xpath=//li[contains(.,'มหาวิทยาลัยเชียงใหม่')]", "xpath:innerText"]
+        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'มหาวิทยาลัยเทคโนโลยีสุรนารี')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "93426af2-387e-4123-90ea-d190cd256b8b",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
-      "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "d822fb58-942a-482a-829f-7296423ea185",
+      "id": "4f1b984a-35a6-433b-9a52-5b5d87daa212",
       "comment": "",
       "command": "click",
       "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
@@ -633,49 +243,18 @@
       ],
       "value": ""
     }, {
-      "id": "b86f80ea-90aa-4b99-a54e-3a9ff04972a7",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
-      "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "81208709-0c72-4202-8996-d486eaf195bf",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "34477882-ca50-4ace-b30b-14f3a07a0add",
+      "id": "af28431e-f118-453a-9889-096be3b0aa71",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root",
+      "target": "css=.MuiPickersDay-current .MuiTypography-root",
       "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
+        ["css=.MuiPickersDay-current .MuiTypography-root", "css:finder"],
+        ["xpath=//div[3]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'18')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "bbb5cd80-14b1-4f6e-87ab-15881e8e3206",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiPickersDay-daySelected .MuiTypography-root",
-      "targets": [
-        ["css=.MuiPickersDay-daySelected .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "bfe2c31d-3dc3-4ea8-ab5a-3bc706bf428f",
+      "id": "a4f69c7f-265d-4679-8725-b1994da11ef6",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -686,7 +265,7 @@
       ],
       "value": ""
     }, {
-      "id": "3717f4e7-44ce-4b9a-9b51-55c0da6978a1",
+      "id": "7184a094-53bc-4202-927c-691069a8ef0a",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
@@ -698,7 +277,7 @@
       ],
       "value": ""
     }, {
-      "id": "bcf90050-1faf-4199-824b-294017e5a1b0",
+      "id": "0f03ce04-5bbb-45a1-9a5b-4222cbc762c0",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -709,7 +288,331 @@
       ],
       "value": ""
     }, {
-      "id": "2f2b2e63-8229-4ede-b81f-8b0218088bd3",
+      "id": "0523a054-e62c-4da7-882a-7f13ad34c589",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
+    }, {
+      "id": "541ae043-d729-4ae5-8df9-752f38af8a0f",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0199c010-c0a9-41ac-8c57-40be1e4a58c5",
+    "name": "B6104887 - ตรวจสอบว่าชื่องานวิจัยต้องไม่เป็นอักขระพิเศษ",
+    "commands": [{
+      "id": "bef9e85b-4545-46d3-9d84-2ad98778d27a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a7f50d0-a1ec-4939-800e-b6e25fff1e9b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d17b350b-5f34-4cd4-b4c9-6e1062fc9058",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "6175111f-6c1a-4d23-969f-168c60134ad9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e88c5af-a6a8-41cd-b543-ec06449db6c8",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(4) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e436137-08b5-498b-9e6f-a0f7682f42c9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มงานวิจัย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62a13ada-5564-4b05-9681-7526fc97fb80",
+      "comment": "",
+      "command": "click",
+      "target": "id=NameResearch",
+      "targets": [
+        ["id=NameResearch", "id"],
+        ["css=#NameResearch", "css:finder"],
+        ["xpath=//input[@id='NameResearch']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ee8e8c5-8481-4891-90f8-e2380b28635c",
+      "comment": "",
+      "command": "type",
+      "target": "id=NameResearch",
+      "targets": [
+        ["id=NameResearch", "id"],
+        ["css=#NameResearch", "css:finder"],
+        ["xpath=//input[@id='NameResearch']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "set@64"
+    }, {
+      "id": "3d25c393-1ba4-471a-936c-9754439f3a7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=YearOfPublication",
+      "targets": [
+        ["id=YearOfPublication", "id"],
+        ["css=#YearOfPublication", "css:finder"],
+        ["xpath=//input[@id='YearOfPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c56cec5a-3a84-48b4-82ae-ce3ad4838ac7",
+      "comment": "",
+      "command": "type",
+      "target": "id=YearOfPublication",
+      "targets": [
+        ["id=YearOfPublication", "id"],
+        ["css=#YearOfPublication", "css:finder"],
+        ["xpath=//input[@id='YearOfPublication']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2020"
+    }, {
+      "id": "2bac2680-c484-4433-a36b-7f2f0b205af9",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-TypeResearchID",
+      "targets": [
+        ["id=mui-component-select-TypeResearchID", "id"],
+        ["css=#mui-component-select-TypeResearchID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-TypeResearchID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[3]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e6953c0-f353-4544-992d-75dc128c7ecd",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiMenu-list",
+      "targets": [
+        ["css=.MuiMenu-list", "css:finder"],
+        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul", "xpath:idRelative"],
+        ["xpath=//div[3]/ul", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84724efd-e9e1-4388-a481-c4174936c51d",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd9f20df-b012-4aeb-bd82-11216273284d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(4)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[4]", "xpath:idRelative"],
+        ["xpath=//li[4]", "xpath:position"],
+        ["xpath=//li[contains(.,'แบ่งตามลักษณะการวิเคราะห์ข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a90828ed-cd50-4057-8325-6d49b444061b",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-AuthorNameID",
+      "targets": [
+        ["id=mui-component-select-AuthorNameID", "id"],
+        ["css=#mui-component-select-AuthorNameID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-AuthorNameID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[4]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8f50694-5645-4eaf-b7a6-0469848e58e5",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiMenuItem-root:nth-child(1)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Chatchai Asara')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b23402c-3869-42b3-a4ba-dcdc4ce3182a",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e45932d8-4a03-405d-b6bd-cc57b6c1aa2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiMenuItem-root:nth-child(1)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Chatchai Asara')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79e3d53c-0d3e-4248-80fb-69d57bf03f62",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-InstitutionNameID",
+      "targets": [
+        ["id=mui-component-select-InstitutionNameID", "id"],
+        ["css=#mui-component-select-InstitutionNameID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-InstitutionNameID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[5]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4913620d-5879-4019-8cb1-55fd3457a382",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiMenuItem-root:nth-child(1)",
+      "targets": [
+        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'มหาวิทยาลัยเทคโนโลยีสุรนารี')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca726c49-0f5f-48a0-a667-7da7a64660a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7de7cc40-00a0-4dc4-b83b-2d0944cbf55c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-InstitutionNameID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'มหาวิทยาลัยเชียงใหม่')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b25bf6d-5e94-4572-b320-c481f83a9af7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "92c173bd-1081-46e2-8b7d-bad5043029e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersDay-current .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersDay-current .MuiTypography-root", "css:finder"],
+        ["xpath=//div[3]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'18')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a386990d-4d47-49be-8c63-9fab1011bd1e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f977410-b15b-451e-a6f4-c89362038e35",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdcf3de8-a11a-4398-868a-f1062dde3bf7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88286e38-5f02-401b-b709-a689f3512f1b",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -724,21 +627,21 @@
     "id": "2763d686-5f20-4e3a-a45a-ab8832cbe6a5",
     "name": "B6104887 - ตรวจสอบว่าปีที่ตีพิมพ์ต้องเป็นตัวเลข ระหว่าง 1900 - 2022 และต้องไม่เป็นตัวเลขจำนวนเต็มลบ",
     "commands": [{
-      "id": "b25dc009-7199-45da-98f4-5ac8531dc2d7",
+      "id": "6610a5e4-a66f-4e58-bab7-a2867f44728a",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "e1baf393-211b-4704-b89d-1b7949add7ed",
+      "id": "0c6c4a7c-7d7d-4be7-9917-2f49da2ec513",
       "comment": "",
       "command": "setWindowSize",
       "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "eaf29e5c-0cdb-4162-b162-11968eca7935",
+      "id": "449fbf55-60b7-4346-adc5-627ff4262d52",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-a-12:nth-child(4) path",
@@ -747,7 +650,19 @@
       ],
       "value": ""
     }, {
-      "id": "4be9fb53-533c-4b2e-aa8b-21357e07cfdd",
+      "id": "412f96a8-fd20-41f6-8b9a-5a14a0a14093",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มงานวิจัย')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "52e1ab0b-b2c2-44d2-9bfc-0313a34b1edd",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -759,7 +674,7 @@
       ],
       "value": ""
     }, {
-      "id": "204aa134-a08f-45f9-86a6-4c5fa29a03e2",
+      "id": "59a8a684-d235-437d-850d-0be8f93fab96",
       "comment": "",
       "command": "click",
       "target": "id=NameResearch",
@@ -772,7 +687,7 @@
       ],
       "value": ""
     }, {
-      "id": "36fcbf69-5275-441e-9b17-a3ba53b5922c",
+      "id": "f86f971b-3671-4838-8a35-f10c78e04bc5",
       "comment": "",
       "command": "type",
       "target": "id=NameResearch",
@@ -783,9 +698,9 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "acd22"
+      "value": "set64"
     }, {
-      "id": "14bc6dfe-1656-4dc7-b97a-9123f6242a9e",
+      "id": "b8dd6b77-3239-48bb-8bf5-b1230b33c7fa",
       "comment": "",
       "command": "click",
       "target": "id=YearOfPublication",
@@ -798,7 +713,7 @@
       ],
       "value": ""
     }, {
-      "id": "f5ce50a8-ab53-463b-87db-da441b20ec53",
+      "id": "0da56fa2-1831-4ae1-aa2d-5398ac4a9907",
       "comment": "",
       "command": "type",
       "target": "id=YearOfPublication",
@@ -809,9 +724,9 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/div/input", "xpath:position"]
       ],
-      "value": "2222"
+      "value": "2025"
     }, {
-      "id": "480f94b7-6729-489a-8fbc-c294a6d5c414",
+      "id": "569ff728-a6b5-4431-bc84-a5d240b05353",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-TypeResearchID",
@@ -824,7 +739,7 @@
       ],
       "value": ""
     }, {
-      "id": "9dc4f644-8d79-4d1f-b605-26be39d9e25c",
+      "id": "71b357c7-ac04-4ccd-9b88-2fdfa8348c90",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.Mui-focusVisible",
@@ -836,7 +751,7 @@
       ],
       "value": ""
     }, {
-      "id": "a0f3e7ea-5cc6-4ec0-97ad-eed8238d76a5",
+      "id": "1609c623-38a2-48ad-b7a0-f127b494af49",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -846,7 +761,7 @@
       ],
       "value": ""
     }, {
-      "id": "faa0c7d6-51c3-4e2c-97f2-d275e9ce6f6d",
+      "id": "7f1f61b4-16d8-4f76-8866-a7d44f82f11e",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(3)",
@@ -858,7 +773,7 @@
       ],
       "value": ""
     }, {
-      "id": "160f557c-84cc-4718-a857-179677d5d584",
+      "id": "52a20c48-1125-4150-a788-33b0eab98ca0",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-AuthorNameID",
@@ -871,30 +786,9 @@
       ],
       "value": ""
     }, {
-      "id": "03151365-6861-4348-a8d4-83bc10f5a8d1",
+      "id": "8d6c496f-d1f0-414f-a49d-15cc3bb7afbd",
       "comment": "",
       "command": "mouseUp",
-      "target": "css=.MuiMenu-list",
-      "targets": [
-        ["css=.MuiMenu-list", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul", "xpath:idRelative"],
-        ["xpath=//div[3]/ul", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e5b01642-2bc0-4524-afb7-8ee17514d539",
-      "comment": "",
-      "command": "click",
-      "target": "css=body",
-      "targets": [
-        ["css=body", "css:finder"],
-        ["xpath=//body", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "47625b12-006d-40b1-9dd5-b0884e333b05",
-      "comment": "",
-      "command": "click",
       "target": "css=.MuiMenuItem-root:nth-child(1)",
       "targets": [
         ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
@@ -904,7 +798,29 @@
       ],
       "value": ""
     }, {
-      "id": "15ff286e-e600-4442-99e4-e0b138dfec2b",
+      "id": "9e1c5c58-aef8-4a2b-b4ce-850f9d5f2dda",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1db3cacf-14c7-420e-97cd-2650836b71b1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'วิศนุ ทองหลาง')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d39ab03d-e857-439f-84b5-fecc343ff07e",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-InstitutionNameID",
@@ -917,7 +833,7 @@
       ],
       "value": ""
     }, {
-      "id": "85d9bf8e-b5c6-4aaf-8629-9df13fb2668d",
+      "id": "358c37fb-3685-4f70-a87f-8d5caa436aca",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiMenuItem-root:nth-child(1)",
@@ -929,7 +845,7 @@
       ],
       "value": ""
     }, {
-      "id": "8ad1c867-1fde-4256-8466-8a6d03671f4f",
+      "id": "f4e2d578-cf79-4f3a-82ac-cb20bbec2633",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -939,7 +855,7 @@
       ],
       "value": ""
     }, {
-      "id": "ffdea191-c3a6-492b-b85e-08fe1a97071d",
+      "id": "8c15267f-8de3-4b13-b6cc-63fa79406469",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -951,7 +867,7 @@
       ],
       "value": ""
     }, {
-      "id": "ff18e86f-b0f6-443c-980c-dcd4a79e9d16",
+      "id": "04286aff-3a25-4489-a837-ddf1dd1784ab",
       "comment": "",
       "command": "click",
       "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
@@ -960,18 +876,18 @@
       ],
       "value": ""
     }, {
-      "id": "aa8fd8d5-56da-445c-8be6-2c85b51b6d98",
+      "id": "c7957ec8-ad3d-4558-a390-7cd74d03f4b1",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root",
+      "target": "css=.MuiPickersDay-current .MuiTypography-root",
       "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(3) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div[3]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'15')]", "xpath:innerText"]
+        ["css=.MuiPickersDay-current .MuiTypography-root", "css:finder"],
+        ["xpath=//div[3]/div[6]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'18')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "505406b1-e5d1-4b11-8ff9-dd0c97bcf39f",
+      "id": "9289742d-993d-442c-b9fb-43615bcdaaa4",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -982,7 +898,7 @@
       ],
       "value": ""
     }, {
-      "id": "d86ffb7f-f80c-4afe-97d1-39b3b8151757",
+      "id": "f8b151c1-b829-499a-963d-09020dbe4575",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
@@ -994,7 +910,7 @@
       ],
       "value": ""
     }, {
-      "id": "f23eda1f-545a-4cc9-88f1-3eb0b916d0e7",
+      "id": "20b95e84-05c3-4e98-b45a-62582c7c93d8",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1005,7 +921,29 @@
       ],
       "value": ""
     }, {
-      "id": "9a78123b-498b-47b0-90a5-3fb19f4567fb",
+      "id": "c8000209-e9b8-4d18-ad95-d9af157bbf20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f5aa532-7451-4e17-901e-c23c5cc08839",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f4fd7cc-a2b9-4149-8c31-40d75b88a46d",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1014,36 +952,60 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div/div[2]", "xpath:idRelative"],
         ["xpath=//div/div/div[2]", "xpath:position"]
       ],
-      "value": "บันทึกข้อมูลไม่สำเร็จ - YearOfPublication: 2222 does not validate as range(1900|2022)"
+      "value": "บันทึกข้อมูลไม่สำเร็จ - YearOfPublication: 2025 does not validate as range(1900|2022)"
     }]
   }, {
     "id": "4a9f863e-c9db-4361-8ce0-57f4889b5cb8",
     "name": "B6104887 - ตรวจสอบว่าวันที่ต้องเป็นปัจจุบัน",
     "commands": [{
-      "id": "09c4ddda-a62d-4dda-ab7f-185ab825975d",
+      "id": "80bfafca-fcef-4ce3-af4f-a09aecd06e3a",
       "comment": "",
       "command": "open",
       "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "ba7cfaba-d932-49b9-b0c0-d017e76865d1",
+      "id": "4d23b0fa-8dff-4c09-81f4-b80216bf49a5",
       "comment": "",
       "command": "setWindowSize",
       "target": "1936x1056",
       "targets": [],
       "value": ""
     }, {
-      "id": "5804966f-94c0-451a-a076-fb0479326ace",
+      "id": "91ff4814-f235-408a-af32-918dbfa3c06e",
       "comment": "",
-      "command": "click",
-      "target": "css=.makeStyles-a-12:nth-child(4) path",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root",
       "targets": [
-        ["css=.makeStyles-a-12:nth-child(4) path", "css:finder"]
+        ["css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/ul/a[4]/div", "xpath:idRelative"],
+        ["xpath=//a[4]/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "908f6f15-51b8-4b30-8049-7c637edc468b",
+      "id": "b4aa4c1a-e344-41ee-a65d-f1513e56bf57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/ul/a[4]/div", "xpath:idRelative"],
+        ["xpath=//a[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79080fef-b09a-43d2-b52f-08b61e1ed28d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root",
+      "targets": [
+        ["css=.makeStyles-a-12:nth-child(4) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/ul/a[4]/div", "xpath:idRelative"],
+        ["xpath=//a[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14e97e7c-ff8d-4b1d-87c2-59bf53b95798",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1055,7 +1017,7 @@
       ],
       "value": ""
     }, {
-      "id": "abb45f06-f74e-46a9-84b0-2feb9f881616",
+      "id": "2a5d5ae9-2d4c-4da9-9bc8-f714e992ff8d",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1067,7 +1029,7 @@
       ],
       "value": ""
     }, {
-      "id": "defc2165-54ae-41d8-a4f5-15acc56628f0",
+      "id": "23d3e710-c1c7-4d80-9f34-5bac39c5f909",
       "comment": "",
       "command": "click",
       "target": "id=NameResearch",
@@ -1080,7 +1042,7 @@
       ],
       "value": ""
     }, {
-      "id": "fd205d38-b01e-4336-9d8f-49aad63ec306",
+      "id": "ecdcfc88-cfb7-45fd-8483-c523a191467c",
       "comment": "",
       "command": "type",
       "target": "id=NameResearch",
@@ -1091,9 +1053,9 @@
         ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "jet09"
+      "value": "set64"
     }, {
-      "id": "75849401-cf67-48c4-8a7b-04250deaf51f",
+      "id": "71750cfb-5e1c-46ce-bed3-6ea8b684c7dd",
       "comment": "",
       "command": "click",
       "target": "id=YearOfPublication",
@@ -1106,7 +1068,7 @@
       ],
       "value": ""
     }, {
-      "id": "08dea6a3-7a28-4a05-940a-8220a3794685",
+      "id": "e4474079-1812-46ab-84f3-8bb5f96cdcbc",
       "comment": "",
       "command": "type",
       "target": "id=YearOfPublication",
@@ -1119,7 +1081,7 @@
       ],
       "value": "2020"
     }, {
-      "id": "e2a8e996-cbf9-460d-9c56-6521921b1328",
+      "id": "94f16fa4-05f6-4e5a-8618-07e168538f2e",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-TypeResearchID",
@@ -1132,7 +1094,7 @@
       ],
       "value": ""
     }, {
-      "id": "5b8248e9-00c8-4d97-a6df-c03d57ef28d1",
+      "id": "5a60e828-058e-4a13-a15a-256fe52963b2",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.Mui-focusVisible",
@@ -1144,7 +1106,7 @@
       ],
       "value": ""
     }, {
-      "id": "8fb22db4-498a-4440-b41a-537b4944a88c",
+      "id": "d09f9651-683c-471d-aaac-cffa63cb7d6c",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -1154,19 +1116,19 @@
       ],
       "value": ""
     }, {
-      "id": "f43ba369-130e-42cb-9c36-0b98914ffc87",
+      "id": "949479ec-75fe-47b7-b8cd-664bc42735d4",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButtonBase-root:nth-child(6)",
+      "target": "css=.MuiListItem-root:nth-child(3)",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(6)", "css:finder"],
-        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[6]", "xpath:idRelative"],
-        ["xpath=//li[6]", "xpath:position"],
-        ["xpath=//li[contains(.,'แบ่งตามระเบียบวิธีวิจัย')]", "xpath:innerText"]
+        ["css=.MuiListItem-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-TypeResearchID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'แบ่งตามวิธีการเก็บรวบรวมข้อมูล')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "c5b23dc5-7841-4d5f-88d3-f052d8b21fa0",
+      "id": "226388c2-2f7f-42a3-b323-856ea680f51a",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-AuthorNameID",
@@ -1179,19 +1141,18 @@
       ],
       "value": ""
     }, {
-      "id": "ffadc1a1-e4a1-475b-832e-cedb6a918d20",
+      "id": "fa25d27f-1848-45bf-b6e0-0445ddc9eb59",
       "comment": "",
       "command": "mouseUp",
-      "target": "css=.MuiMenuItem-root:nth-child(1)",
+      "target": "css=#menu-AuthorNameID > div:nth-child(1)",
       "targets": [
-        ["css=.MuiMenuItem-root:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='menu-AuthorNameID']/div[3]/ul/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'Chatchai Asara')]", "xpath:innerText"]
+        ["css=#menu-AuthorNameID > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='menu-AuthorNameID']/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "1d2f67e5-57fd-4c11-9d17-66e5f4a6aeb8",
+      "id": "3d7f2670-7d47-47ea-b92f-55f4ced41460",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -1201,7 +1162,7 @@
       ],
       "value": ""
     }, {
-      "id": "2c09371e-c0ef-4f6c-a582-967920b72652",
+      "id": "1ecdc64b-71dd-4792-ba1f-40b72bd87302",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1213,7 +1174,7 @@
       ],
       "value": ""
     }, {
-      "id": "6d5349dc-f129-4dc8-830c-477128f4d1b6",
+      "id": "d3f7dc04-7bab-4d26-8409-170dbbfca553",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-InstitutionNameID",
@@ -1226,7 +1187,7 @@
       ],
       "value": ""
     }, {
-      "id": "6b9ec905-a3aa-49fd-a7bc-ea5c4c0b3661",
+      "id": "0a9c1101-35ae-4708-b0b7-8eb7db4718e3",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiMenuItem-root:nth-child(1)",
@@ -1238,7 +1199,7 @@
       ],
       "value": ""
     }, {
-      "id": "52126233-3ed0-40dc-85d4-41c3d4ae752c",
+      "id": "5204a1ac-afbd-470b-9d87-fd1b4211b1b5",
       "comment": "",
       "command": "click",
       "target": "css=body",
@@ -1248,7 +1209,7 @@
       ],
       "value": ""
     }, {
-      "id": "f1c49f57-64fb-45b1-b3a6-3da0c576c263",
+      "id": "fcedd81b-d93d-4ccc-b933-10c6c48654ae",
       "comment": "",
       "command": "click",
       "target": "css=.MuiMenuItem-root:nth-child(1)",
@@ -1260,27 +1221,45 @@
       ],
       "value": ""
     }, {
-      "id": "ffa67370-7fb8-496a-802f-71e22ae862d8",
+      "id": "f3d26043-29a7-4e95-8dad-e778918c81d7",
       "comment": "",
-      "command": "click",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
       "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "59cee3bf-a9fc-4841-9887-da2b8fad1286",
+      "id": "7f1c1012-364e-4084-af52-9874d9857962",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(1) .MuiTypography-root",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
       "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(1) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[3]/div/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'13')]", "xpath:innerText"]
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "19acda84-0668-4723-92ef-39421aaffcef",
+      "id": "64d75197-b2bb-43c3-b374-dddb084f6d86",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "98474176-d1e3-40ef-9001-fe5c1b7e6def",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(3) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[3]/div[5]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'17')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "774e1569-de2b-437c-80d5-36552c2fd5c9",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -1291,7 +1270,19 @@
       ],
       "value": ""
     }, {
-      "id": "1f899581-d631-42f6-805d-0e6d68a1322d",
+      "id": "924aadbf-4adc-4b1c-8189-17b83536f8db",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b608b3c-57ab-4ec5-82ad-17cc0a0e9840",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
@@ -1303,7 +1294,19 @@
       ],
       "value": ""
     }, {
-      "id": "a76920fb-842e-4be2-ad9a-4f86dc041266",
+      "id": "465d4d2f-b4fe-4def-8dd4-ade802fa94c2",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButton-containedPrimary > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-containedPrimary > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div/main/div[2]/div/div[2]/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึกข้อมูล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea7880db-7864-4192-95a9-f80475337e46",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1314,7 +1317,7 @@
       ],
       "value": ""
     }, {
-      "id": "bc320a39-08fd-4cbe-aec8-375158fbcb90",
+      "id": "839de27a-3fd7-4a70-a979-b669d30ba044",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
