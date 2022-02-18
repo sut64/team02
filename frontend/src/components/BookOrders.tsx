@@ -99,10 +99,10 @@ function BookOrders() {
       บริษัท
     </TableCell>
     <TableCell align="center" width="10%">
-      จำนวน
+      จำนวน(เล่ม)
     </TableCell>
     <TableCell align="center" width="10%">
-      ราคา
+      ราคา(บาท)
     </TableCell>
     <TableCell align="center" width="10%">
       สถานะ
